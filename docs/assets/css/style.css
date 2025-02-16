@@ -7,7 +7,14 @@
     font-style: italic;
 }
 
-/* 2. 전체 스타일 */
+/* 2. 기본 스타일 초기화 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* 3. 전체 페이지 스타일 */
 body {
     font-family: 'PP Hatton', sans-serif;
     background: white;
@@ -15,30 +22,30 @@ body {
     color: black;
 }
 
-/* 3. "JIEUN KIM" 중앙 상단 */
+/* 4. "JIEUN KIM" 텍스트 (중앙 상단) */
 .main-title {
-    margin-top: 80px;
+    margin-top: 80px; /* 상단 여백 */
     font-size: 40px;
     font-style: italic;
     font-weight: 100;
 }
 
-/* 4. 메뉴 스타일 */
+/* 5. 메뉴 스타일 */
 .menu {
-    margin-top: 150px;
+    margin-top: 150px; /* JIEUN KIM 아래 여백 */
     font-size: 22px;
     font-style: italic;
     font-weight: 100;
-    line-height: 2.5;
+    line-height: 2.5; /* 줄 간격 */
 }
 
-/* 5. 링크 스타일 */
+/* 6. 링크 스타일 */
 .menu a {
     text-decoration: none;
     color: black;
 }
 
+/* 7. 링크에 마우스를 올렸을 때 */
 .menu a:hover {
     text-decoration: underline;
 }
-
