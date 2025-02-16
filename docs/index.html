@@ -32,12 +32,17 @@
         }
 
         /* Vimeo 비디오 스타일 */
-        .video-container iframe {
-            width: 100%;
-            height: 100%;
+        .video-wrapper {
+            position: relative;
+            padding-top: 56.25%; /* 16:9 비율 유지 */
+            height: 0;
+        }
+        .video-wrapper iframe {
             position: absolute;
             top: 0;
             left: 0;
+            width: 100%;
+            height: 100%;
         }
 
         /* JIEUN KIM 텍스트 */
@@ -73,9 +78,10 @@
 
     <!-- 비디오 섹션 -->
     <div class="video-container">
-        <!-- Vimeo 임베드 코드 -->
-        <iframe src="https://player.vimeo.com/video/1002831654?autoplay=1&loop=1&muted=1&background=1" 
-            frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media" allowfullscreen></iframe>
+        <div class="video-wrapper">
+            <iframe src="https://player.vimeo.com/video/1002831654?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479&autoplay=1&loop=1&muted=1&background=1"
+                frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media" allowfullscreen></iframe>
+        </div>
         <div class="overlay-text">JIEUN KIM</div> <!-- 중앙 텍스트 (대문자로 수정) -->
     </div>
 
@@ -90,5 +96,6 @@
         </div>
     </div>
 
+    <script src="https://player.vimeo.com/api/player.js"></script>
 </body>
 </html>
