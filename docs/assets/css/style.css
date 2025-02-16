@@ -1,8 +1,8 @@
 /* 1. PP Hatton 폰트 적용 */
 @font-face {
-    font-family: 'PP Hatton';
-    src: url('../fonts/PPHatton-UltralightItalic.otf') format('opentype'),
-         url('../fonts/PPHatton-UltralightItalic.ttf') format('truetype');
+    font-family: 'Copperplate';
+    src: url('../fonts/Copperplate.otf') format('opentype'),
+         url('../fonts/Copperplate.ttf') format('truetype');
     font-weight: 100;
     font-style: italic;
 }
@@ -16,7 +16,7 @@
 
 /* 3. 전체 페이지 스타일 */
 body {
-    font-family: 'PP Hatton', sans-serif;
+    font-family: 'Copperplate', sans-serif;
     background: white;
     text-align: center;
     color: black;
