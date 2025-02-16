@@ -1,1 +1,44 @@
+/* 1. PP Hatton 폰트 적용 */
+@font-face {
+    font-family: 'PP Hatton';
+    src: url('../fonts/PPHatton-UltralightItalic.otf') format('opentype'),
+         url('../fonts/PPHatton-UltralightItalic.ttf') format('truetype');
+    font-weight: 100;
+    font-style: italic;
+}
+
+/* 2. 전체 스타일 */
+body {
+    font-family: 'PP Hatton', sans-serif;
+    background: white;
+    text-align: center;
+    color: black;
+}
+
+/* 3. "JIEUN KIM" 중앙 상단 */
+.main-title {
+    margin-top: 80px;
+    font-size: 40px;
+    font-style: italic;
+    font-weight: 100;
+}
+
+/* 4. 메뉴 스타일 */
+.menu {
+    margin-top: 150px;
+    font-size: 22px;
+    font-style: italic;
+    font-weight: 100;
+    line-height: 2.5;
+}
+
+/* 5. 링크 스타일 */
+.menu a {
+    text-decoration: none;
+    color: black;
+}
+
+.menu a:hover {
+    text-decoration: underline;
+}
 
