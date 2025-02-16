@@ -4,56 +4,68 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>JIEUN KIM Portfolio</title>
+
+    <!-- PP Hatton 폰트 적용 -->
     <style>
         @import url('https://fonts.googleapis.com/css2?family=PP+Hatton:ital,wght@1,100&display=swap');
 
+        /* 기본 스타일 초기화 */
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
 
+        /* 전체 페이지 스타일 */
         body {
             font-family: 'PP Hatton', sans-serif;
-            color: black;
             background: white;
             text-align: center;
+            color: black;
         }
 
-        /* JIEUN KIM 중앙 정렬 */
+        /* "JIEUN KIM" 텍스트 (중앙 상단) */
         .main-title {
-            height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+            margin-top: 80px; /* 상단 여백 */
             font-size: 40px;
             font-style: italic;
             font-weight: 100;
         }
 
-        /* 아래 메뉴 */
-        .content {
-            padding: 100px 0;
+        /* 메뉴 스타일 */
+        .menu {
+            margin-top: 150px; /* JIEUN KIM 아래 여백 */
             font-size: 22px;
             font-style: italic;
             font-weight: 100;
-            line-height: 2.5;
+            line-height: 2.5; /* 줄 간격 */
+        }
+
+        /* 링크 스타일 (기본 밑줄 제거) */
+        .menu a {
+            text-decoration: none;
+            color: black;
+        }
+
+        /* 링크에 마우스를 올렸을 때 */
+        .menu a:hover {
+            text-decoration: underline;
         }
     </style>
 </head>
 <body>
 
+    <!-- 상단 이름 -->
     <div class="main-title">JIEUN KIM</div>
 
-    <div class="content">
-       <div class="nav-text">
-        REAL<br>
-        UNREAL<br>
-        LIFE<br><br>
-        ABOUT<br>
-        INFO/CONTACT
-       </div>
-    </div> 
-        
+    <!-- 네비게이션 메뉴 -->
+    <div class="menu">
+        <a href="real.html">REAL</a><br>
+        <a href="unreal.html">UNREAL</a><br>
+        <a href="life.html">LIFE</a><br><br> <!-- 한 줄 띄움 -->
+        <a href="about.html">ABOUT</a><br>
+        <a href="contact.html">INFO/CONTACT</a>
+    </div>
+
 </body>
 </html>
