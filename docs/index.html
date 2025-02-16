@@ -4,61 +4,73 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Jieun Kim Portfolio</title>
-    <link rel="stylesheet" href="style.css">  <!-- CSS 파일 연결 -->
     <style>
-        /* Copperplate 고딕 폰트 설정 */
+        /* PP Hatton 폰트 적용 */
         @font-face {
-            font-family: 'Copperplate';
-            src: local('Copperplate'), local('Copperplate Gothic'), sans-serif;
+            font-family: 'PP Hatton';
+            src: url('assets/fonts/PPHatton-UltralightItalic.ttf') format('truetype');
+            font-weight: 100;
+            font-style: italic;
         }
 
-        /* 기본 스타일 설정 */
+        /* Palatino Bold 폰트 적용 */
+        @font-face {
+            font-family: 'Palatino';
+            src: url('assets/fonts/Palatino-Bold.ttf') format('truetype');
+            font-weight: bold;
+        }
+
+        /* 기본 스타일 */
         body, html {
             margin: 0;
             padding: 0;
-            font-family: 'Copperplate', sans-serif;
+            font-family: 'Palatino', serif;
             text-align: center;
             background-color: black;
             color: white;
         }
 
-        /* 비디오 섹션 */
+        /* 비디오 컨테이너 */
         .video-container {
             position: relative;
             width: 100%;
-            height: 100vh; /* 화면 전체 높이 */
+            height: 100vh;
             overflow: hidden;
         }
 
-        .video-container video {
+        /* Vimeo 비디오 스타일 */
+        .video-container iframe {
             width: 100%;
             height: 100%;
-            object-fit: cover; /* 화면 가득 채우기 */
+            position: absolute;
+            top: 0;
+            left: 0;
         }
 
-        /* 이름 표시 */
-        .name-section {
-            padding: 50px 0;
-            font-size: 32px;
-            font-weight: bold;
-        }
-
-        /* 네비게이션 메뉴 */
-        .nav-menu {
-            font-size: 22px;
-            margin-top: 20px;
-        }
-
-        .nav-menu a {
-            display: block;
-            margin: 10px 0;
-            text-decoration: none;
+        /* Jieun Kim 텍스트 */
+        .overlay-text {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 40px;
+            font-family: 'PP Hatton', serif;
+            font-style: italic;
             color: white;
-            transition: color 0.3s;
+            text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.8);
         }
 
-        .nav-menu a:hover {
-            color: gray;
+        /* 스크롤 영역 */
+        .content {
+            padding: 100px 20px;
+        }
+
+        /* 네비게이션 텍스트 스타일 */
+        .nav-text {
+            font-size: 22px;
+            font-family: 'Palatino', serif;
+            font-weight: bold;
+            line-height: 2;
         }
     </style>
 </head>
@@ -66,25 +78,21 @@
 
     <!-- 비디오 섹션 -->
     <div class="video-container">
-        <video autoplay loop muted>
-            <source src="assets/your-video.mp4" type="video/mp4">
-            Your browser does not support the video tag.
-        </video>
+        <!-- 여기에 Vimeo 임베드 코드 붙여넣기 -->
+        <iframe src="https://player.vimeo.com/video/<div style="padding:56.25% 0 0 0;position:relative;"><iframe src="https://player.vimeo.com/video/1002831654?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media" style="position:absolute;top:0;left:0;width:100%;height:100%;" title="룰루랄라 해파리"></iframe></div><script src="https://player.vimeo.com/api/player.js"></script>?autoplay=1&loop=1&muted=1&background=1" 
+            frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
+        <div class="overlay-text">Jieun Kim</div> <!-- 중앙 텍스트 -->
     </div>
 
-    <!-- 이름 섹션 -->
-    <div class="name-section">
-        Jieun Kim
-    </div>
-
-    <!-- 네비게이션 메뉴 -->
-    <div class="nav-menu">
-        <a href="real.html">REAL</a>
-        <a href="unreal.html">UNREAL</a>
-        <a href="life.html">LIFE</a>
-
-        <a href="life.html">ABOUT</a>
-        <a href="contact.html">INFO / CONTACT</a>
+    <!-- 스크롤 후 나타나는 콘텐츠 -->
+    <div class="content">
+        <div class="nav-text">
+            REAL <br>
+            UNREAL <br>
+            LIFE <br><br>
+            ABOUT <br>
+            INFO/CONTACT
+        </div>
     </div>
 
 </body>
