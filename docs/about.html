@@ -5,7 +5,13 @@
             margin: 50px auto; /* 위아래 여백 추가 */
             padding: 20px;
         }
-
+/* 모바일 화면에서 글씨 크기 조정 & 여백 조절 */
+@media (max-width: 768px) {
+    .container {
+        max-width: 90%; /* 모바일에서는 화면 크기에 맞게 */
+        margin: 20px auto; /* 위아래 여백 줄이기 */
+        padding: 10px; /* 패딩 줄여서 여백 확보 */
+    }
         p {
             margin-bottom: 5px; /* 문장 간 간격 */
             line-height: 1.6; /* 가독성 향상 */
