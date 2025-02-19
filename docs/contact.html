@@ -1,20 +1,48 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Info - Jieun Kim</title>
     <style>
         body {
             font-family: Arial, sans-serif;
             line-height: 1.6;
-            text-align: center;
-            margin: 50px;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
         }
+
+        .container {
+            text-align: left;
+            max-width: 800px; /* 기본 너비 */
+            margin: 50px auto;
+            padding: 20px;
+        }
+
+        /* 모바일 화면에서 글씨 크기 조정 & 여백 조절 */
+        @media (max-width: 768px) {
+            .container {
+                max-width: 90%;
+                margin: 20px auto;
+                padding: 10px;
+            }
+
+            p {
+                font-size: 16px;
+                line-height: 1.8;
+            }
+        }
+
         a {
-            color: #0073e6;
+            color: black; /* 링크 색상 검은색으로 변경 */
             text-decoration: none;
             font-weight: bold;
         }
+
         a:hover {
             text-decoration: underline;
         }
@@ -22,33 +50,37 @@
 </head>
 <body>
 
-    <h1>Jieun Kim</h1>
-    <p>born in South Korea</p>
-    <p>based in the Netherlands</p>
+    <div class="container">
+        <h1>Jieun Kim</h1>
+        <p>born in South Korea</p>
+        <p>based in the Netherlands</p>
+        <p>-</p> <!-- 추가된 구분선 -->
 
-    <hr>
+        <hr>
 
-    <p>
-        <a href="https://drive.google.com/drive/folders/1HdETXttFpYPrXa2RDJAFtcmce2zXgjdr?dmr=1&ec=wgc-drive-globalnav-goto" target="_blank">
-            Press pack
-        </a>
-    </p>
+        <p>
+            <a href="https://drive.google.com/drive/folders/1HdETXttFpYPrXa2RDJAFtcmce2zXgjdr?dmr=1&ec=wgc-drive-globalnav-goto" target="_blank">
+                Press pack
+            </a>
+        </p>
 
-    <p>
-        <a href="mailto:metaphor3021@gmail.com">metaphor3021@gmail.com</a>
-    </p>
+        <p>
+            <a href="mailto:metaphor3021@gmail.com">metaphor3021@gmail.com</a>
+        </p>
 
-    <p>
-        <a href="https://www.instagram.com/jieun__kimm/" target="_blank">@jieun__kimm</a>
-    </p>
+        <p>
+            <a href="https://www.instagram.com/jieun__kimm/" target="_blank">@jieun__kimm</a>
+        </p>
 
-    <p>
-        <a href="https://vimeo.com/jieunkimm" target="_blank">Vimeo</a>
-    </p>
+        <p>
+            <a href="https://vimeo.com/jieunkimm" target="_blank">Vimeo</a>
+        </p>
 
-    <p>
-        <a href="https://www.behance.net/jieunkim79" target="_blank">Behance</a>
-    </p>
+        <p>
+            <a href="https://www.behance.net/jieunkim79" target="_blank">Behance</a>
+        </p>
+    </div>
 
 </body>
 </html>
+
