@@ -29,10 +29,10 @@
 }
 
 
-/* 2. 기본 스타일 - Regular; 특별히 다른 폰트를 지정하지 않으면 모든 html에 영향 */
+/* 2. 기본 스타일 - light 지정; 특별히 다른 폰트를 지정하지 않으면 모든 html에 영향 */
 * {
     font-family: 'Noto Sans KR', sans-serif;
-    font-weight: 400; 
+    font-weight: 300; 
     color: #000;
     background-color: #fff;
 }
