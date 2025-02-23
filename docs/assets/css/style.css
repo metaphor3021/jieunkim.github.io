@@ -1,4 +1,11 @@
 /* 1. Noto Sans KR 폰트 차례대로 지정해주기 */
+/* 1-0) Noto Sans KR ExtraLight 지정 */
+@font-face {
+    font-family: 'Noto Sans KR';/* 폰트 페밀리니까 Noto Sans KR 띄어쓰기 유지 */
+    font-weight: 200;
+    font-style: normal;
+    src: url('/assets/fonts/NotoSansKR-ExtraLight.ttf') format('truetype');/* 파일명은 -로 띄어쓰기 제거 */
+}
 /* 1-1) Noto Sans KR light 지정 */
 @font-face {
     font-family: 'Noto Sans KR';/* 폰트 페밀리니까 Noto Sans KR 띄어쓰기 유지 */
@@ -27,7 +34,7 @@
 * {
     font-family: 'Noto Sans KR', sans-serif;
     color: #000;
-    font-weight: 300;/* 기본 스타일 300으로 설정 */
+    font-weight: 200;/* 기본 스타일 200으로 설정 */
     background-color: #fff;
 }
 
@@ -36,7 +43,7 @@ body {
     font-family: 'Noto Sans KR', sans-serif;
     background: white;
     text-align: center;
-    font-weight: 300;/* 기본 스타일 300으로 설정 */
+    font-weight: 200;/* 기본 스타일 200으로 설정 */
     color: black;
 }
 
@@ -45,7 +52,7 @@ body {
     margin-top: 80px; /* 상단 여백 */
     font-size: 40px;
     font-style: normal;
-    font-weight: 300;/* 타이틀 폰트 크기 300으로 설정 */
+    font-weight: 200;/* 타이틀 폰트 크기 200으로 설정 */
 }
 
 /* 5. 메뉴 스타일 */
@@ -53,7 +60,7 @@ body {
     margin-top: 150px; /* JIEUN KIM 아래 여백 */
     font-size: 22px;
     font-style: normal;
-    font-weight: 300;/* 메뉴 폰트 크기 300으로 설정 */
+    font-weight: 200;/* 메뉴 폰트 크기 200으로 설정 */
     line-height: 2.5; /* 줄 간격 */
 }
 
