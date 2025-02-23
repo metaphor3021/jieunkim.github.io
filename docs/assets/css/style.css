@@ -32,9 +32,8 @@
 /* 2. 기본 스타일 - light 지정; 특별히 다른 폰트를 지정하지 않으면 모든 html에 영향 */
 * {
     font-family: 'Noto Sans KR', sans-serif;
-    font-weight: 300; 
     color: #000;
-    background-color: #fff;
+    background-color: #fff;/* font-weight 설정을 하지 않음 */
 }
 
 /* 3. 전체 페이지 스타일 - <body> 태그 안에 있는 모든 텍스트에 영향을 미침. */
@@ -42,15 +41,14 @@ body {
     font-family: 'Noto Sans KR', sans-serif;
     background: white;
     text-align: center;
-    color: black;
+    color: black;/* font-weight 설정을 하지 않음 */
 }
 
 /* 4. "JIEUN KIM" 텍스트 (중앙 상단) */
 .main-title {
     margin-top: 80px; /* 상단 여백 */
     font-size: 40px;
-    font-style: normal;
-    font-weight: 300;
+    font-style: normal;/* font-weight 설정을 하지 않음 */
 }
 
 /* 5. 메뉴 스타일 */
@@ -58,8 +56,7 @@ body {
     margin-top: 150px; /* JIEUN KIM 아래 여백 */
     font-size: 22px;
     font-style: normal;
-    font-weight: 300;
-    line-height: 2.5; /* 줄 간격 */
+    line-height: 2.5; /* 줄 간격 *//* font-weight 설정을 하지 않음 */
 }
 
 /* 6. 링크 스타일 */
