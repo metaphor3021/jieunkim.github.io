@@ -1,7 +1,7 @@
 /* 1. PP Hatton 폰트 적용 */
 @font-face {
-    font-family: 'Cinzel-VariableFont_wght';/* 띄어쓰기 유지 */
-   src: url('../assets/fonts/Cinzel-VariableFont_wght.ttf') format('truetype');/* 파일명에서 띄어쓰기 제거 */
+    font-family: 'bookk Gothic light';/* 띄어쓰기 유지 */
+   src: url('../assets/fonts/bookk-Gothic-light.ttf') format('truetype');/* 파일명에서 띄어쓰기 제거 */
     font-weight: 300;
     font-weight: 100;
     font-style: normal;
@@ -15,7 +15,7 @@
 
 /* 3. 전체 페이지 스타일 */
 body {
-    font-family: 'Cinzel-VariableFont_wght', sans-serif;
+    font-family: 'bookk Gothic light', sans-serif;
     background: white;
     text-align: center;
     color: black;
