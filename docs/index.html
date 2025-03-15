@@ -48,11 +48,12 @@
         /* 데스크탑 사이드바 (목차) */
         .sidebar {
             position: fixed;
-            top: 140px; /* 타이틀 바와 겹치지 않도록 조정 */
+            top: 140px;
             left: 30px;
             width: 250px;
             text-align: left;
             font-size: 18px;
+            font-weight: normal; /* 모든 메뉴 폰트 굵기 제거 (얇게) */
         }
 
         .sidebar a {
@@ -107,7 +108,7 @@
             }
 
             .sidebar {
-                display: none;
+                display: none; /* 모바일에서 기본적으로 숨김 */
             }
 
             .menu-button {
@@ -133,6 +134,7 @@
                 display: flex;
                 flex-direction: column;
                 font-size: 18px; /* 데스크탑과 동일한 폰트 크기 유지 */
+                font-weight: normal; /* 모든 메뉴 폰트 동일하게 설정 */
             }
 
             .menu.active {
@@ -142,8 +144,14 @@
             .menu a {
                 text-decoration: none;
                 color: black;
-                margin: 10px 0;
-                font-weight: normal;
+                margin: 8px 0;
+                font-weight: normal; /* 모든 메뉴 폰트 굵기 동일하게 */
+            }
+
+            .menu .real, .menu .unreal {
+                padding-left: 20px;
+                font-size: 16px;
+                margin: 5px 0;
             }
 
             .menu-overlay {
@@ -196,43 +204,4 @@
     <nav class="menu">
         <a href="#">Side Project</a>
         <a href="#" class="real">Real</a>
-        <a href="#" class="unreal">Unreal</a>
-        <a href="#">Notes</a>
-        <a href="#">About</a>
-        <a href="#">Info/Contact</a>
-    </nav>
-
-    <main class="content">
-        <div class="image-container">
-            <img src="images/project1.jpg" alt="Project 1">
-            <div class="image-title">Project 1</div>
-        </div>
-        <div class="image-container">
-            <img src="images/project2.jpg" alt="Project 2">
-            <div class="image-title">Project 2</div>
-        </div>
-    </main>
-
-    <!-- 햄버거 메뉴 동작 -->
-    <script>
-        document.addEventListener("DOMContentLoaded", function () {
-            const menuButton = document.querySelector('.menu-button');
-            const menu = document.querySelector('.menu');
-            const menuOverlay = document.querySelector('.menu-overlay');
-
-            function toggleMenu() {
-                menu.classList.toggle('active');
-                menuOverlay.classList.toggle('active');
-            }
-
-            menuButton.addEventListener('click', toggleMenu);
-            menuOverlay.addEventListener('click', toggleMenu);
-
-            document.querySelectorAll('.menu a').forEach(item => {
-                item.addEventListener('click', toggleMenu);
-            });
-        });
-    </script>
-</body>
-</html>
-
+        <a href="#
