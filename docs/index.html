@@ -3,26 +3,109 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>JIEUN KIM Portfolio</title>
+    <title>Jieun Kim Portfolio</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-    <!-- 외부 CSS 파일 연결 -->
-    <link rel="stylesheet" href="assets/css/style.css"> <!-- 스타일 연결 -->
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #fff;
+            color: #000;
+            text-align: center;
+        }
+
+        /* 상단 네비게이션 바 */
+        .navbar {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 20px;
+            background: rgba(255, 255, 255, 0.9);
+            z-index: 1000;
+        }
+
+        .menu-icon {
+            font-size: 24px;
+            cursor: pointer;
+        }
+
+        .instagram {
+            font-size: 24px;
+        }
+
+        .container {
+            padding-top: 80px; /* 네비게이션 바 높이 고려 */
+        }
+
+        .name {
+            font-size: 40px;
+            font-weight: bold;
+        }
+
+        .name-korean {
+            font-size: 20px;
+            text-align: left;
+            margin: 5px auto;
+            width: fit-content;
+        }
+
+        .gallery {
+            margin-top: 50px;
+        }
+
+        .gallery img {
+            width: 100%;
+            max-width: 500px;
+            display: block;
+            margin: 0 auto;
+        }
+
+        .gallery-title {
+            margin-top: 10px;
+            font-size: 18px;
+        }
+
+        /* 모바일 반응형 */
+        @media (max-width: 768px) {
+            .name {
+                font-size: 30px;
+            }
+            .name-korean {
+                font-size: 15px;
+            }
+        }
+    </style>
 </head>
 <body>
-
-    <!-- 상단 이름 -->
-    <div class="main-title">JIEUN KIM</div>
-
-    <!-- 네비게이션 메뉴 -->
-    <div class="menu">
-        <a href="real.html">REAL</a><br>
-        <a href="unreal.html">UNREAL</a><br>
-        <a href="life.html">LIFE</a><br><br> <!-- 한 줄 띄움 -->
-        <a href="about.html">ABOUT</a><br>
-        <a href="contact.html">INFO/CONTACT</a>
+    <div class="navbar">
+        <div class="menu-icon">☰</div>
+        <div class="instagram">📷</div>
     </div>
-    <br>
-    <br>
 
+    <div class="container">
+        <div class="name">Jieun Kim</div>
+        <div class="name-korean">김지은</div>
+
+        <div class="gallery">
+            <a href="work1.html">
+                <img src="images/work1.jpg" alt="Work 1">
+                <div class="gallery-title">Project Title 1</div>
+            </a>
+        </div>
+
+        <div class="gallery">
+            <a href="work2.html">
+                <img src="images/work2.jpg" alt="Work 2">
+                <div class="gallery-title">Project Title 2</div>
+            </a>
+        </div>
+    </div>
 </body>
 </html>
