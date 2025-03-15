@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Jieun Kim Portfolio</title>
+    <!-- 외부 CSS 파일 연결 -->
+    <link rel="stylesheet" href="assets/css/style.css">
     <style>
         * {
             margin: 0;
@@ -11,14 +13,6 @@
             box-sizing: border-box;
         }
 
-        body {
-            font-family: 'Arial', sans-serif;
-            background-color: #fff;
-            color: #000;
-            text-align: center;
-        }
-
-        /* 상단 네비게이션 바 */
         .navbar {
             position: fixed;
             top: 0;
@@ -40,8 +34,31 @@
             font-size: 24px;
         }
 
+        .sidebar {
+            position: fixed;
+            left: -250px;
+            top: 0;
+            width: 250px;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            color: white;
+            padding-top: 50px;
+            transition: left 0.3s;
+        }
+
+        .sidebar a {
+            display: block;
+            padding: 15px;
+            color: white;
+            text-decoration: none;
+        }
+
+        .sidebar a:hover {
+            background: gray;
+        }
+
         .container {
-            padding-top: 80px; /* 네비게이션 바 높이 고려 */
+            padding-top: 80px;
         }
 
         .name {
@@ -72,7 +89,6 @@
             font-size: 18px;
         }
 
-        /* 모바일 반응형 */
         @media (max-width: 768px) {
             .name {
                 font-size: 30px;
@@ -85,8 +101,16 @@
 </head>
 <body>
     <div class="navbar">
-        <div class="menu-icon">☰</div>
-        <div class="instagram">📷</div>
+        <div class="menu-icon" onclick="toggleSidebar()">☰</div>
+        <div class="instagram"><a href="https://www.instagram.com/jieun__kimm/" target="_blank">📷</a></div>
+    </div>
+
+    <div class="sidebar" id="sidebar">
+        <a href="#">Side Project</a>
+        <a href="#">Video</a>
+        <a href="#">Product</a>
+        <a href="#">About</a>
+        <a href="#">Info/Contact</a>
     </div>
 
     <div class="container">
@@ -107,5 +131,17 @@
             </a>
         </div>
     </div>
+
+    <script>
+        function toggleSidebar() {
+            var sidebar = document.getElementById("sidebar");
+            if (sidebar.style.left === "-250px") {
+                sidebar.style.left = "0";
+            } else {
+                sidebar.style.left = "-250px";
+            }
+        }
+    </script>
 </body>
 </html>
+
