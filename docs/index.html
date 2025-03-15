@@ -15,7 +15,7 @@
             padding: 0;
         }
 
-        /* 상단 타이틀 바 (스크롤 내려도 본문 위로 보이게) */
+        /* 상단 타이틀 바 */
         .header {
             position: fixed;
             top: 0;
@@ -45,7 +45,7 @@
             margin-top: 5px;
         }
 
-        /* 사이드바 (데스크탑에서만 보임) */
+        /* 사이드바 (데스크탑) */
         .sidebar {
             position: fixed;
             top: 140px;
@@ -53,30 +53,35 @@
             width: 250px;
             text-align: left;
             font-size: 18px;
-            font-weight: 300; /* 얇게 수정 */
+            font-weight: 300;
         }
 
         .sidebar a {
             text-decoration: none;
             color: black;
             display: block;
-            margin: 8px 0;
-            font-weight: 300; /* 얇게 수정 */
+            margin: 12px 0; /* 간격 추가 조정 */
+            font-weight: 300;
+        }
+
+        .sidebar a[disabled] {
+            pointer-events: none;
+            color: #999; /* 클릭 안 되는 항목 흐리게 */
         }
 
         .sidebar .real, .sidebar .unreal {
             padding-left: 20px;
             font-size: 16px;
-            margin: 5px 0;
+            margin: 8px 0;
         }
 
-        /* 본문 (사이드바가 본문을 가리지 않도록 조정) */
+        /* 본문 */
         .content {
             max-width: 900px;
             margin: 150px auto 50px;
             padding: 0 30px;
             position: relative;
-            z-index: 1; /* 사이드바보다 위에 보이도록 */
+            z-index: 1;
         }
 
         .image-container {
@@ -89,7 +94,7 @@
             width: 100%;
             height: auto;
             position: relative;
-            z-index: -1; /* 사이드바보다 아래로 */
+            z-index: -1;
         }
 
         .image-title {
@@ -113,7 +118,7 @@
             }
 
             .sidebar {
-                display: none; /* 모바일에서 기본적으로 숨김 */
+                display: none;
             }
 
             .menu-button {
@@ -129,17 +134,18 @@
                 position: fixed;
                 top: 0;
                 right: -250px;
-                width: 250px;
+                width: 220px;
                 height: 100vh;
                 background: white;
                 box-shadow: -2px 0 5px rgba(0, 0, 0, 0.1);
                 transition: right 0.3s ease;
-                padding: 50px 20px;
+                padding: 40px 15px;
                 text-align: left;
                 display: flex;
                 flex-direction: column;
-                font-size: 18px; /* 데스크탑과 동일한 폰트 크기 유지 */
-                font-weight: 300; /* 얇게 수정 */
+                font-size: 16px; /* 크기 줄임 */
+                font-weight: 300;
+                line-height: 1.5; /* 간격 줄임 */
             }
 
             .menu.active {
@@ -149,14 +155,14 @@
             .menu a {
                 text-decoration: none;
                 color: black;
-                margin: 8px 0;
-                font-weight: 300; /* 얇게 수정 */
+                margin: 6px 0; /* 간격 축소 */
+                font-weight: 300;
             }
 
             .menu .real, .menu .unreal {
                 padding-left: 20px;
-                font-size: 16px;
-                margin: 5px 0;
+                font-size: 14px;
+                margin: 4px 0;
             }
 
             .menu-overlay {
@@ -193,26 +199,26 @@
         <div class="header-subtitle">김지은</div>
     </header>
 
-    <!-- 사이드바 (데스크탑에서만 보임) -->
+    <!-- 사이드바 (데스크탑) -->
     <nav class="sidebar">
-        <a href="#">Side Project</a>
-        <a href="#" class="real">Real</a>
-        <a href="#" class="unreal">Unreal</a>
-        <a href="#">Notes</a>
-        <a href="#">About</a>
-        <a href="#">Info/Contact</a>
+        <a href="#" disabled>Side Project</a>
+        <a href="real.html" class="real" target="_blank">Real</a>
+        <a href="unreal.html" class="unreal" target="_blank">Unreal</a>
+        <a href="notes.html" target="_blank">Notes</a>
+        <a href="about.html" target="_blank">About</a>
+        <a href="contact.html" target="_blank">Info/Contact</a>
     </nav>
 
-    <!-- 모바일에서는 햄버거 메뉴 -->
+    <!-- 모바일 햄버거 메뉴 -->
     <div class="menu-button">☰</div>
     <div class="menu-overlay"></div>
     <nav class="menu">
-        <a href="#">Side Project</a>
-        <a href="#" class="real">Real</a>
-        <a href="#" class="unreal">Unreal</a>
-        <a href="#">Notes</a>
-        <a href="#">About</a>
-        <a href="#">Info/Contact</a>
+        <a href="#" disabled>Side Project</a>
+        <a href="real.html" class="real" target="_blank">Real</a>
+        <a href="unreal.html" class="unreal" target="_blank">Unreal</a>
+        <a href="notes.html" target="_blank">Notes</a>
+        <a href="about.html" target="_blank">About</a>
+        <a href="contact.html" target="_blank">Info/Contact</a>
     </nav>
 
     <main class="content">
@@ -234,9 +240,8 @@
             const menuOverlay = document.querySelector('.menu-overlay');
 
             function toggleMenu() {
-                const isActive = menu.classList.contains('active');
-                menu.classList.toggle('active', !isActive);
-                menuOverlay.classList.toggle('active', !isActive);
+                menu.classList.toggle('active');
+                menuOverlay.classList.toggle('active');
             }
 
             menuButton.addEventListener('click', toggleMenu);
