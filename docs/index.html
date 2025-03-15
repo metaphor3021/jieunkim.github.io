@@ -3,9 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jieun Kim Portfolio</title>
+    <title>JIEUN KIM</title>
+    
     <!-- 외부 CSS 파일 연결 -->
     <link rel="stylesheet" href="assets/css/style.css">
+    
     <style>
         * {
             margin: 0;
@@ -13,135 +15,138 @@
             box-sizing: border-box;
         }
 
-        .navbar {
-            position: fixed;
-            top: 0;
-            width: 100%;
+        body {
+            font-family: 'Noto Sans KR', sans-serif;
+            background-color: #fff;
+            color: #000;
+            text-align: center;
+        }
+
+        .header {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 15px 20px;
-            background: rgba(255, 255, 255, 0.9);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            left: 0;
+            padding: 20px;
+            background: white;
             z-index: 1000;
         }
 
-        .menu-icon {
-            font-size: 24px;
+        .menu-toggle {
             cursor: pointer;
-        }
-
-        .instagram {
             font-size: 24px;
         }
 
         .sidebar {
             position: fixed;
-            left: -250px;
             top: 0;
+            left: -250px;
             width: 250px;
             height: 100%;
-            background: rgba(0, 0, 0, 0.8);
-            color: white;
-            padding-top: 50px;
-            transition: left 0.3s;
+            background: white;
+            box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2);
+            transition: left 0.3s ease;
+            padding-top: 60px;
+        }
+
+        .sidebar.active {
+            left: 0;
         }
 
         .sidebar a {
             display: block;
             padding: 15px;
-            color: white;
             text-decoration: none;
-        }
-
-        .sidebar a:hover {
-            background: gray;
-        }
-
-        .container {
-            padding-top: 80px;
-        }
-
-        .name {
-            font-size: 40px;
-            font-weight: bold;
-        }
-
-        .name-korean {
-            font-size: 20px;
-            text-align: left;
-            margin: 5px auto;
-            width: fit-content;
-        }
-
-        .gallery {
-            margin-top: 50px;
-        }
-
-        .gallery img {
-            width: 100%;
-            max-width: 500px;
-            display: block;
-            margin: 0 auto;
-        }
-
-        .gallery-title {
-            margin-top: 10px;
+            color: black;
             font-size: 18px;
         }
 
-        @media (max-width: 768px) {
-            .name {
-                font-size: 30px;
-            }
-            .name-korean {
-                font-size: 15px;
-            }
+        .sidebar a:hover {
+            background: none;
+        }
+
+        .title {
+            font-size: 32px;
+            font-weight: bold;
+        }
+
+        .subtitle {
+            font-size: 16px;
+        }
+
+        .instagram-link {
+            text-decoration: none;
+            color: black;
+            font-size: 18px;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 100px auto 0;
+            padding: 20px;
+        }
+
+        .image-container {
+            width: 100%;
+            max-width: 800px;
+            margin: 0 auto 40px;
+            position: relative;
+            padding-top: 56.25%;
+            overflow: hidden;
+        }
+
+        .image-container img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            cursor: pointer;
         }
     </style>
 </head>
 <body>
-    <div class="navbar">
-        <div class="menu-icon" onclick="toggleSidebar()">☰</div>
-        <div class="instagram"><a href="https://www.instagram.com/jieun__kimm/" target="_blank">📷</a></div>
-    </div>
+    <header class="header">
+        <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+        <div class="title">JIEUN KIM</div>
+        <a href="https://www.instagram.com/jieun__kimm/" class="instagram-link">Instagram</a>
+    </header>
 
-    <div class="sidebar" id="sidebar">
+    <nav class="sidebar" id="sidebar">
         <a href="#">Side Project</a>
         <a href="#">Video</a>
         <a href="#">Product</a>
+        <br>: 문장 사이 여백 1줄 
+        <a href="#">Notes</a>
+        <br>: 문장 사이 여백 1줄 
         <a href="#">About</a>
         <a href="#">Info/Contact</a>
-    </div>
+    </nav>
 
     <div class="container">
-        <div class="name">Jieun Kim</div>
-        <div class="name-korean">김지은</div>
-
-        <div class="gallery">
-            <a href="work1.html">
-                <img src="images/work1.jpg" alt="Work 1">
-                <div class="gallery-title">Project Title 1</div>
+        <div class="subtitle">김지은</div>
+        <div class="image-container">
+            <a href="vase.html">
+                <img src="images/vase.jpg" alt="real Image 1">
             </a>
         </div>
 
-        <div class="gallery">
-            <a href="work2.html">
-                <img src="images/work2.jpg" alt="Work 2">
-                <div class="gallery-title">Project Title 2</div>
+        <div class="image-container">
+            <a href="paperlamp2.html">
+                <img src="images/paperlamp2.jpg" alt="real Image 2">
             </a>
         </div>
     </div>
 
     <script>
-        function toggleSidebar() {
+        function toggleMenu() {
             var sidebar = document.getElementById("sidebar");
-            if (sidebar.style.left === "-250px") {
-                sidebar.style.left = "0";
-            } else {
-                sidebar.style.left = "-250px";
-            }
+            sidebar.classList.toggle("active");
         }
     </script>
 </body>
 </html>
-
