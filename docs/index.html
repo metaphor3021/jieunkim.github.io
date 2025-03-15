@@ -60,13 +60,13 @@
             text-decoration: none;
             color: black;
             display: block;
-            margin: 12px 0; /* 간격 추가 조정 */
+            margin: 12px 0;
             font-weight: 300;
         }
 
         .sidebar a[disabled] {
             pointer-events: none;
-            color: #999; /* 클릭 안 되는 항목 흐리게 */
+            color: black; /* 검정색 유지 */
         }
 
         .sidebar .real, .sidebar .unreal {
@@ -82,25 +82,6 @@
             padding: 0 30px;
             position: relative;
             z-index: 1;
-        }
-
-        .image-container {
-            margin: 40px 0;
-            text-align: left;
-            position: relative;
-        }
-
-        .image-container img {
-            width: 100%;
-            height: auto;
-            position: relative;
-            z-index: -1;
-        }
-
-        .image-title {
-            font-size: 16px;
-            margin-top: 10px;
-            color: #333;
         }
 
         /* 모바일 스타일 */
@@ -143,9 +124,9 @@
                 text-align: left;
                 display: flex;
                 flex-direction: column;
-                font-size: 16px; /* 크기 줄임 */
+                font-size: 16px;
                 font-weight: 300;
-                line-height: 1.5; /* 간격 줄임 */
+                line-height: 1.5;
             }
 
             .menu.active {
@@ -155,7 +136,7 @@
             .menu a {
                 text-decoration: none;
                 color: black;
-                margin: 6px 0; /* 간격 축소 */
+                margin: 6px 0;
                 font-weight: 300;
             }
 
@@ -202,11 +183,11 @@
     <!-- 사이드바 (데스크탑) -->
     <nav class="sidebar">
         <a href="#" disabled>Side Project</a>
-        <a href="real.html" class="real" target="_blank">Real</a>
-        <a href="unreal.html" class="unreal" target="_blank">Unreal</a>
-        <a href="notes.html" target="_blank">Notes</a>
-        <a href="about.html" target="_blank">About</a>
-        <a href="contact.html" target="_blank">Info/Contact</a>
+        <a href="real.html" class="real" onclick="openNewTab(event, 'real.html')">Real</a>
+        <a href="unreal.html" class="unreal" onclick="openNewTab(event, 'unreal.html')">Unreal</a>
+        <a href="notes.html" onclick="openNewTab(event, 'notes.html')">Notes</a>
+        <a href="about.html" onclick="openNewTab(event, 'about.html')">About</a>
+        <a href="contact.html" onclick="openNewTab(event, 'contact.html')">Info/Contact</a>
     </nav>
 
     <!-- 모바일 햄버거 메뉴 -->
@@ -214,11 +195,11 @@
     <div class="menu-overlay"></div>
     <nav class="menu">
         <a href="#" disabled>Side Project</a>
-        <a href="real.html" class="real" target="_blank">Real</a>
-        <a href="unreal.html" class="unreal" target="_blank">Unreal</a>
-        <a href="notes.html" target="_blank">Notes</a>
-        <a href="about.html" target="_blank">About</a>
-        <a href="contact.html" target="_blank">Info/Contact</a>
+        <a href="real.html" class="real" onclick="openNewTab(event, 'real.html')">Real</a>
+        <a href="unreal.html" class="unreal" onclick="openNewTab(event, 'unreal.html')">Unreal</a>
+        <a href="notes.html" onclick="openNewTab(event, 'notes.html')">Notes</a>
+        <a href="about.html" onclick="openNewTab(event, 'about.html')">About</a>
+        <a href="contact.html" onclick="openNewTab(event, 'contact.html')">Info/Contact</a>
     </nav>
 
     <main class="content">
@@ -226,13 +207,9 @@
             <img src="images/project1.jpg" alt="Project 1">
             <div class="image-title">Project 1</div>
         </div>
-        <div class="image-container">
-            <img src="images/project2.jpg" alt="Project 2">
-            <div class="image-title">Project 2</div>
-        </div>
     </main>
 
-    <!-- 햄버거 메뉴 동작 -->
+    <!-- 스크립트 -->
     <script>
         document.addEventListener("DOMContentLoaded", function () {
             const menuButton = document.querySelector('.menu-button');
@@ -247,6 +224,12 @@
             menuButton.addEventListener('click', toggleMenu);
             menuOverlay.addEventListener('click', toggleMenu);
         });
+
+        function openNewTab(event, url) {
+            event.preventDefault();
+            window.open(url, '_blank');
+        }
     </script>
 </body>
 </html>
+
