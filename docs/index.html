@@ -11,27 +11,22 @@
             font-family: 'Noto Sans KR', sans-serif;
             background-color: #fff;
             color: #000;
-            text-align: center;
             margin: 0;
             padding: 0;
         }
 
-        /* 상단 바 */
+        /* 상단 바 (데스크탑에서는 보이지만 모바일에서는 숨김) */
         .header {
-            position: fixed;
-            top: 10px;
-            left: 0;
-            width: 100%;
             display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 15px 20px;
-            background: rgba(255, 255, 255, 0.9);
+            flex-direction: column;
+            position: fixed;
+            top: 30px;
+            left: 30px;
             z-index: 1000;
         }
 
         .header-title {
-            font-size: 24px; /* 타이틀 크기 조금 키움 */
+            font-size: 40px; /* 타이틀 큼직하게 */
             font-weight: bold;
             cursor: pointer;
         }
@@ -42,81 +37,49 @@
         }
 
         .header-subtitle {
-            font-size: 12px;
+            font-size: 16px;
             color: #666;
+            text-align: left;
             margin-top: 5px;
-            position: relative;
         }
 
-        /* 햄버거 메뉴 */
-        .menu-button {
-            font-size: 24px;
-            cursor: pointer;
-        }
-
-        /* 사이드바 스타일 */
-        .menu {
+        /* 사이드바 (데스크탑에서 항상 보이고, 모바일에서는 햄버거 메뉴로 보임) */
+        .sidebar {
             position: fixed;
-            top: 0;
-            left: 0;
-            height: 100vh;
-            width: 230px; /* 사이드바 폭 조정 */
-            background: white;
-            transform: translateX(-100%);
-            transition: transform 0.3s ease;
-            z-index: 1100;
-            padding-top: 50px;
-            box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
-            text-align: left; /* 모든 메뉴 좌측 정렬 */
-            padding-left: 20px;
+            top: 150px;
+            left: 30px;
+            width: 250px;
+            text-align: left;
+            font-size: 18px;
         }
 
-        .menu.active {
-            transform: translateX(0);
-        }
-
-        .menu a {
+        .sidebar a {
             text-decoration: none;
             color: black;
             display: block;
-            font-size: 16px;
-            font-family: 'Noto Sans KR', sans-serif; /* 타이틀과 같은 폰트 */
+            margin: 8px 0;
         }
 
-        /* Side Project 클릭 안 되도록 설정 */
-        .menu-item.side-project {
+        .sidebar .side-project {
             pointer-events: none;
+            font-weight: normal;
         }
 
-        /* 메뉴 간격 조정 */
-        .menu-item {
-            margin: 10px 0; /* 기본 간격 */
+        .sidebar .real, .sidebar .unreal {
+            padding-left: 20px;
+            font-size: 16px;
+            margin: 5px 0;
         }
 
-        /* 하위 메뉴 (Real, Unreal) 들여쓰기 & 간격 줄이기 */
-        .menu-item.real, .menu-item.unreal {
-            padding-left: 25px;
-            margin-top: 5px;
-            margin-bottom: 5px;
-        }
-
-        /* Instagram 링크 스타일 */
-        .header-right a {
-            text-decoration: none;
-            color: black;
-            font-size: 14px;
-            white-space: nowrap; /* 글자 짤리는 문제 해결 */
-            display: inline-block;
-        }
-
-        /* 본문 사진 & 제목 스타일 */
+        /* 본문 스타일 */
         .content {
-            margin-top: 150px;
+            max-width: 900px;
+            margin: 200px auto 50px;
+            padding: 0 30px;
         }
 
         .image-container {
-            max-width: 800px;
-            margin: 20px auto;
+            margin: 40px 0;
         }
 
         .image-container img {
@@ -125,55 +88,89 @@
         }
 
         .image-title {
-            font-size: 18px;
+            font-size: 20px;
             margin-top: 10px;
         }
 
-        /* 반응형 조정 */
+        /* 모바일 스타일 */
         @media (max-width: 768px) {
+            .header {
+                top: 20px;
+                left: 20px;
+            }
+
             .header-title {
-                font-size: 20px;
+                font-size: 30px;
             }
 
             .header-subtitle {
-                font-size: 10px;
+                font-size: 14px;
             }
 
-            .header-right a {
-                font-size: 12px; /* 모바일에서도 instagram 글씨 보이게 */
+            .sidebar {
+                display: none;
+            }
+
+            .menu-button {
+                position: fixed;
+                top: 20px;
+                right: 20px;
+                font-size: 24px;
+                cursor: pointer;
+                z-index: 1100;
             }
 
             .menu {
-                width: 200px; /* 모바일에서 사이드바 폭 조정 */
+                position: fixed;
+                top: 0;
+                right: 0;
+                width: 250px;
+                height: 100vh;
+                background: white;
+                box-shadow: -2px 0 5px rgba(0, 0, 0, 0.1);
+                transform: translateX(100%);
+                transition: transform 0.3s ease;
+                padding: 50px 20px;
+                text-align: left;
+            }
+
+            .menu.active {
+                transform: translateX(0);
             }
 
             .menu a {
-                font-size: 14px; /* 모바일에서 사이드바 폰트 크기 조정 */
+                display: block;
+                font-size: 18px;
+                margin: 10px 0;
             }
         }
     </style>
 </head>
 <body>
     <header class="header">
-        <div class="header-left">
-            <div class="menu-button">☰</div>
-        </div>
-        <div class="header-center">
-            <div class="header-title"><a href="index.html">JIEUM KIM</a></div>
-            <div class="header-subtitle">김지은</div>
-        </div>
-        <div class="header-right">
-            <a href="https://instagram.com" target="_blank">Instagram</a>
-        </div>
+        <div class="header-title"><a href="index.html">JIEUM KIM</a></div>
+        <div class="header-subtitle">김지은</div>
     </header>
-    
+
+    <!-- 사이드바 (데스크탑에서만 보임) -->
+    <nav class="sidebar">
+        <a href="#" class="side-project">Side Project</a>
+        <a href="#" class="real">Real</a>
+        <a href="#" class="unreal">Unreal</a>
+        <a href="#">Notes</a>
+        <a href="#">About</a>
+        <a href="#">Info/Contact</a>
+    </nav>
+
+    <!-- 모바일에서는 햄버거 메뉴로 -->
+    <div class="menu-button">☰</div>
     <nav class="menu">
-        <a href="#" class="menu-item side-project">Side Project</a>
-        <a href="#" class="menu-item real">Real</a>
-        <a href="#" class="menu-item unreal">Unreal</a>
-        <a href="#" class="menu-item">Notes</a>
-        <a href="#" class="menu-item">About</a>
-        <a href="#" class="menu-item">Info/Contact</a>
+        <a href="#" class="side-project">Side Project</a>
+        <a href="#" class="real">Real</a>
+        <a href="#" class="unreal">Unreal</a>
+        <a href="#">Notes</a>
+        <a href="#">About</a>
+        <a href="#">Info/Contact</a>
     </nav>
 
     <main class="content">
