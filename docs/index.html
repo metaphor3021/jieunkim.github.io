@@ -1,152 +1,126 @@
-<!DOCTYPE html>
-<html lang="ko">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>JIEUN KIM</title>
-    
-    <!-- 외부 CSS 파일 연결 -->
-    <link rel="stylesheet" href="assets/css/style.css">
-    
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+/* 스타일 조정 */
+body {
+    font-family: 'Noto Sans KR', sans-serif;
+    background-color: #fff;
+    color: #000;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
 
-        body {
-            font-family: 'Noto Sans KR', sans-serif;
-            background-color: #fff;
-            color: #000;
-            text-align: center;
-        }
+/* 상단 바 조정 */
+.header {
+    position: fixed;
+    top: 10px; /* 살짝 내려서 위치 조정 */
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+    background: rgba(255, 255, 255, 0.9);
+    z-index: 1000;
+}
 
-        .header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            position: fixed;
-            width: 100%;
-            top: 0;
-            left: 0;
-            padding: 20px;
-            background: white;
-            z-index: 1000;
-        }
+.header-title {
+    font-size: 22px; /* 타이틀 크기 조정 */
+    font-weight: bold;
+    cursor: pointer;
+}
 
-        .menu-toggle {
-            cursor: pointer;
-            font-size: 24px;
-        }
+.header-title a {
+    text-decoration: none;
+    color: black;
+}
 
-        .sidebar {
-            position: fixed;
-            top: 0;
-            left: -250px;
-            width: 250px;
-            height: 100%;
-            background: white;
-            box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2);
-            transition: left 0.3s ease;
-            padding-top: 60px;
-        }
+.header-title:hover {
+    opacity: 0.8;
+}
 
-        .sidebar.active {
-            left: 0;
-        }
+/* 한글 이름 영어 이름 바로 아래 위치, 스크롤 시에도 함께 이동 */
+.header-subtitle {
+    font-size: 12px; /* 한글 폰트 크기 작게 */
+    color: #666;
+    margin-top: 5px;
+    position: relative;
+}
 
-        .sidebar a {
-            display: block;
-            padding: 15px;
-            text-decoration: none;
-            color: black;
-            font-size: 18px;
-        }
+/* 햄버거 메뉴 조정 */
+.menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 250px;
+    background: white;
+    transform: translateX(-100%);
+    transition: transform 0.3s ease;
+    z-index: 1100; /* 본문 위로 보이게 */
+}
 
-        .sidebar a:hover {
-            background: none;
-        }
+.menu.active {
+    transform: translateX(0);
+}
 
-        .title {
-            font-size: 32px;
-            font-weight: bold;
-        }
+.menu a {
+    text-decoration: none;
+    color: black;
+    display: block;
+    padding: 15px;
+}
 
-        .subtitle {
-            font-size: 16px;
-        }
+.menu a:hover {
+    background: none; /* 선택 시 회색 배경 제거 */
+}
 
-        .instagram-link {
-            text-decoration: none;
-            color: black;
-            font-size: 18px;
-        }
+/* 사이드 프로젝트 비활성화 & 하위 메뉴 real, unreal로 변경 */
+.menu-item.side-project {
+    pointer-events: none;
+    font-weight: bold;
+}
 
-        .container {
-            max-width: 1000px;
-            margin: 100px auto 0;
-            padding: 20px;
-        }
+.menu-item.real, .menu-item.unreal {
+    padding-left: 20px; /* 들여쓰기 */
+}
 
-        .image-container {
-            width: 100%;
-            max-width: 800px;
-            margin: 0 auto 40px;
-            position: relative;
-            padding-top: 56.25%;
-            overflow: hidden;
-        }
+/* 인스타그램 복구 */
+.header-right {
+    font-size: 14px;
+}
 
-        .image-container img {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            cursor: pointer;
-        }
-    </style>
-</head>
-<body>
-    <header class="header">
-        <div class="menu-toggle" onclick="toggleMenu()">☰</div>
-        <div class="title">JIEUN KIM</div>
-        <a href="https://www.instagram.com/jieun__kimm/" class="instagram-link">Instagram</a>
-    </header>
+.header-right a {
+    text-decoration: none;
+    color: black;
+}
 
-    <nav class="sidebar" id="sidebar">
-        <a href="#">Side Project</a>
-        <a href="#">Video</a>
-        <a href="#">Product</a>
-        <br>: 문장 사이 여백 1줄 
-        <a href="#">Notes</a>
-        <br>: 문장 사이 여백 1줄 
-        <a href="#">About</a>
-        <a href="#">Info/Contact</a>
-    </nav>
+/* 본문 사진 & 제목 스타일 */
+.content {
+    margin-top: 150px;
+}
 
-    <div class="container">
-        <div class="subtitle">김지은</div>
-        <div class="image-container">
-            <a href="vase.html">
-                <img src="images/vase.jpg" alt="real Image 1">
-            </a>
-        </div>
+.image-container {
+    max-width: 800px;
+    margin: 20px auto;
+}
 
-        <div class="image-container">
-            <a href="paperlamp2.html">
-                <img src="images/paperlamp2.jpg" alt="real Image 2">
-            </a>
-        </div>
-    </div>
+.image-container img {
+    width: 100%;
+    height: auto;
+}
 
-    <script>
-        function toggleMenu() {
-            var sidebar = document.getElementById("sidebar");
-            sidebar.classList.toggle("active");
-        }
-    </script>
-</body>
-</html>
+.image-title {
+    font-size: 18px;
+    margin-top: 10px;
+}
+
+/* 반응형 조정 */
+@media (max-width: 768px) {
+    .header-title {
+        font-size: 18px;
+    }
+
+    .header-subtitle {
+        font-size: 10px;
+    }
+}
+
