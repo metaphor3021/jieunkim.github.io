@@ -1,126 +1,144 @@
-/* 스타일 조정 */
-body {
-    font-family: 'Noto Sans KR', sans-serif;
-    background-color: #fff;
-    color: #000;
-    text-align: center;
-    margin: 0;
-    padding: 0;
-}
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JIEUM KIM</title>
+    <link rel="stylesheet" href="assets/css/style.css"> <!-- 스타일 연결 -->
+    <style>
+        /* 기본 스타일 */
+        body {
+            font-family: 'Noto Sans KR', sans-serif;
+            background-color: #fff;
+            color: #000;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
 
-/* 상단 바 조정 */
-.header {
-    position: fixed;
-    top: 10px; /* 살짝 내려서 위치 조정 */
-    left: 0;
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 15px 20px;
-    background: rgba(255, 255, 255, 0.9);
-    z-index: 1000;
-}
+        /* 상단 바 조정 */
+        .header {
+            position: fixed;
+            top: 10px;
+            left: 0;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 20px;
+            background: rgba(255, 255, 255, 0.9);
+            z-index: 1000;
+        }
 
-.header-title {
-    font-size: 22px; /* 타이틀 크기 조정 */
-    font-weight: bold;
-    cursor: pointer;
-}
+        .header-title {
+            font-size: 20px;
+            font-weight: bold;
+            cursor: pointer;
+        }
 
-.header-title a {
-    text-decoration: none;
-    color: black;
-}
+        .header-title a {
+            text-decoration: none;
+            color: black;
+        }
 
-.header-title:hover {
-    opacity: 0.8;
-}
+        .header-subtitle {
+            font-size: 12px;
+            color: #666;
+            margin-top: 5px;
+            position: relative;
+        }
 
-/* 한글 이름 영어 이름 바로 아래 위치, 스크롤 시에도 함께 이동 */
-.header-subtitle {
-    font-size: 12px; /* 한글 폰트 크기 작게 */
-    color: #666;
-    margin-top: 5px;
-    position: relative;
-}
+        /* 햄버거 메뉴 */
+        .menu {
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 100vh;
+            width: 250px;
+            background: white;
+            transform: translateX(-100%);
+            transition: transform 0.3s ease;
+            z-index: 1100;
+        }
 
-/* 햄버거 메뉴 조정 */
-.menu {
-    position: fixed;
-    top: 0;
-    left: 0;
-    height: 100vh;
-    width: 250px;
-    background: white;
-    transform: translateX(-100%);
-    transition: transform 0.3s ease;
-    z-index: 1100; /* 본문 위로 보이게 */
-}
+        .menu.active {
+            transform: translateX(0);
+        }
 
-.menu.active {
-    transform: translateX(0);
-}
+        .menu a {
+            text-decoration: none;
+            color: black;
+            display: block;
+            padding: 15px;
+        }
 
-.menu a {
-    text-decoration: none;
-    color: black;
-    display: block;
-    padding: 15px;
-}
+        .menu-item.side-project {
+            pointer-events: none;
+            font-weight: bold;
+        }
 
-.menu a:hover {
-    background: none; /* 선택 시 회색 배경 제거 */
-}
+        .menu-item.real, .menu-item.unreal {
+            padding-left: 20px;
+        }
 
-/* 사이드 프로젝트 비활성화 & 하위 메뉴 real, unreal로 변경 */
-.menu-item.side-project {
-    pointer-events: none;
-    font-weight: bold;
-}
+        /* 인스타그램 링크 */
+        .header-right a {
+            text-decoration: none;
+            color: black;
+        }
 
-.menu-item.real, .menu-item.unreal {
-    padding-left: 20px; /* 들여쓰기 */
-}
+        /* 본문 사진 & 제목 스타일 */
+        .content {
+            margin-top: 150px;
+        }
 
-/* 인스타그램 복구 */
-.header-right {
-    font-size: 14px;
-}
+        .image-container {
+            max-width: 800px;
+            margin: 20px auto;
+        }
 
-.header-right a {
-    text-decoration: none;
-    color: black;
-}
+        .image-container img {
+            width: 100%;
+            height: auto;
+        }
 
-/* 본문 사진 & 제목 스타일 */
-.content {
-    margin-top: 150px;
-}
+        .image-title {
+            font-size: 18px;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="header-left">
+            <div class="menu-button">☰</div>
+        </div>
+        <div class="header-center">
+            <div class="header-title"><a href="index.html">JIEUM KIM</a></div>
+            <div class="header-subtitle">김지은</div>
+        </div>
+        <div class="header-right">
+            <a href="https://www.instagram.com/jieun__kimm/" target="_blank">Instagram</a>
+        </div>
+    </header>
+    
+    <nav class="menu">
+        <a href="#" class="menu-item side-project">Side Project</a>
+        <a href="#" class="menu-item real">Real</a>
+        <a href="#" class="menu-item unreal">Unreal</a>
+        <a href="#" class="menu-item">About</a>
+        <a href="#" class="menu-item">Info/Contact</a>
+    </nav>
 
-.image-container {
-    max-width: 800px;
-    margin: 20px auto;
-}
-
-.image-container img {
-    width: 100%;
-    height: auto;
-}
-
-.image-title {
-    font-size: 18px;
-    margin-top: 10px;
-}
-
-/* 반응형 조정 */
-@media (max-width: 768px) {
-    .header-title {
-        font-size: 18px;
-    }
-
-    .header-subtitle {
-        font-size: 10px;
-    }
-}
-
+    <main class="content">
+        <div class="image-container">
+            <img src="images/project1.jpg" alt="Project 1">
+            <div class="image-title">Project 1</div>
+        </div>
+        <div class="image-container">
+            <img src="images/project2.jpg" alt="Project 2">
+            <div class="image-title">Project 2</div>
+        </div>
+    </main>
+</body>
+</html>
