@@ -204,4 +204,39 @@
     <nav class="menu">
         <a href="#">Side Project</a>
         <a href="#" class="real">Real</a>
-        <a href="#
+        <a href="#" class="unreal">Unreal</a>
+        <a href="#">Notes</a>
+        <a href="#">About</a>
+        <a href="#">Info/Contact</a>
+    </nav>
+
+    <main class="content">
+        <div class="image-container">
+            <img src="images/project1.jpg" alt="Project 1">
+            <div class="image-title">Project 1</div>
+        </div>
+        <div class="image-container">
+            <img src="images/project2.jpg" alt="Project 2">
+            <div class="image-title">Project 2</div>
+        </div>
+    </main>
+
+    <!-- 햄버거 메뉴 동작 -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const menuButton = document.querySelector('.menu-button');
+            const menu = document.querySelector('.menu');
+            const menuOverlay = document.querySelector('.menu-overlay');
+
+            function toggleMenu() {
+                const isActive = menu.classList.contains('active');
+                menu.classList.toggle('active', !isActive);
+                menuOverlay.classList.toggle('active', !isActive);
+            }
+
+            menuButton.addEventListener('click', toggleMenu);
+            menuOverlay.addEventListener('click', toggleMenu);
+        });
+    </script>
+</body>
+</html>
