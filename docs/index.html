@@ -15,7 +15,7 @@
             padding: 0;
         }
 
-        /* 상단 바 고정 */
+        /* 상단 타이틀 바 (스크롤 내려도 본문 위로 보이게) */
         .header {
             position: fixed;
             top: 0;
@@ -45,7 +45,7 @@
             margin-top: 5px;
         }
 
-        /* 데스크탑 사이드바 (목차) */
+        /* 사이드바 (데스크탑에서만 보임) */
         .sidebar {
             position: fixed;
             top: 140px;
@@ -53,7 +53,7 @@
             width: 250px;
             text-align: left;
             font-size: 18px;
-            font-weight: normal; /* 모든 메뉴 폰트 굵기 제거 (얇게) */
+            font-weight: 300; /* 얇게 수정 */
         }
 
         .sidebar a {
@@ -61,7 +61,7 @@
             color: black;
             display: block;
             margin: 8px 0;
-            font-weight: normal; /* 모든 메뉴 폰트 굵기 동일하게 */
+            font-weight: 300; /* 얇게 수정 */
         }
 
         .sidebar .real, .sidebar .unreal {
@@ -70,21 +70,26 @@
             margin: 5px 0;
         }
 
-        /* 본문 스타일 (데스크탑에서 본문 중앙 목차 삭제) */
+        /* 본문 (사이드바가 본문을 가리지 않도록 조정) */
         .content {
             max-width: 900px;
-            margin: 120px auto 50px;
+            margin: 150px auto 50px;
             padding: 0 30px;
+            position: relative;
+            z-index: 1; /* 사이드바보다 위에 보이도록 */
         }
 
         .image-container {
             margin: 40px 0;
             text-align: left;
+            position: relative;
         }
 
         .image-container img {
             width: 100%;
             height: auto;
+            position: relative;
+            z-index: -1; /* 사이드바보다 아래로 */
         }
 
         .image-title {
@@ -134,7 +139,7 @@
                 display: flex;
                 flex-direction: column;
                 font-size: 18px; /* 데스크탑과 동일한 폰트 크기 유지 */
-                font-weight: normal; /* 모든 메뉴 폰트 동일하게 설정 */
+                font-weight: 300; /* 얇게 수정 */
             }
 
             .menu.active {
@@ -145,7 +150,7 @@
                 text-decoration: none;
                 color: black;
                 margin: 8px 0;
-                font-weight: normal; /* 모든 메뉴 폰트 굵기 동일하게 */
+                font-weight: 300; /* 얇게 수정 */
             }
 
             .menu .real, .menu .unreal {
