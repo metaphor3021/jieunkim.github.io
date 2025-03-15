@@ -16,7 +16,7 @@
             padding: 0;
         }
 
-        /* 상단 바 조정 */
+        /* 상단 바 */
         .header {
             position: fixed;
             top: 10px;
@@ -31,7 +31,7 @@
         }
 
         .header-title {
-            font-size: 20px;
+            font-size: 24px; /* 타이틀 크기 조금 키움 */
             font-weight: bold;
             cursor: pointer;
         }
@@ -49,16 +49,24 @@
         }
 
         /* 햄버거 메뉴 */
+        .menu-button {
+            font-size: 24px;
+            cursor: pointer;
+        }
+
+        /* 사이드바 스타일 */
         .menu {
             position: fixed;
             top: 0;
             left: 0;
             height: 100vh;
-            width: 250px;
+            width: 230px; /* 사이드바 폭 조정 */
             background: white;
             transform: translateX(-100%);
             transition: transform 0.3s ease;
             z-index: 1100;
+            padding-top: 50px;
+            box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
         }
 
         .menu.active {
@@ -69,22 +77,30 @@
             text-decoration: none;
             color: black;
             display: block;
-            padding: 15px;
+            padding: 12px 20px; /* 간격 조정 */
+            font-size: 16px; /* 폰트 크기 줄임 */
+            font-family: 'Noto Sans KR', sans-serif; /* 타이틀과 같은 폰트 */
         }
 
         .menu-item.side-project {
-            pointer-events: none;
             font-weight: bold;
+            cursor: default;
         }
 
         .menu-item.real, .menu-item.unreal {
-            padding-left: 20px;
+            padding-left: 35px; /* 하위 메뉴 들여쓰기 */
+        }
+
+        .menu a:hover {
+            background: none; /* 선택 시 회색 배경 제거 */
         }
 
         /* 인스타그램 링크 */
         .header-right a {
             text-decoration: none;
             color: black;
+            font-size: 14px;
+            white-space: nowrap; /* 줄바꿈 방지 */
         }
 
         /* 본문 사진 & 제목 스타일 */
@@ -106,6 +122,30 @@
             font-size: 18px;
             margin-top: 10px;
         }
+
+        /* 반응형 조정 */
+        @media (max-width: 768px) {
+            .header-title {
+                font-size: 20px;
+            }
+
+            .header-subtitle {
+                font-size: 10px;
+            }
+
+            .header-right a {
+                font-size: 12px; /* 모바일에서도 instagram 글씨 보이게 */
+            }
+
+            .menu {
+                width: 200px; /* 모바일에서 사이드바 폭 조정 */
+            }
+
+            .menu a {
+                font-size: 14px; /* 모바일에서 사이드바 폰트 크기 조정 */
+                padding: 10px 15px;
+            }
+        }
     </style>
 </head>
 <body>
@@ -118,7 +158,7 @@
             <div class="header-subtitle">김지은</div>
         </div>
         <div class="header-right">
-            <a href="https://www.instagram.com/jieun__kimm/" target="_blank">Instagram</a>
+            <a href="https://instagram.com" target="_blank">Instagram</a>
         </div>
     </header>
     
@@ -126,6 +166,7 @@
         <a href="#" class="menu-item side-project">Side Project</a>
         <a href="#" class="menu-item real">Real</a>
         <a href="#" class="menu-item unreal">Unreal</a>
+        <a href="#" class="menu-item">Notes</a>
         <a href="#" class="menu-item">About</a>
         <a href="#" class="menu-item">Info/Contact</a>
     </nav>
@@ -140,11 +181,12 @@
             <div class="image-title">Project 2</div>
         </div>
     </main>
-    <script>
-    document.querySelector('.menu-button').addEventListener('click', function() {
-        document.querySelector('.menu').classList.toggle('active');
-    });
-</script>
 
+    <!-- 햄버거 메뉴 동작 -->
+    <script>
+        document.querySelector('.menu-button').addEventListener('click', function() {
+            document.querySelector('.menu').classList.toggle('active');
+        });
+    </script>
 </body>
 </html>
