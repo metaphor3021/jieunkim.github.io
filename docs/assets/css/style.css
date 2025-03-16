@@ -99,7 +99,6 @@ body {
     flex-direction: column;
     justify-content: flex-start; /* 위쪽 정렬 */
     align-items: center;
-    padding-top: 50px; /* 적당한 여백 추가 */
     text-align: left;
     z-index: 1200;
     padding: 30px;
