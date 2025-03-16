@@ -62,7 +62,6 @@ body {
 
 /* 5. 메뉴 스타일 */
 .menu {
-    margin-top: 150px; /* JIEUN KIM 아래 여백 */
     font-size: 22px;
     font-style: normal;
     font-weight: 200;/* 메뉴 폰트 크기 200으로 설정 */
