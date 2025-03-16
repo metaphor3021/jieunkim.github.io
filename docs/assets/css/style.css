@@ -133,3 +133,63 @@ body {
     color: black; /* 글자 색 동일하게 */
 }
 
+/* 모바일 전체 화면 메뉴 스타일 */
+@media (max-width: 768px) {
+    .menu {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        background: white;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        transform: translateY(-100%);
+        transition: transform 0.3s ease;
+        z-index: 1200;
+        padding: 30px;
+    }
+
+    .menu.active {
+        transform: translateY(0);
+    }
+
+    /* 닫기 버튼 스타일 */
+    .menu-close {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        font-size: 28px;
+        cursor: pointer;
+        color: black;
+    }
+
+    /* 메뉴 오버레이 (배경 흐림 효과) */
+    .menu-overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.3);
+        display: none;
+        z-index: 1100;
+    }
+
+    .menu-overlay.active {
+        display: block;
+    }
+
+    /* 햄버거 버튼 스타일 */
+    .menu-button {
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        font-size: 24px;
+        cursor: pointer;
+        z-index: 1300;
+    }
+}
