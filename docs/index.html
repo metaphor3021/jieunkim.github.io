@@ -231,11 +231,15 @@ document.addEventListener("DOMContentLoaded", function () {
     function openMenu() {
         menu.classList.add('active');
         menuOverlay.classList.add('active'); // <- 이 부분 추가
+        menu.style.display = 'flex'; // ← 추가
     }
 
     function closeMenu() {
         menu.classList.remove('active');
         menuOverlay.classList.remove('active'); // <- 이 부분 추가
+         setTimeout(() => {
+            menu.style.display = 'none'; // ← 추가
+        }, 300); // 애니메이션 후 사라지게 하기
     }
 
     menuButton.addEventListener('click', openMenu);
