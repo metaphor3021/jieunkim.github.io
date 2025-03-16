@@ -127,3 +127,9 @@ body {
     display: block;
 }
 
+/* "Side Project"가 다른 메뉴와 같은 스타일이 되도록 수정 */
+.sidebar .side-project {
+    font-weight: 200; /* 다른 메뉴와 동일한 스타일 적용 */
+    color: black; /* 글자 색 동일하게 */
+}
+
