@@ -217,10 +217,41 @@
             <img src="images/project2.jpg" alt="Project 2">
             <div class="image-title">Project 2</div>
         </div>
+                <div class="image-container" onclick="openNewTab(event, 'project3.html')">
+            <img src="images/project3.jpg" alt="Project 3">
+            <div class="image-title">Project 3</div>
+        </div>
+                <div class="image-container" onclick="openNewTab(event, 'project4.html')">
+            <img src="images/project4.jpg" alt="Project 4">
+            <div class="image-title">Project 4</div>
+        </div>
+                <div class="image-container" onclick="openNewTab(event, 'project5.html')">
+            <img src="images/project5.jpg" alt="Project 5">
+            <div class="image-title">Project 5</div>
+        </div>
+                <div class="image-container" onclick="openNewTab(event, 'project6.html')">
+            <img src="images/project6.jpg" alt="Project 6">
+            <div class="image-title">Project 6</div>
+        </div>
+                <div class="image-container" onclick="openNewTab(event, 'project7.html')">
+            <img src="images/project7.jpg" alt="Project 7">
+            <div class="image-title">Project 7</div>
+        </div>
+                <div class="image-container" onclick="openNewTab(event, 'project8.html')">
+            <img src="images/project8.jpg" alt="Project 8">
+            <div class="image-title">Project 8</div>
+        </div>
+                <div class="image-container" onclick="openNewTab(event, 'project9.html')">
+            <img src="images/project9.jpg" alt="Project 9">
+            <div class="image-title">Project 9</div>
+        </div>
     </main>
 
     <!-- 스크립트 -->
     <script>
+          function openNewTab(event, url) {
+        window.open(url, '_blank'); // 새 탭에서 열기
+    }
 document.addEventListener("DOMContentLoaded", function () {
     const menuButton = document.querySelector('.menu-button');
     const menu = document.querySelector('.menu');
