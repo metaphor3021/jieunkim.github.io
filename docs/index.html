@@ -193,16 +193,21 @@
         <a href="contact.html" onclick="openNewTab(event, 'contact.html')">Info/Contact</a>
     </nav>
 
-    <!-- 모바일 햄버거 메뉴 -->
-    <div class="menu-button">☰</div>
-    <nav class="menu">
-        <a href="#" disabled>Side Project</a>
-        <a href="real.html" class="real" onclick="openNewTab(event, 'real.html')">Real</a>
-        <a href="unreal.html" class="unreal" onclick="openNewTab(event, 'unreal.html')">Unreal</a>
-        <a href="notes.html" onclick="openNewTab(event, 'notes.html')">Notes</a>
-        <a href="about.html" onclick="openNewTab(event, 'about.html')">About</a>
-        <a href="contact.html" onclick="openNewTab(event, 'contact.html')">Info/Contact</a>
-    </nav>
+   <!-- 모바일 햄버거 메뉴 버튼 -->
+<div class="menu-button">☰</div>
+
+<!-- 전체 화면 메뉴 (오버레이 포함) -->
+<div class="menu-overlay"></div>
+<nav class="menu">
+    <div class="menu-close">✕</div>
+    <a href="#" disabled>Side Project</a>
+    <a href="real.html" class="real">Real</a>
+    <a href="unreal.html" class="unreal">Unreal</a>
+    <a href="notes.html">Notes</a>
+    <a href="about.html">About</a>
+    <a href="contact.html">Info/Contact</a>
+</nav>
+
 
     <main class="content">
         <div class="image-container" onclick="openNewTab(event, 'project1.html')">
@@ -217,21 +222,27 @@
 
     <!-- 스크립트 -->
     <script>
-        document.addEventListener("DOMContentLoaded", function () {
-            const menuButton = document.querySelector('.menu-button');
-            const menu = document.querySelector('.menu');
+document.addEventListener("DOMContentLoaded", function () {
+    const menuButton = document.querySelector('.menu-button');
+    const menu = document.querySelector('.menu');
+    const menuOverlay = document.querySelector('.menu-overlay');
+    const menuClose = document.querySelector('.menu-close');
 
-            function toggleMenu() {
-                menu.classList.toggle('active');
-            }
+    function openMenu() {
+        menu.classList.add('active');
+        menuOverlay.classList.add('active');
+    }
 
-            menuButton.addEventListener('click', toggleMenu);
-        });
+    function closeMenu() {
+        menu.classList.remove('active');
+        menuOverlay.classList.remove('active');
+    }
 
-        function openNewTab(event, url) {
-            event.preventDefault();
-            window.open(url, '_blank');
-        }
+    menuButton.addEventListener('click', openMenu);
+    menuClose.addEventListener('click', closeMenu);
+    menuOverlay.addEventListener('click', closeMenu);
+});
+
     </script>
 </body>
 </html>
