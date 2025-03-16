@@ -230,12 +230,12 @@ document.addEventListener("DOMContentLoaded", function () {
 
     function openMenu() {
         menu.classList.add('active');
-        menuOverlay.classList.add('active');
+        menuOverlay.classList.add('active'); // <- 이 부분 추가
     }
 
     function closeMenu() {
         menu.classList.remove('active');
-        menuOverlay.classList.remove('active');
+        menuOverlay.classList.remove('active'); // <- 이 부분 추가
     }
 
     menuButton.addEventListener('click', openMenu);
