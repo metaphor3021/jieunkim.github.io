@@ -224,26 +224,32 @@
         </div>
     </main>
 
-    <!-- 햄버거 메뉴 동작 -->
-    <script>
-        document.addEventListener("DOMContentLoaded", function () {
-            const menuButton = document.querySelector('.menu-button');
-            const menu = document.querySelector('.menu');
-            const menuOverlay = document.querySelector('.menu-overlay');
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const menuButton = document.querySelector('.menu-button');
+        const menu = document.querySelector('.menu');
+        const menuOverlay = document.querySelector('.menu-overlay');
 
-            function toggleMenu() {
-                menu.classList.toggle('active');
-                menuOverlay.classList.toggle('active');
-            }
+        function toggleMenu() {
+            menu.classList.toggle('active');
+            menuOverlay.classList.toggle('active');
+        }
 
-            menuButton.addEventListener('click', toggleMenu);
-            menuOverlay.addEventListener('click', toggleMenu);
+        menuButton.addEventListener('click', toggleMenu);
+        menuOverlay.addEventListener('click', toggleMenu);
 
-            document.querySelectorAll('.menu a').forEach(item => {
-                item.addEventListener('click', toggleMenu);
-            });
+        document.querySelectorAll('.menu a').forEach(item => {
+            item.addEventListener('click', toggleMenu);
         });
-    </script>
+
+        // 페이지 로드 시 메뉴 숨기기 (모바일)
+        menu.classList.remove('active');
+        menuOverlay.classList.remove('active');
+    });
+</script>
+</body>
+</html>
+
 </body>
 </html>
 
