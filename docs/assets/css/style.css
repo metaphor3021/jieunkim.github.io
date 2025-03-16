@@ -79,3 +79,51 @@ body {
 .menu a:hover {
     text-decoration: underline;
 }
+
+/* 본문이 사이드바에 가려지는 문제 해결 */
+.content {
+    max-width: 900px;
+    margin: 120px auto 50px;
+    padding: 0 30px;
+    margin-left: 300px; /* 사이드바 크기만큼 왼쪽 여백 추가 */
+}
+
+/* 모바일에서 Info/Contact 메뉴 숨기기 */
+.menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 80%;  /* 화면의 80%만 차지하도록 조정 */
+    height: 100vh;
+    background: white;
+    display: none; /* 기본적으로 숨김 */
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: left;
+    transform: translateX(-100%);
+    transition: transform 0.3s ease;
+    z-index: 1200;
+}
+
+.menu.active {
+    display: flex; /* 활성화되면 보이도록 설정 */
+    transform: translateX(0);
+}
+
+/* 모바일에서 오버레이 스타일 수정 */
+.menu-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.3);
+    display: none; /* 기본적으로 숨김 */
+    z-index: 1199;
+}
+
+.menu-overlay.active {
+    display: block;
+}
+
