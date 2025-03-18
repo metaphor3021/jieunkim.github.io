@@ -71,40 +71,45 @@
             padding: 0 30px;
             position: relative;
             z-index: 1;
-        }
-
-        .project-title {
-            font-size: 28px;
-            font-weight: bold;
-            text-align: center;
-            margin-bottom: 10px;
-        }
-
-        .project-description {
-            font-size: 16px;
-            text-align: center;
-            color: #555;
-            margin-bottom: 30px;
+            text-align: left;
         }
 
         .image-container {
-            margin-bottom: 50px;
-            text-align: center;
+            margin-bottom: 30px;
         }
 
         .image-container img {
             width: 100%;
             max-width: 800px;
             height: auto;
-            object-fit: contain;
             display: block;
             margin: 0 auto;
         }
 
-        .image-title {
-            text-align: center;
-            font-size: 14px;
+        .project-info {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: left;
+        }
+
+        .project-title {
+            font-size: 16px;  /* 본문 크기로 줄임 */
+            font-weight: bold;
             margin-top: 10px;
+        }
+
+        .project-details {
+            font-size: 14px;  /* 연도, 크기, 재료 크기 줄임 */
+            color: #555;
+            margin-top: 5px;
+            line-height: 1.6;
+        }
+
+        .project-description {
+            font-size: 16px;
+            color: #000;
+            margin-top: 20px;
+            line-height: 1.8;
         }
 
         /* 모바일 스타일 */
@@ -146,53 +151,48 @@
 
     <!-- 본문 -->
     <main class="content">
-        <div class="project-title">INVISIBLE DEATH PROJECT</div>
-        <div class="project-description">
-            이 프로젝트는 보이지 않는 죽음이라는 개념을 시각적으로 탐구하는 작품입니다. 
-            현대 사회에서 점점 가려지고 있는 죽음의 의미를 조형적으로 표현한 시리즈입니다.
-        </div>
-
+        <!-- 첫 번째 이미지 -->
         <div class="image-container">
             <img src="images/project1_1.jpg" alt="INVISIBLE DEATH 1">
-            <div class="image-title">INVISIBLE DEATH 1</div>
         </div>
-        
+
+        <!-- 프로젝트 정보 -->
+        <div class="project-info">
+            <div class="project-title">PAPER VASE I</div>
+            <div class="project-details">
+                2024<br>
+                16*14*29 cm<br>
+                egg carton, natural glue
+            </div>
+            <div class="project-description">
+                이 프로젝트는 보이지 않는 죽음이라는 개념을 시각적으로 탐구하는 작품입니다. 
+                현대 사회에서 점점 가려지고 있는 죽음의 의미를 조형적으로 표현한 시리즈입니다.
+            </div>
+        </div>
+
+        <!-- 추가 이미지들 -->
         <div class="image-container">
             <img src="images/project1_2.jpg" alt="INVISIBLE DEATH 2">
-            <div class="image-title">INVISIBLE DEATH 2</div>
         </div>
-
         <div class="image-container">
             <img src="images/project1_3.jpg" alt="INVISIBLE DEATH 3">
-            <div class="image-title">INVISIBLE DEATH 3</div>
         </div>
-
         <div class="image-container">
             <img src="images/project1_4.jpg" alt="INVISIBLE DEATH 4">
-            <div class="image-title">INVISIBLE DEATH 4</div>
         </div>
-
         <div class="image-container">
             <img src="images/project1_5.jpg" alt="INVISIBLE DEATH 5">
-            <div class="image-title">INVISIBLE DEATH 5</div>
         </div>
-
         <div class="image-container">
             <img src="images/project1_6.jpg" alt="INVISIBLE DEATH 6">
-            <div class="image-title">INVISIBLE DEATH 6</div>
         </div>
-
         <div class="image-container">
             <img src="images/project1_7.jpg" alt="INVISIBLE DEATH 7">
-            <div class="image-title">INVISIBLE DEATH 7</div>
         </div>
-
         <div class="image-container">
             <img src="images/project1_8.jpg" alt="INVISIBLE DEATH 8">
-            <div class="image-title">INVISIBLE DEATH 8</div>
         </div>
     </main>
 
 </body>
 </html>
-
