@@ -74,11 +74,14 @@
             text-align: left;
         }
 
-        .image-container {
+        .image-container,
+        .video-container {
             margin-bottom: 30px;
+            text-align: center;
         }
 
-        .image-container img {
+        .image-container img,
+        .video-container video {
             width: 100%;
             max-width: 800px;
             height: auto;
@@ -140,62 +143,54 @@
     </header>
 
 
-    <!-- 본문 -->
+ <!-- 본문 -->
     <main class="content">
-        <!-- 첫 번째 이미지 -->
-        <div class="image-container">
-            <img src="images/real2_1.jpg" alt="real2_1">
+        <!-- 자동 재생되는 동영상 -->
+        <div class="video-container">
+            <video autoplay muted loop playsinline>
+                <source src="videos/real2.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
         </div>
-        <div class="image-container">
-            <img src="images/real2_2.jpg" alt="real2_2">
-        </div>
-        <div class="image-container">
-            <img src="images/real2_3.jpg" alt="real2_2">
-        </div>
-              <div class="image-container">
-            <img src="images/real2_4.jpg" alt="real2_2">
-        </div>
-              <div class="image-container">
-            <img src="images/real2_5.jpg" alt="real2_2">
-        </div>
-              <div class="image-container">
-            <img src="images/real2_6.jpg" alt="real2_2">
-        </div>
-              <div class="image-container">
-            <img src="images/real2_7.jpg" alt="real2_2">
-        </div>
-              <div class="image-container">
-            <img src="images/real2_8.jpg" alt="real2_2">
-        </div>
-              <div class="image-container">
-            <img src="images/real2_9.jpg" alt="real2_2">
-        </div>
-              <div class="image-container">
-            <img src="images/real2_10.jpg" alt="real2_2">
-        </div>
-          <!-- 프로젝트 정보 -->
+
+        <!-- 이미지 목록 -->
+        <div class="image-container"><img src="images/real2_1.jpg" alt="real2_1"></div>
+        <div class="image-container"><img src="images/real2_2.jpg" alt="real2_2"></div>
+        <div class="image-container"><img src="images/real2_3.jpg" alt="real2_3"></div>
+        <div class="image-container"><img src="images/real2_4.jpg" alt="real2_4"></div>
+        <div class="image-container"><img src="images/real2_5.jpg" alt="real2_5"></div>
+        <div class="image-container"><img src="images/real2_6.jpg" alt="real2_6"></div>
+        <div class="image-container"><img src="images/real2_7.jpg" alt="real2_7"></div>
+        <div class="image-container"><img src="images/real2_8.jpg" alt="real2_8"></div>
+        <div class="image-container"><img src="images/real2_9.jpg" alt="real2_9"></div>
+        <div class="image-container"><img src="images/real2_10.jpg" alt="real2_10"></div>
+
+        <!-- 프로젝트 정보 -->
         <div class="project-info">
             <div class="project-title">TREE FOR FREES</div>
             <div class="project-details">
                 2025<br>
-                45(W) × 193(H) × 60(D) cm <br>
+                45(W) × 193(H) × 60(D) cm<br>
                 Leftover wood<br>
             </div>
             <div class="project-description">
-              I carefully selected, gathered, cut, and assembled<br>
-fragments of old furniture that once filled the shelves of the studio.<br>
-<br>
-Among the offcuts of various thicknesses and sizes<br> that emerge during the working process,<br> the thin and small pieces became intricate details,<br> drawing the viewer in for a closer look.<br>
-<br>
-Wood scraps, waiting for another use,<br> take on the form of a tree once again,<br> suggesting the potential to become something else.<br>
-<br>
--<br>
-I designed and crafted this project during my internship at Piet Hein Eek, <br>
-using materials from the studio.<br>
+                I carefully selected, gathered, cut, and assembled<br>
+                fragments of old furniture that once filled the shelves of the studio.<br><br>
 
+                Among the offcuts of various thicknesses and sizes<br>
+                that emerge during the working process,<br>
+                the thin and small pieces became intricate details,<br>
+                drawing the viewer in for a closer look.<br><br>
+
+                Wood scraps, waiting for another use,<br>
+                take on the form of a tree once again,<br>
+                suggesting the potential to become something else.<br><br>
+
+                -<br>
+                I designed and crafted this project during my internship at Piet Hein Eek,<br>
+                using materials from the studio.<br>
             </div>
         </div>
-
     </main>
 
 </body>
