@@ -2,9 +2,9 @@
 /* 1-0) Spoqa Han Sans Neo ExtraLight 지정 */
 @font-face {
     font-family: 'Spoqa Han Sans Neo';/* 폰트 페밀리니까 Noto Sans KR 띄어쓰기 유지 */
-    font-weight: 200;
+    font-weight: 300;
     font-style: normal;
-    src: url('/assets/fonts/SpoqaHanSansNeo-Thin.ttf') format('truetype');/* 파일명은 -로 띄어쓰기 제거 */
+    src: url('/assets/fonts/SpoqaHanSansNeo-Light.ttf') format('truetype');/* 파일명은 -로 띄어쓰기 제거 */
 }
 /* 1-1) Spoqa Han Sans Neo Bold 지정 */
 @font-face {
