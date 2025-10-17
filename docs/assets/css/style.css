@@ -42,7 +42,7 @@
 
 /* 2. 기본 스타일 - light 지정; 특별히 다른 폰트를 지정하지 않으면 모든 html에 영향 */
 * {
-    font-family: 'Spoqa Han Sans Neo', sans-serif;
+    font-family: 'Spoqa Han Sans Neo';
     color: #000;
     font-weight: 200;/* 기본 스타일 200으로 설정 */
     background-color: #fff;
@@ -50,7 +50,7 @@
 
 /* 3. 전체 페이지 스타일 - <body> 태그 안에 있는 모든 텍스트에 영향을 미침. */
 body {
-    font-family: 'Spoqa Han Sans Neo', sans-serif;
+    font-family: 'Spoqa Han Sans Neo';
     background: white;
     text-align: center;
     font-weight: 200;/* 기본 스타일 200으로 설정 */
