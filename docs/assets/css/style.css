@@ -62,8 +62,8 @@ body {
 .main-title {
     margin-top: 80px; /* 상단 여백 */
     font-size: 40px;
-    font-style: regular;
-    font-weight: 400;/* 타이틀 폰트 크기 200으로 설정 */
+    font-style: Bold;
+    font-weight: 600;/* 타이틀 폰트 크기 200으로 설정 */
 }
 
 /* 6. 링크 스타일 */
