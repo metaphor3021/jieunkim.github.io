@@ -5,35 +5,35 @@
     font-family: 'Spoqa Han Sans Neo';
     font-weight: 200;
     font-style: normal;
-    src: url('/assets/fonts/SpoqaHanSansNeo-Thin.ttf') format('truetype');
+    src: url('/jieunkim.github.io/assets/fonts/SpoqaHanSansNeo-Thin.ttf') format('truetype');
 }
 
 @font-face {
     font-family: 'Spoqa Han Sans Neo';
     font-weight: 300;
     font-style: normal;
-    src: url('/assets/fonts/SpoqaHanSansNeo-Light.ttf') format('truetype');
+    src: url('/jieunkim.github.io/assets/fonts/SpoqaHanSansNeo-Light.ttf') format('truetype');
 }
 
 @font-face {
     font-family: 'Spoqa Han Sans Neo';
     font-weight: 400;
     font-style: normal;
-    src: url('/assets/fonts/SpoqaHanSansNeo-Regular.ttf') format('truetype');
+    src: url('/jieunkim.github.io/assets/fonts/SpoqaHanSansNeo-Regular.ttf') format('truetype');
 }
 
 @font-face {
     font-family: 'Spoqa Han Sans Neo';
     font-weight: 500;
     font-style: normal;
-    src: url('/assets/fonts/SpoqaHanSansNeo-Medium.ttf') format('truetype');
+    src: url('/jieunkim.github.io/assets/fonts/SpoqaHanSansNeo-Medium.ttf') format('truetype');
 }
 
 @font-face {
     font-family: 'Spoqa Han Sans Neo';
     font-weight: 600;
     font-style: normal;
-    src: url('/assets/fonts/SpoqaHanSansNeo-Bold.ttf') format('truetype');
+    src: url('/jieunkim.github.io/assets/fonts/SpoqaHanSansNeo-Bold.ttf') format('truetype');
 }
 
 /* =========================
