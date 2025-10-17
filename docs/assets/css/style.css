@@ -172,6 +172,14 @@ body {
     .menu {
         display: none;
     }
+/* ===== Contact 페이지 스타일(bold와 semi bold ===== */
+.bold {
+    font-weight: 700; /* 제목용: 확실히 굵게 */
+}
+
+.semi-bold {
+    font-weight: 500; /* 전시 리스트용: 약간만 굵게 */
+}
 
 }
 
