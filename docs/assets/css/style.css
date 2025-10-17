@@ -1,116 +1,113 @@
-/* 1. Spoqa Han Sans Neo 폰트 차례대로 지정해주기 */
-/* 1-0) Spoqa Han Sans Neo ExtraLight 지정 */
+/* =========================
+   1. Spoqa Han Sans Neo 폰트 설정
+   ========================= */
 @font-face {
-    font-family: 'Spoqa Han Sans Neo';/* 폰트 페밀리니까 Noto Sans KR 띄어쓰기 유지 */
+    font-family: 'Spoqa Han Sans Neo';
+    font-weight: 200;
+    font-style: normal;
+    src: url('/assets/fonts/SpoqaHanSansNeo-Thin.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Spoqa Han Sans Neo';
     font-weight: 300;
     font-style: normal;
-    src: url('/assets/fonts/SpoqaHanSansNeo-Light.ttf') format('truetype');/* 파일명은 -로 띄어쓰기 제거 */
+    src: url('/assets/fonts/SpoqaHanSansNeo-Light.ttf') format('truetype');
 }
-/* 1-1) Spoqa Han Sans Neo Bold 지정 */
+
 @font-face {
-    font-family: 'Spoqa Han Sans Neo';/* 폰트 페밀리니까 Noto Sans KR 띄어쓰기 유지 */
-    font-weight: 600;
+    font-family: 'Spoqa Han Sans Neo';
+    font-weight: 400;
     font-style: normal;
-    src: url('/assets/fonts/SpoqaHanSansNeo-Bold.ttf') format('truetype');/* 파일명은 -로 띄어쓰기 제거 */
+    src: url('/assets/fonts/SpoqaHanSansNeo-Regular.ttf') format('truetype');
 }
-/* 1-2) Spoqa Han Sans Neo medium 지정 */
+
 @font-face {
-    font-family: 'Noto Sans KR';
+    font-family: 'Spoqa Han Sans Neo';
     font-weight: 500;
     font-style: normal;
     src: url('/assets/fonts/SpoqaHanSansNeo-Medium.ttf') format('truetype');
 }
-/* 1-3) Spoqa Han Sans Neo Regular 지정 */
+
 @font-face {
-    font-family: 'Spoqa Han Sans Neo';/* 폰트 페밀리니까 Noto Sans KR 띄어쓰기 유지 */
-    font-weight: 400;
+    font-family: 'Spoqa Han Sans Neo';
+    font-weight: 600;
     font-style: normal;
-    src: url('/assets/fonts/NotoSansKR-Regular.ttf') format('truetype');/* .ttf는 truetype, woff 안 됨 */
-}
-/* 1-4) Spoqa Han Sans Neo light 지정 */
-@font-face {
-    font-family: 'Noto Sans KR';
-    src: url('/assets/fonts/SpoqaHanSansNeo-Light.ttf') format('truetype');
-    font-weight: 300; /* 가변 폰트 사용 시 사파리에서도 200 적용될 수 있음. 사파리는 일부 폰트에서 너무 얇은 글꼴을 강제로 보정해서 대체하는 경우 있음. */
-}
-/* 1-5) Spoqa Han Sans Neo bold 지정 */
-@font-face {
-    font-family: 'Noto Sans KR';
-    src: url('/assets/fonts/SpoqaHanSansNeo-Thin.ttf') format('truetype');
-    font-weight: 200; /* 가변 폰트 사용 시 사파리에서도 200 적용될 수 있음. 사파리는 일부 폰트에서 너무 얇은 글꼴을 강제로 보정해서 대체하는 경우 있음. */
+    src: url('/assets/fonts/SpoqaHanSansNeo-Bold.ttf') format('truetype');
 }
 
-/* 2. 기본 스타일 - light 지정; 특별히 다른 폰트를 지정하지 않으면 모든 html에 영향 */
+/* =========================
+   2. 기본 전역 스타일
+   ========================= */
 * {
-    font-family: 'Spoqa Han Sans Neo';
+    font-family: 'Spoqa Han Sans Neo', sans-serif;
     color: #000;
-    font-weight: 200;/* 기본 스타일 200으로 설정 */
     background-color: #fff;
+    font-weight: 300; /* 기본 두께 (얇지 않게) */
 }
 
-/* 3. 전체 페이지 스타일 - <body> 태그 안에 있는 모든 텍스트에 영향을 미침. */
 body {
-    font-family: 'Spoqa Han Sans Neo';
+    margin: 0;
     background: white;
     text-align: center;
-    font-weight: 200;/* 기본 스타일 200으로 설정 */
     color: black;
-    font-size: 14px; /* ← 기본 폰트 크기 설정 */
+    font-size: 14px;
 }
 
-/* 4. "JIEUN KIM" 텍스트 (중앙 상단) */
+/* =========================
+   3. 메인 타이틀
+   ========================= */
 .main-title {
-    margin-top: 80px; /* 상단 여백 */
+    margin-top: 80px;
     font-size: 40px;
-    font-style: Bold;
-    font-weight: 600;/* 타이틀 폰트 크기 200으로 설정 */
+    font-weight: 600; /* Bold */
 }
 
-/* 6. 링크 스타일 */
+/* =========================
+   4. 메뉴 & 링크
+   ========================= */
 .menu a {
     text-decoration: none;
     color: black;
+    font-weight: 300;
 }
 
-/* 7. 링크에 마우스를 올렸을 때 */
 .menu a:hover {
     text-decoration: underline;
 }
 
-/* 본문이 사이드바에 가려지는 문제 해결 */
 .content {
     max-width: 900px;
     margin: 120px auto 50px;
     padding: 0 30px;
-    margin-left: 300px; /* 사이드바 크기만큼 왼쪽 여백 추가 */
+    margin-left: 300px; /* 사이드바 여백 */
 }
 
-/* "Side Project"가 다른 메뉴와 같은 스타일이 되도록 수정 */
 .sidebar .side-project {
-    font-weight: 200; /* 다른 메뉴와 동일한 스타일 적용 */
-    color: black; /* 글자 색 동일하게 */
+    font-weight: 300;
+    color: black;
 }
 
+/* =========================
+   5. 햄버거 메뉴
+   ========================= */
+.menu-button {
+    position: fixed;
+    top: 15px;
+    right: 20px;
+    font-size: 24px;
+    cursor: pointer;
+    z-index: 1300;
+}
 
-    /* 햄버거 버튼 스타일 */
-    .menu-button {
-        position: fixed;
-        top: 15px;
-        right: 20px;
-        font-size: 24px;
-        cursor: pointer;
-        z-index: 1300;
-    }
-
-    /* 모바일 햄버거 메뉴 */
-   .menu-overlay {
+.menu-overlay {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
     background: rgba(0, 0, 0, 0.3);
-    display: none; /* 기본적으로 숨김 */
+    display: none;
     opacity: 0;
     transition: opacity 0.3s ease;
     z-index: 1100;
@@ -120,7 +117,6 @@ body {
     display: block;
     opacity: 1;
 }
-
 
 .menu {
     position: fixed;
@@ -134,16 +130,10 @@ body {
     display: flex;
     flex-direction: column;
     font-size: 18px;
-    font-style: normal;
-    font-weight: 200;/* 메뉴 폰트 크기 200으로 설정 */
-    line-height: 2; /* 줄 간격 */
+    font-weight: 300;
+    line-height: 2;
     transition: right 0.3s ease;
     box-shadow: -2px 0 5px rgba(0, 0, 0, 0.1);
-    z-index: 1200;
-}
-    
-    justify-content: flex-start; /* 위쪽 정렬 */
-    align-items: center;
     z-index: 1200;
 }
 
@@ -151,24 +141,24 @@ body {
     right: 0;
 }
 
-    /* 닫기 버튼 스타일 */
-    .menu-close {
-        position: absolute;
-        top: 15px;
-        right: 15px;
-        font-size: 22px;
-        cursor: pointer;
-        color: black;
-    }
+.menu-close {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    font-size: 22px;
+    cursor: pointer;
+    color: black;
+}
 
-/* 모바일 스타일 */
+/* =========================
+   6. 반응형
+   ========================= */
 @media (max-width: 768px) {
     .sidebar {
         display: none;
     }
 }
 
-/* 데스크탑에서 햄버거 버튼 숨기기 */
 @media (min-width: 769px) {
     .menu-button {
         display: none;
@@ -177,14 +167,15 @@ body {
     .menu {
         display: none;
     }
-/* ===== Contact 페이지 스타일(bold와 semi bold ===== */
+}
+
+/* =========================
+   7. Contact 페이지용 폰트 굵기 클래스
+   ========================= */
 .bold {
-    font-weight: 700; /* 제목용: 확실히 굵게 */
+    font-weight: 700;
 }
 
 .semi-bold {
-    font-weight: 500; /* 전시 리스트용: 약간만 굵게 */
+    font-weight: 500;
 }
-
-}
-
