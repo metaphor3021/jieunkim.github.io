@@ -129,6 +129,64 @@
             .sidebar {
                 display: none;
             }
+            
+            .menu-button {
+                position: fixed;
+                top: 20px;
+                right: 20px;
+                font-size: 24px;
+                cursor: pointer;
+                z-index: 1100;
+            }
+            .content {
+        margin-top: 100px; /* 기존 150px → 100px로 줄임 */
+        padding: 0 15px; /* 좌우 여백 30px → 15px */
+    }
+            .menu {
+                position: fixed;
+                top: 0;
+                right: -250px;
+                width: 220px;
+                height: 100vh;
+                background: white;
+                transition: right 0.3s ease;
+                padding: 40px 15px;
+                text-align: left;
+                display: flex;
+                flex-direction: column;
+                font-size: 16px;
+                font-weight: 100;
+                line-height: 1.5;
+                box-shadow: -2px 0 5px rgba(0, 0, 0, 0.1);
+            }
+
+            .menu.active {
+                right: 0;
+            }
+
+            .menu a {
+                text-decoration: none;
+                color: black;
+                margin: 6px 0;
+                font-weight: 100;
+            }
+
+            .menu .real, .menu .unreal {
+                padding-left: 20px;
+                font-size: 14px;
+                margin: 4px 0;
+            }
+        }
+
+        /* 데스크탑에서 햄버거 메뉴 숨기기 */
+        @media (min-width: 769px) {
+            .menu-button {
+                display: none;
+            }
+
+            .menu {
+                display: none;
+            }
         }
     </style>
 </head>
