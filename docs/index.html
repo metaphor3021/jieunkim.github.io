@@ -225,90 +225,69 @@
   font-weight: 700;
 }
 
-/* ✅ 모바일 (768px 이하) 레이아웃 최종 */
+/* ✅ 모바일 (768px 이하)에서 헤더 + 메뉴버튼 정상 표시 */
 @media (max-width: 768px) {
-    /* 상단 고정 헤더 */
-    .header {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        background: white;
-        /* 타이틀과 버튼 가로 배치 */
-        display: flex; 
-        justify-content: space-between;
-        align-items: center;
-        /* 타이틀 왼쪽 여백 기준 (20px) */
-        padding: 15px 20px; 
-        z-index: 1000;
-    }
+  /* 상단 고정 헤더 */
+  .header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: white;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 15px 20px 10px 20px; /* 좌우 여백 동일하게 */
+    z-index: 1000;
+  }
 
-    /* 영어 타이틀 */
-    .header-title {
-        font-size: 30px;
-        font-weight: bold;
-        margin: 0;
-        line-height: 1.1;
-    }
-    
-    /* 서브타이틀은 현재 헤더가 가로 정렬이므로 숨김 (혹은 HTML을 그룹화해야 함) */
-    .header-subtitle {
-        display: none; 
-    }
+  /* 영어 타이틀 */
+  .header-title {
+    font-size: 30px;
+    font-weight: bold;
+    margin: 0;
+    line-height: 1.1;
+  }
 
-    /* 햄버거 메뉴 버튼 */
-    .menu-button {
-        display: block !important;
-        position: static; /* 헤더의 Flex 아이템으로 배치 */
-        font-size: 26px;
-        cursor: pointer;
-        color: black;
-        z-index: 1200;
-    }
+  /* 한글 서브타이틀 (영문 바로 아래 위치) */
+  .header-subtitle {
+    font-size: 14px;
+    color: #666;
+    margin-top: 4px;
+  }
 
-    /* 사이드바는 모바일에서 숨김 */
-    .sidebar {
-        display: none;
-    }
-    
-    /* 🛠️ 본문 여백 조정 (핵심 수정) */
-    .content {
-        /* 타이틀과의 세로 간격 줄이기 (헤더 높이 60px 내외 + 여백 20px = 80px) */
-        margin-top: 80px; 
-        /* 왼쪽/오른쪽 여백을 헤더와 동일하게 20px로 설정하여 정렬 맞춤 */
-        padding: 0 20px; 
-    }
-    
-    /* 🛠️ 이미지 컨테이너 내 이미지 (선택적) */
-    .image-container img {
-        /* 이미지가 가운데 정렬되어 있지만, .content 패딩에 맞춰 왼쪽 정렬처럼 보일 것입니다. */
-        /* width: 100% 덕분에 .content의 20px 여백 안에 꽉 차게 보입니다. */
-        display: block;
-        margin: 0; /* 중앙 정렬 margin: 0 auto; 대신 0으로 명시 */
-        max-width: 100%;
-    }
+  /* ✅ 햄버거 메뉴 버튼 — 타이틀과 같은 높이, 같은 오른쪽 여백 */
+  .menu-button {
+    display: block !important;
+    position: fixed; /* 헤더와 같은 레이어에서 고정 */
+    top: 20px;       /* 타이틀과 같은 높이 */
+    right: 24px;     /* 헤더 padding과 동일한 여백 */
+    font-size: 26px;
+    cursor: pointer;
+    color: black;
+    z-index: 1200;   /* 헤더보다 위 */
+  }
 
-    /* 모바일 메뉴 관련 스타일 유지 */
-    .menu {
-        position: fixed;
-        top: 0;
-        right: -250px;
-        width: 220px;
-        height: 100vh;
-        background: white;
-        transition: right 0.3s ease;
-        padding: 40px 15px; 
-        text-align: left;
-        display: flex;
-        flex-direction: column;
-        font-size: 16px;
-        font-weight: 100;
-        line-height: 1.5;
-        box-shadow: -2px 0 5px rgba(0, 0, 0, 0.1);
-        z-index: 1100;
-    }
-    /* ... (나머지 .menu, .menu-overlay 스타일은 그대로) ... */
-}
+  /* ✅ 모바일 메뉴 */
+  .menu {
+    position: fixed;
+    top: 0;
+    right: -250px; /* 숨겨진 상태 */
+    width: 230px;
+    height: 100vh;
+    background: white;
+    transition: right 0.3s ease;
+    padding: 70px 20px 20px 20px;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    font-size: 16px;
+    font-weight: 100;
+    line-height: 1.6;
+    box-shadow: -2px 0 5px rgba(0, 0, 0, 0.15);
+    z-index: 1100;
+  }
+
   .menu.active {
     right: 0;
   }
