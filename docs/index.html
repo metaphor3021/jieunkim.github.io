@@ -235,9 +235,9 @@
     width: 100%;
     background: white;
     display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    padding: 15px 20px 10px 20px;
+    justify-content: space-between; /* 제목과 메뉴 버튼을 양 끝으로 배치 */
+    align-items: center;
+    padding: 15px 20px;
     z-index: 1000;
   }
 
@@ -245,6 +245,7 @@
     font-size: 30px;
     line-height: 1.1;
     margin: 0;
+    font-weight: bold;
   }
 
   .header-subtitle {
@@ -255,8 +256,8 @@
 
   /* ✅ 모바일 햄버거 메뉴 버튼 */
   .menu-button {
-    display: block !important;
-    position: absolute;
+    display: block;
+    position: relative;
     top: 20px;
     right: 20px;
     font-size: 26px;
