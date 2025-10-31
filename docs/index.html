@@ -235,19 +235,20 @@
     width: 100%;
     background: white;
     display: flex;
-    justify-content: space-between; /* 제목과 메뉴 버튼을 양 끝으로 배치 */
-    align-items: center;
-    padding: 15px 20px;
+    justify-content: column; /* 제목과 메뉴 버튼을 양 끝으로 배치 */
+    align-items: flex-start;
+    padding: 15px 24px 12px 24px; /* 오른쪽 여백 살짝 늘림 */
     z-index: 1000;
   }
-
+    
+  /* ✅ 타이틀 (JIEUN KIM) */
   .header-title {
     font-size: 30px;
     line-height: 1.1;
     margin: 0;
     font-weight: bold;
   }
-
+  /* ✅ 부제목 (김지은) - 타이틀 바로 아래 */
   .header-subtitle {
     font-size: 14px;
     color: #666;
@@ -257,9 +258,9 @@
   /* ✅ 모바일 햄버거 메뉴 버튼 */
   .menu-button {
     display: block;
-    position: relative;
+    position: absolute;
     top: 20px;
-    right: 20px;
+    right: 28px;
     font-size: 26px;
     cursor: pointer;
     color: black;
