@@ -132,6 +132,7 @@
             }
     .content {
         margin-top: 100px; /* 기존 150px → 100px로 줄임 */
+        padding: 0 15px; /* 좌우 여백 30px → 15px */
     }
 }
             .menu {
@@ -180,6 +181,37 @@
                 display: none;
             }
         }
+        /* --- 브라우저 폭이 줄어들 때 사이드바와 본문이 겹치는 현상 해결 --- */
+
+/* 1200px 이하일 때: 본문 왼쪽 여백 줄이기 */
+@media (max-width: 1200px) {
+    .content {
+        margin-left: 270px; /* 기존보다 살짝 줄임 */
+    }
+}
+
+/* 1024px 이하일 때: 사이드바 더 좁히고 본문 여백도 줄임 */
+@media (max-width: 1024px) {
+    .sidebar {
+        width: 200px; /* 사이드바 폭 줄임 */
+    }
+    .content {
+        margin-left: 220px; /* 본문도 같이 이동 */
+        padding: 0 25px;
+    }
+}
+
+/* 900px 이하일 때: 사이드바 자동 숨김 (햄버거 메뉴 전환 직전 구간) */
+@media (max-width: 900px) {
+    .sidebar {
+        display: none;
+    }
+    .content {
+        margin: 120px auto 50px;
+        padding: 0 20px;
+    }
+}
+
     </style>
 </head>
 
