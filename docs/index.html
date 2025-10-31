@@ -235,21 +235,18 @@
     width: 100%;
     background: white;
     display: flex;
-    flex-direction: column; /* 세로 정렬로 변경 (가장 중요!!) */
+    flex-direction: column;
     align-items: flex-start;
-    padding: 15px 26px 12px 26px;
+    padding: 15px 20px 10px 20px;
     z-index: 1000;
   }
-    
-  /* ✅ 타이틀 (JIEUN KIM) */
+
   .header-title {
     font-size: 30px;
-    line-height: 1.2;
+    line-height: 1.1;
     margin: 0;
-    font-weight: bold;
   }
 
-  /* ✅ 부제목 (김지은) — 타이틀 바로 아래 */
   .header-subtitle {
     font-size: 14px;
     color: #666;
@@ -258,10 +255,10 @@
 
   /* ✅ 모바일 햄버거 메뉴 버튼 */
   .menu-button {
-    display: block;
+    display: block !important;
     position: absolute;
-    top: 22px;
-    right: 26px; /* 너무 오른쪽에 붙지 않게 */
+    top: 20px;
+    right: 20px;
     font-size: 26px;
     cursor: pointer;
     color: black;
@@ -272,12 +269,12 @@
   .menu {
     position: fixed;
     top: 0;
-    right: -240px; /* 살짝 더 안쪽으로 설정 */
+    right: -250px;
     width: 220px;
     height: 100vh;
     background: white;
     transition: right 0.3s ease;
-    padding: 60px 20px 20px 20px;
+    padding: 40px 15px;
     text-align: left;
     display: flex;
     flex-direction: column;
@@ -299,8 +296,7 @@
     font-weight: 100;
   }
 
-  .menu .real,
-  .menu .unreal {
+  .menu .real, .menu .unreal {
     padding-left: 20px;
     font-size: 14px;
     margin: 4px 0;
@@ -308,11 +304,10 @@
 
   /* ✅ 본문 여백 보정 */
   .content {
-    margin-top: 110px;
+    margin-top: 100px;
     padding: 0 15px;
   }
 }
-
 
 /* ✅ 데스크탑에서 햄버거 메뉴 숨김 */
 @media (min-width: 769px) {
@@ -323,6 +318,7 @@
     display: none;
   }
 }
+
 
     </style>
 </head>
