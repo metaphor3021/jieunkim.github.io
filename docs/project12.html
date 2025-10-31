@@ -8,7 +8,7 @@
     <style>
         /* 기본 스타일 */
         body {
-            font-family: 'Noto Sans KR', sans-serif;
+            font-family: 'Spoqa Han Sans Neo';
             background-color: #fff;
             color: #000;
             margin: 0;
@@ -53,7 +53,7 @@
             width: 250px;
             text-align: left;
             font-size: 18px;
-            font-weight: 200;
+            font-weight: 100;
         }
 
         .sidebar a {
@@ -61,9 +61,18 @@
             color: black;
             display: block;
             margin: 12px 0;
-            font-weight: 200;
+            font-weight: 100;
+        }
+        .sidebar a[disabled] {
+            pointer-events: none;
+            color: black;
         }
 
+        .sidebar .real, .sidebar .unreal {
+            padding-left: 20px;
+            font-size: 16px;
+            margin: 8px 0;
+        }
         /* 본문 */
         .content {
             max-width: 900px;
@@ -196,8 +205,27 @@
         <div class="header-title"><a href="index.html">JIEUN KIM</a></div>
         <div class="header-subtitle">김지은</div>
     </header>
+ <!-- 사이드바 (데스크탑) -->
+    <nav class="sidebar">
+        <a href="#" disabled>Side Project</a>
+        <a href="real.html" class="real">Real</a>
+        <a href="unreal.html" class="unreal">Unreal</a>
+        <a href="notes.html">Notes</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Info/Contact</a>
+    </nav>
 
-
+    <!-- 모바일 햄버거 메뉴 -->
+<div class="menu-overlay"></div>
+<nav class="menu">
+    <div class="menu-close">✕</div>
+    <a href="#" disabled>Side Project</a>
+    <a href="real.html" class="real">Real</a>
+    <a href="unreal.html" class="unreal">Unreal</a>
+    <a href="notes.html">Notes</a>
+    <a href="about.html">About</a>
+    <a href="contact.html">Info/Contact</a>
+</nav>
     <!-- 본문 -->
     <main class="content">
         <!-- 첫 번째 이미지 -->
