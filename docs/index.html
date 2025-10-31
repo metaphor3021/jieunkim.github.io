@@ -228,29 +228,50 @@
     font-weight: 700;
 }
 
-/* 모바일에서 타이틀과 메뉴 정렬 높이 맞추기 */
+/* 🔹 모바일 (768px 이하) — 타이틀과 메뉴 높이 맞추기 */
 @media (max-width: 768px) {
     .header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        background: white;
         display: flex;
-        align-items: center;   /* 세로 정렬 중앙 */
-        justify-content: space-between; /* 왼쪽 타이틀 ↔ 오른쪽 메뉴 */
-        padding: 15px 20px;   /* 상하 여백 균일하게 */
+        align-items: center;
+        justify-content: space-between;
+        padding: 15px 20px;
+        z-index: 1000;
     }
 
+    /* 영어 타이틀 */
     .header-title {
         font-size: 30px;
         line-height: 1;
+        margin: 0;
     }
 
+    /* 한글 타이틀 */
     .header-subtitle {
-        display: none; /* 모바일에선 ‘김지은’ 숨김 (선택사항) */
+        font-size: 14px;
+        color: #666;
+        margin-left: 10px;
+        display: inline; /* 다시 보이게 복구 */
     }
 
+    /* 햄버거 메뉴 버튼 */
     .menu-button {
         position: relative;
-        top: 0;
         right: 0;
-        font-size: 26px; /* 아이콘 크기 약간 키움 */
+        top: 0;
+        font-size: 26px;
+        cursor: pointer;
+        z-index: 1100; /* 다른 요소 위로 */
+    }
+
+    /* 타이틀+한글 묶음 정렬을 자연스럽게 */
+    .header-title, .header-subtitle {
+        display: inline-block;
+        vertical-align: middle;
     }
 }
 
