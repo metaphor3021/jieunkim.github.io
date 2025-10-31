@@ -270,6 +270,28 @@
         padding: 0 15px;
     }
 }
+/* ✅ 모바일 메뉴 버튼이 안 보이는 문제 해결 */
+@media (max-width: 768px) {
+    .menu-button {
+        display: block !important; /* 혹시 숨김된 경우 강제로 표시 */
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        font-size: 26px;
+        cursor: pointer;
+        color: black;
+        z-index: 1200; /* 다른 요소보다 위로 */
+    }
+
+    .menu {
+        display: none; /* 기본은 숨김 */
+    }
+
+    .menu.active {
+        display: flex; /* 활성화되면 표시 */
+        right: 0;
+    }
+}
 
     </style>
 </head>
