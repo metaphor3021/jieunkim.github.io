@@ -211,6 +211,48 @@
         padding: 0 20px;
     }
 }
+/* --- 타이틀 영역 조정 및 폰트 변경 --- */
+
+/* SpoqaHanSansNeo-Bold 폰트 불러오기 */
+@font-face {
+    font-family: 'SpoqaHanSansNeo-Bold';
+    src: url('assets/fonts/SpoqaHanSansNeo-Bold.woff2') format('woff2'),
+         url('assets/fonts/SpoqaHanSansNeo-Bold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+}
+
+/* 타이틀 폰트 적용 및 더 볼드하게 */
+.header-title {
+    font-family: 'SpoqaHanSansNeo-Bold', 'Spoqa Han Sans Neo', sans-serif;
+    font-weight: 700;
+}
+
+/* 모바일에서 타이틀과 메뉴 정렬 높이 맞추기 */
+@media (max-width: 768px) {
+    .header {
+        display: flex;
+        align-items: center;   /* 세로 정렬 중앙 */
+        justify-content: space-between; /* 왼쪽 타이틀 ↔ 오른쪽 메뉴 */
+        padding: 15px 20px;   /* 상하 여백 균일하게 */
+    }
+
+    .header-title {
+        font-size: 30px;
+        line-height: 1;
+    }
+
+    .header-subtitle {
+        display: none; /* 모바일에선 ‘김지은’ 숨김 (선택사항) */
+    }
+
+    .menu-button {
+        position: relative;
+        top: 0;
+        right: 0;
+        font-size: 26px; /* 아이콘 크기 약간 키움 */
+    }
+}
 
     </style>
 </head>
