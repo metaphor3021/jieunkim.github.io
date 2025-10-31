@@ -338,6 +338,49 @@
   }
 }
 
+/* ✅ 모바일/데스크탑 공통 헤더 정렬 및 세로줄 제거 */
+.header {
+  padding: 20px 30px;
+  box-shadow: none; /* 혹시 생긴 잔여 그림자 제거 */
+}
+
+/* ✅ 이미지와 헤더 왼쪽 정렬 통일 */
+.content,
+.image-container img {
+  margin-left: 0;
+  padding-left: 30px; /* 헤더 왼쪽 여백(30px)과 동일하게 */
+  box-sizing: border-box;
+}
+
+/* ✅ 세로줄처럼 보이던 원인 제거 */
+.menu {
+  box-shadow: none !important; /* 세로줄 제거 */
+  border-left: none !important; /* 혹시 남아있을 경우 대비 */
+}
+
+/* ✅ 모바일(768px 이하) */
+@media (max-width: 768px) {
+  .header {
+    padding: 15px 20px 10px 20px; /* 헤더 왼쪽 여백 20px로 통일 */
+  }
+
+  .menu-button {
+    top: 20px;
+    right: 20px;
+  }
+
+  /* 사진과 타이틀의 왼쪽 정렬을 통일 */
+  .content,
+  .image-container img {
+    padding-left: 20px; /* 헤더 왼쪽 여백과 동일 */
+  }
+
+  /* 세로줄 제거 */
+  .menu {
+    box-shadow: none !important;
+    border-left: none !important;
+  }
+}
 
     </style>
 </head>
