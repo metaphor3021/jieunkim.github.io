@@ -212,85 +212,111 @@
     }
 }
 /* --- 타이틀 영역 조정 및 폰트 변경 --- */
-
-/* SpoqaHanSansNeo-Bold 폰트 불러오기 */
+/* ✅ SpoqaHanSansNeo-Bold 폰트 적용 */
 @font-face {
-    font-family: 'SpoqaHanSansNeo-Bold';
-    src: url('assets/fonts/SpoqaHanSansNeo-Bold.woff2') format('woff2'),
-         url('assets/fonts/SpoqaHanSansNeo-Bold.woff') format('woff');
-    font-weight: bold;
-    font-style: normal;
+  font-family: 'SpoqaHanSansNeo-Bold';
+  src: url('assets/fonts/SpoqaHanSansNeo-Bold.woff2') format('woff2'),
+       url('assets/fonts/SpoqaHanSansNeo-Bold.woff') format('woff');
+  font-weight: bold;
+  font-style: normal;
 }
 
-/* 타이틀 폰트 적용 및 더 볼드하게 */
 .header-title {
-    font-family: 'SpoqaHanSansNeo-Bold', 'Spoqa Han Sans Neo', sans-serif;
-    font-weight: 700;
+  font-family: 'SpoqaHanSansNeo-Bold', 'Spoqa Han Sans Neo', sans-serif;
+  font-weight: 700;
 }
 
-/* 🔹 모바일 (768px 이하) — 타이틀 위·아래 정렬 */
+/* ✅ 모바일 (768px 이하) 레이아웃 */
 @media (max-width: 768px) {
-    .header {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        background: white;
-        display: flex;
-        flex-direction: column; /* 타이틀 위/아래 정렬 */
-        align-items: flex-start; /* 왼쪽 정렬 */
-        padding: 15px 20px 10px 20px;
-        z-index: 1000;
-    }
+  .header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: white;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 15px 20px 10px 20px;
+    z-index: 1000;
+  }
 
-    .header-title {
-        font-size: 30px;
-        line-height: 1.1;
-        margin: 0;
-    }
+  .header-title {
+    font-size: 30px;
+    line-height: 1.1;
+    margin: 0;
+  }
 
-    .header-subtitle {
-        font-size: 14px;
-        color: #666;
-        margin-top: 4px;
-    }
+  .header-subtitle {
+    font-size: 14px;
+    color: #666;
+    margin-top: 4px;
+  }
 
-    .menu-button {
-        position: absolute;
-        top: 20px;
-        right: 20px;
-        font-size: 26px;
-        cursor: pointer;
-        z-index: 1100; /* 메뉴가 항상 위로 */
-    }
+  /* ✅ 모바일 햄버거 메뉴 버튼 */
+  .menu-button {
+    display: block !important;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 26px;
+    cursor: pointer;
+    color: black;
+    z-index: 1200;
+  }
 
-    /* 본문 여백 살짝 줄이기 (타이틀 아래 간격 보정) */
-    .content {
-        margin-top: 100px; /* 기존보다 조금 줄임 */
-        padding: 0 15px;
-    }
+  /* ✅ 모바일 메뉴 패널 */
+  .menu {
+    position: fixed;
+    top: 0;
+    right: -250px;
+    width: 220px;
+    height: 100vh;
+    background: white;
+    transition: right 0.3s ease;
+    padding: 40px 15px;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    font-size: 16px;
+    font-weight: 100;
+    line-height: 1.5;
+    box-shadow: -2px 0 5px rgba(0, 0, 0, 0.1);
+    z-index: 1100;
+  }
+
+  .menu.active {
+    right: 0;
+  }
+
+  .menu a {
+    text-decoration: none;
+    color: black;
+    margin: 6px 0;
+    font-weight: 100;
+  }
+
+  .menu .real, .menu .unreal {
+    padding-left: 20px;
+    font-size: 14px;
+    margin: 4px 0;
+  }
+
+  /* ✅ 본문 여백 보정 */
+  .content {
+    margin-top: 100px;
+    padding: 0 15px;
+  }
 }
-/* ✅ 모바일 메뉴 버튼이 안 보이는 문제 해결 */
-@media (max-width: 768px) {
-    .menu-button {
-        display: block !important; /* 혹시 숨김된 경우 강제로 표시 */
-        position: absolute;
-        top: 20px;
-        right: 20px;
-        font-size: 26px;
-        cursor: pointer;
-        color: black;
-        z-index: 1200; /* 다른 요소보다 위로 */
-    }
 
-    .menu {
-        display: none; /* 기본은 숨김 */
-    }
-
-    .menu.active {
-        display: flex; /* 활성화되면 표시 */
-        right: 0;
-    }
+/* ✅ 데스크탑에서 햄버거 메뉴 숨김 */
+@media (min-width: 769px) {
+  .menu-button {
+    display: none;
+  }
+  .menu {
+    display: none;
+  }
 }
 
     </style>
