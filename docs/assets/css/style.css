@@ -47,6 +47,7 @@
     /* 기본 두께 (얇지 않게) */
 }
 
+
 body {
     margin: 0;
     background: white;
@@ -58,13 +59,6 @@ body {
 /* =========================
    3. 메인 타이틀
    ========================= */
-.main-title {
-    margin-top: 80px;
-    font-size: 40px;
-    font-weight: 600;
-    /* Bold */
-}
-
 .layout {
     display: flex;
     min-height: 100vh;
@@ -101,45 +95,16 @@ body {
     margin-top: 4px;
 }
 
-/* 사이드바 (데스크탑) */
-.sidebar {
-    position: fixed;
-    top: 120px;
-    left: 40px;
-    width: 240px;
-    height: 100vh;
-    text-align: left;
-    font-size: 18px;
-    font-weight: 100;
-}
-
-.sidebar a {
-    text-decoration: none;
-    color: black;
-    display: block;
-    margin: 12px 0;
-    font-weight: 100;
-}
-
-.sidebar a[disabled] {
-    pointer-events: none;
-    color: black;
-}
-
-.sidebar .real,
-.sidebar .unreal {
-    padding-left: 20px;
-    font-size: 16px;
-    margin: 8px 0;
-}
 
 /* 본문 */
 .content {
-    margin-top: 70px;
     margin-left: 240px;
+    margin-top: 80px;
+
+    display: flex;
     justify-content: center;
-    align-items: flex-start;
-    padding: 40px;
+    flex-direction: column;
+    align-items: center;
 }
 
 .container {
@@ -153,32 +118,30 @@ body {
 }
 
 .image-container {
+    max-width: 800px;
     margin-bottom: 50px;
-    cursor: pointer;
 }
 
 .image-container img {
     width: 100%;
-    max-width: 800px;
     height: auto;
     /* 높이 자동 조절 */
     object-fit: contain;
     /* 이미지 비율 유지하면서 맞춤 */
     align-content: center;
     display: block;
-    margin: auto;
+    margin: 0 auto;
 }
 
-.image-title {
+.main-title {
     text-align: center;
     font-size: 14px;
     margin-top: 10px;
 }
 
-
-
 .project-info {
     max-width: 800px;
+    padding: 20px 0px;
     margin: 0 auto;
     text-align: left;
 }
@@ -223,6 +186,38 @@ body {
     max-width: 900px;
     padding: 40px;
     /* 사이드바 여백 */
+}
+
+/* 사이드바 (데스크탑) */
+.sidebar {
+    position: fixed;
+    top: 120px;
+    left: 40px;
+    width: 240px;
+    height: 100vh;
+    text-align: left;
+    font-size: 18px;
+    font-weight: 100;
+}
+
+.sidebar a {
+    text-decoration: none;
+    color: black;
+    display: block;
+    margin: 12px 0;
+    font-weight: 100;
+}
+
+.sidebar a[disabled] {
+    pointer-events: none;
+    color: black;
+}
+
+.sidebar .real,
+.sidebar .unreal {
+    padding-left: 20px;
+    font-size: 16px;
+    margin: 8px 0;
 }
 
 
@@ -345,13 +340,20 @@ a:hover {
     }
 
     .content {
+        display: block;
         max-width: 100%;
         margin-left: 0;
+        padding: 0px;
     }
 
     .container {
         max-width: 100%;
         margin-left: 0;
+    }
+
+    .project-info {
+        width: auto;
+        padding: 20px 20px 80px;
     }
 
     .menu {
