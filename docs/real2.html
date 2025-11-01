@@ -1,191 +1,67 @@
 <!DOCTYPE html>
 <html lang="ko">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>INVISIBLE DEATH PROJECT</title>
     <link rel="stylesheet" href="assets/css/style.css">
-    <style>
-        /* 기본 스타일 */
-        body {
-            font-family: 'Noto Sans KR', sans-serif;
-            background-color: #fff;
-            color: #000;
-            margin: 0;
-            padding: 0;
-        }
-
-        /* 상단 타이틀 바 */
-        .header {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            background: white;
-            padding: 20px 30px;
-            z-index: 1000;
-            text-align: left;
-        }
-
-        .header-title {
-            font-size: 40px;
-            font-weight: bold;
-            cursor: pointer;
-        }
-
-        .header-title a {
-            text-decoration: none;
-            color: black;
-        }
-
-        .header-subtitle {
-            font-size: 16px;
-            color: #666;
-            text-align: left;
-            margin-top: 5px;
-        }
-
-        /* 사이드바 (데스크탑) */
-        .sidebar {
-            position: fixed;
-            top: 140px;
-            left: 30px;
-            width: 250px;
-            text-align: left;
-            font-size: 18px;
-            font-weight: 200;
-        }
-
-        .sidebar a {
-            text-decoration: none;
-            color: black;
-            display: block;
-            margin: 12px 0;
-            font-weight: 200;
-        }
-
-        /* 본문 */
-        .content {
-            max-width: 900px;
-            margin: 150px auto 50px;
-            padding: 0 30px;
-            position: relative;
-            z-index: 1;
-            text-align: left;
-        }
-
-        .image-container,
-        .video-container {
-            margin-bottom: 30px;
-            text-align: center;
-        }
-
-        .image-container img,
-        .video-container video {
-            width: 100%;
-            max-width: 800px;
-            height: auto;
-            display: block;
-            margin: 0 auto;
-        }
-
-        .project-info {
-            max-width: 800px;
-            margin: 0 auto;
-            text-align: left;
-        }
-
-        .project-title {
-            font-size: 16px;  /* 본문 크기로 줄임 */
-            font-weight: bold;
-            margin-top: 10px;
-        }
-
-        .project-details {
-            font-size: 14px;  /* 연도, 크기, 재료 크기 줄임 */
-            color: #555;
-            margin-top: 5px;
-            line-height: 1.6;
-        }
-
-        .project-description {
-            font-size: 16px;
-            color: #000;
-            margin-top: 20px;
-            line-height: 1.8;
-        }
-
-        /* 모바일 스타일 */
-        @media (max-width: 768px) {
-            .header {
-                padding: 15px 20px;
-            }
-
-            .header-title {
-                font-size: 30px;
-            }
-
-            .header-subtitle {
-                font-size: 14px;
-            }
-
-            .sidebar {
-                display: none;
-            }
-        }
-    </style>
 </head>
+
 <body>
-    <!-- 상단 타이틀 -->
-    <header class="header">
-        <div class="header-title"><a href="index.html">JIEUN KIM</a></div>
-        <div class="header-subtitle">김지은</div>
-    </header>
+    <div class="layout">
 
+        <div id="header"></div>
+        <div id="sidebar"></div>
+        <div id="menu"></div>
 
- <!-- 본문 -->
-    <main class="content">
+        <!-- 본문 -->
+        <main class="content">
 
-        <!-- 이미지 목록 -->
-        <div class="image-container"><img src="images/real2_1.jpg" alt="real2_1"></div>
-        <div class="image-container"><img src="images/real2_2.jpg" alt="real2_2"></div>
-        <div class="image-container"><img src="images/real2_3.jpg" alt="real2_3"></div>
-        <div class="image-container"><img src="images/real2_4.jpg" alt="real2_4"></div>
-        <div class="image-container"><img src="images/real2_5.jpg" alt="real2_5"></div>
-        <div class="image-container"><img src="images/real2_6.jpg" alt="real2_6"></div>
-        <div class="image-container"><img src="images/real2_7.jpg" alt="real2_7"></div>
-        <div class="image-container"><img src="images/real2_8.jpg" alt="real2_8"></div>
-        <div class="image-container"><img src="images/real2_9.jpg" alt="real2_9"></div>
-        <div class="image-container"><img src="images/real2_10.jpg" alt="real2_10"></div>
-        <div class="image-container"><img src="images/real2_11.jpg" alt="real2_11"></div>
+            <!-- 이미지 목록 -->
+            <div class="image-container"><img src="images/real2_1.jpg" alt="real2_1"></div>
+            <div class="image-container"><img src="images/real2_2.jpg" alt="real2_2"></div>
+            <div class="image-container"><img src="images/real2_3.jpg" alt="real2_3"></div>
+            <div class="image-container"><img src="images/real2_4.jpg" alt="real2_4"></div>
+            <div class="image-container"><img src="images/real2_5.jpg" alt="real2_5"></div>
+            <div class="image-container"><img src="images/real2_6.jpg" alt="real2_6"></div>
+            <div class="image-container"><img src="images/real2_7.jpg" alt="real2_7"></div>
+            <div class="image-container"><img src="images/real2_8.jpg" alt="real2_8"></div>
+            <div class="image-container"><img src="images/real2_9.jpg" alt="real2_9"></div>
+            <div class="image-container"><img src="images/real2_10.jpg" alt="real2_10"></div>
+            <div class="image-container"><img src="images/real2_11.jpg" alt="real2_11"></div>
 
-        <!-- 프로젝트 정보 -->
-        <div class="project-info">
-            <div class="project-title">TREE FOR FREES</div>
-            <div class="project-details">
-                2025<br>
-                45(W) × 193(H) × 60(D) cm<br>
-                Leftover wood<br>
+            <!-- 프로젝트 정보 -->
+            <div class="project-info">
+                <div class="project-title">TREE FOR TREES</div>
+                <div class="project-details">
+                    2025<br>
+                    45(W) × 193(H) × 60(D) cm<br>
+                    Leftover wood<br>
+                </div>
+                <div class="project-description">
+                    I carefully selected, gathered, cut, and assembled<br>
+                    fragments of old furniture that once filled the shelves of the studio.<br><br>
+
+                    Among the offcuts of various thicknesses and sizes<br>
+                    that emerge during the working process,<br>
+                    the thin and small pieces became intricate details,<br>
+                    drawing the viewer in for a closer look.<br><br>
+
+                    Wood scraps, waiting for another use,<br>
+                    take on the form of a tree once again,<br>
+                    suggesting the potential to become something else.<br><br>
+
+                    -<br>
+                    I designed and crafted this project during my internship at Piet Hein Eek,<br>
+                    using materials from the studio.<br>
+                </div>
             </div>
-            <div class="project-description">
-                I carefully selected, gathered, cut, and assembled<br>
-                fragments of old furniture that once filled the shelves of the studio.<br><br>
+        </main>
+    </div>
 
-                Among the offcuts of various thicknesses and sizes<br>
-                that emerge during the working process,<br>
-                the thin and small pieces became intricate details,<br>
-                drawing the viewer in for a closer look.<br><br>
-
-                Wood scraps, waiting for another use,<br>
-                take on the form of a tree once again,<br>
-                suggesting the potential to become something else.<br><br>
-
-                -<br>
-                I designed and crafted this project during my internship at Piet Hein Eek,<br>
-                using materials from the studio.<br>
-            </div>
-        </div>
-    </main>
-
+    <!-- 스크립트 -->
+    <script src="assets/js/common.js"></script>
 </body>
+
 </html>
