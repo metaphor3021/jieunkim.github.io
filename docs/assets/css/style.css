@@ -43,7 +43,8 @@
     font-family: 'Spoqa Han Sans Neo', sans-serif;
     color: #000;
     background-color: #fff;
-    font-weight: 300; /* 기본 두께 (얇지 않게) */
+    font-weight: 300;
+    /* 기본 두께 (얇지 않게) */
 }
 
 body {
@@ -60,7 +61,148 @@ body {
 .main-title {
     margin-top: 80px;
     font-size: 40px;
-    font-weight: 600; /* Bold */
+    font-weight: 600;
+    /* Bold */
+}
+
+.layout {
+    display: flex;
+    min-height: 100vh;
+}
+
+/* 상단 타이틀 바 */
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: white;
+    /* 상단 타이틀 바 불투명 없앰 */
+    padding: 20px 30px;
+    z-index: 1000;
+    text-align: left;
+}
+
+.header-title {
+    font-size: 40px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.header-title a {
+    text-decoration: none;
+    color: black;
+}
+
+.header-subtitle {
+    font-size: 16px;
+    color: #666;
+    text-align: left;
+    margin-top: 4px;
+}
+
+/* 사이드바 (데스크탑) */
+.sidebar {
+    position: fixed;
+    top: 120px;
+    left: 40px;
+    width: 240px;
+    height: 100vh;
+    text-align: left;
+    font-size: 18px;
+    font-weight: 100;
+}
+
+.sidebar a {
+    text-decoration: none;
+    color: black;
+    display: block;
+    margin: 12px 0;
+    font-weight: 100;
+}
+
+.sidebar a[disabled] {
+    pointer-events: none;
+    color: black;
+}
+
+.sidebar .real,
+.sidebar .unreal {
+    padding-left: 20px;
+    font-size: 16px;
+    margin: 8px 0;
+}
+
+/* 본문 */
+.content {
+    margin-top: 70px;
+    margin-left: 240px;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 40px;
+}
+
+.container {
+    margin-top: 70px;
+    margin-left: 240px;
+    max-width: 600px;
+    text-align: left;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 40px;
+}
+
+.image-container {
+    margin-bottom: 50px;
+    cursor: pointer;
+}
+
+.image-container img {
+    width: 100%;
+    max-width: 800px;
+    height: auto;
+    /* 높이 자동 조절 */
+    object-fit: contain;
+    /* 이미지 비율 유지하면서 맞춤 */
+    align-content: center;
+    display: block;
+    margin: auto;
+}
+
+.image-title {
+    text-align: center;
+    font-size: 14px;
+    margin-top: 10px;
+}
+
+
+
+.project-info {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: left;
+}
+
+.project-title {
+    font-size: 16px;
+    /* 본문 크기로 줄임 */
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+.project-details {
+    font-size: 14px;
+    /* 연도, 크기, 재료 크기 줄임 */
+    color: #555;
+    margin-top: 5px;
+    line-height: 1.6;
+}
+
+.project-description {
+    font-size: 16px;
+    color: #000;
+    margin-top: 20px;
+    line-height: 1.8;
 }
 
 /* =========================
@@ -77,27 +219,23 @@ body {
 }
 
 .content {
+    flex: 1;
     max-width: 900px;
-    margin: 120px auto 50px;
-    padding: 0 30px;
-    margin-left: 300px; /* 사이드바 여백 */
+    padding: 40px;
+    /* 사이드바 여백 */
 }
 
-.sidebar .side-project {
-    font-weight: 300;
-    color: black;
-}
 
 /* =========================
    5. 햄버거 메뉴
    ========================= */
 .menu-button {
     position: fixed;
-    top: 15px;
+    top: 20px;
     right: 20px;
     font-size: 24px;
     cursor: pointer;
-    z-index: 1300;
+    z-index: 1100;
 }
 
 .menu-overlay {
@@ -120,21 +258,20 @@ body {
 
 .menu {
     position: fixed;
-    top: 0;
-    right: -100%;
-    width: 260%;
+    top: 0px;
+    right: -250px;
+    width: 220px;
     height: 100vh;
     background: white;
-    padding: 50px 20px;
+    transition: right 0.3s ease;
+    padding: 40px 15px;
     text-align: left;
     display: flex;
     flex-direction: column;
-    font-size: 18px;
-    font-weight: 300;
-    line-height: 2;
-    transition: right 0.3s ease;
+    font-size: 16px;
+    font-weight: 100;
+    line-height: 1.5;
     box-shadow: -2px 0 5px rgba(0, 0, 0, 0.1);
-    z-index: 1200;
 }
 
 .menu.active {
@@ -150,15 +287,116 @@ body {
     color: black;
 }
 
+
+.menu a {
+    text-decoration: none;
+    color: black;
+    margin: 6px 0;
+    font-weight: 100;
+}
+
+.menu .real,
+.menu .unreal {
+    padding-left: 20px;
+    font-size: 14px;
+    margin: 4px 0;
+}
+
+/* 이메일 & 인스타 사이 여백 조정 */
+.contact-links p {
+    margin: 5px 0;
+    /* 위아래 여백 줄임 */
+}
+
+a {
+    color: black;
+    /* 링크 색상 검은색으로 변경 */
+    text-decoration: none;
+    font-weight: 400;
+    /* Regular */
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
 /* =========================
    6. 반응형
    ========================= */
 @media (max-width: 768px) {
+    .header {
+        padding: 15px 20px;
+    }
+
+    .header-title {
+        font-size: 30px;
+    }
+
+    .header-subtitle {
+        font-size: 14px;
+    }
+
     .sidebar {
         display: none;
     }
+
+    .layout {
+        display: block;
+    }
+
+    .content {
+        max-width: 100%;
+        margin-left: 0;
+    }
+
+    .container {
+        max-width: 100%;
+        margin-left: 0;
+    }
+
+    .menu {
+        position: fixed;
+        top: 0;
+        right: -250px;
+        width: 220px;
+        height: 100vh;
+        background: white;
+        transition: right 0.3s ease;
+        padding: 40px 15px;
+        text-align: left;
+        display: flex;
+        flex-direction: column;
+        font-size: 16px;
+        font-weight: 100;
+        line-height: 1.5;
+        box-shadow: -2px 0 5px rgba(0, 0, 0, 0.1);
+    }
+
+    .menu.active {
+        right: 0;
+    }
+
+    .menu a {
+        text-decoration: none;
+        color: black;
+        margin: 6px 0;
+        font-weight: 100;
+    }
+
+    .menu .real,
+    .menu .unreal {
+        padding-left: 20px;
+        font-size: 14px;
+        margin: 4px 0;
+    }
+
+    p {
+        font-size: 16px;
+        line-height: 1.8;
+    }
 }
 
+/* 데스크탑에서 햄버거 메뉴 숨기기 */
 @media (min-width: 769px) {
     .menu-button {
         display: none;
