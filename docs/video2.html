@@ -1,125 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Video 1 Description</title>
-    <style>
-        /* 기본 스타일 */
-        body {
-            font-family: bookk Gothic, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #fff;
-            color: #000;
-            text-align: center;
-        }
-
-        .container {
-            max-width: 800px;
-            margin: 50px auto;
-            padding: 20px;
-            text-align: left;
-        }
-
-        /* 동영상 스타일 */
-        .video-wrapper {
-            position: relative;
-            padding-bottom: 56.25%; /* 16:9 비율 */
-            height: 0;
-            overflow: hidden;
-            max-width: 100%;
-            background: #000;
-        }
-
-        .video-wrapper iframe {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-        }
-
-        /* 텍스트 스타일 */
-        .title {
-            font-size: 24px;
-            font-weight: bold;
-            margin-bottom: 5px;
-        }
-
-        .year {
-            font-size: 18px;
-            color: #666;
-            margin-bottom: 20px;
-        }
-
-        .description {
-            font-size: 16px;
-            line-height: 1.8;
-            margin-bottom: 20px;
-        }
-
-        .separator {
-            margin: 30px 0;
-            text-align: center;
-        }
-
-        .credits {
-            font-size: 16px;
-            color: #555;
-        }
-
-        /* 모바일 반응형 */
-        @media (max-width: 768px) {
-            .container {
-                max-width: 90%;
-                margin: 20px auto;
-                padding: 10px;
-            }
-
-            .title {
-                font-size: 22px;
-            }
-
-            .description {
-                font-size: 16px;
-                line-height: 1.6;
-            }
-
-            .credits {
-                font-size: 14px;
-            }
-        }
-    </style>
     <!-- 외부 CSS 파일 연결 -->
-    <link rel="stylesheet" href="assets/css/style.css"> <!-- 스타일 연결 -->
+    <link rel="stylesheet" href="./assets/css/style.css">
 </head>
+
 <body>
+    <div class="layout">
 
-    <div class="container">
-        <!-- 제목 -->
-        <div class="title">DDW Duo 24</div>
-        <div class="year">2024</div>
+        <div id="header"></div>
+        <div id="sidebar"></div>
+        <div id="menu"></div>
 
-        <!-- Vimeo Video -->
-        <div class="video-wrapper">
-            <iframe src="https://player.vimeo.com/video/1020820962?title=0&amp;byline=0&amp;portrait=0&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media" title="Everyone’s Aliens to Someone"></iframe>
-        </div>
+        <div class="container">
+            <!-- 제목 -->
+            <div class="project-title">DDW Duo 24</div>
+            <div class="year">2024</div>
 
-        <!-- Description Text -->
-        <div class="description">
-            <p>A promotional video for the duo exhibition "Forest Reverie," during Dutch Design Week (October 19th - 27th, 2024)</p>
-        </div>
-        <br>
-        <br>
-        <br>
-        <!-- 구분선 -->
-        <p>-</p>
-        <!-- 크레딧 -->
-        <div class="credits">
-            Music: <i>Echo Sax No.4</i> by Caleb Arredondo</p>
+            <!-- Vimeo Video -->
+            <div class="video-wrapper">
+                <iframe
+                    src="https://player.vimeo.com/video/1020820962?title=0&amp;byline=0&amp;portrait=0&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479"
+                    frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media"
+                    title="Everyone’s Aliens to Someone"></iframe>
+            </div>
+
+            <!-- Description Text -->
+            <div class="description">
+                <p>A promotional video for the duo exhibition "Forest Reverie," during Dutch Design Week (October 19th -
+                    27th, 2024)</p>
+            </div>
+            <br>
+            <br>
+            <br>
+            <!-- 구분선 -->
+            <p>-</p>
+            <!-- 크레딧 -->
+            <div class="credits">
+                Music: <i>Echo Sax No.4</i> by Caleb Arredondo</p>
+            </div>
         </div>
     </div>
 
+    <!-- 스크립트 -->
+    <script src="./assets/js/common.js"></script>
 </body>
+
 </html>
