@@ -1,87 +1,44 @@
 <!DOCTYPE html>
 <html lang="ko">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Unreal</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-    @font-face {
-            font-family: 'bookk Gothic';
-            src: url('./assets/fonts/bookk-Gothic-light.ttf') format('truetype');
-            font-weight: normal;
-            font-style: normal;
-        }
-
-        body {
-            font-family: 'bookk Gothic', sans-serif;
-            background-color: #000;
-            color: #fff;
-            text-align: center;
-        }
-
-        .container {
-            max-width: 1000px;
-            margin: 0 auto;
-            padding: 20px;
-        }
-
-        .image-container {
-            width: 100%;
-            max-width: 800px; /* 이미지 최대 너비 */
-            margin: 0 auto 40px; /* 아래 여백 추가 */
-            position: relative;
-            padding-top: 56.25%; /* 16:9 비율 유지 */
-            overflow: hidden;
-        }
-
-        .image-container img {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            object-fit: cover; /* 이미지 왜곡 방지 */
-            cursor: pointer;
-        }
-
-        /* 📱 모바일 최적화 */
-        @media (max-width: 768px) {
-            .container {
-                padding: 10px; /* 패딩 줄이기 */
-            }
-
-            .image-container {
-                max-width: 100%; /* 작은 화면에서는 가로 너비 100% */
-                margin-bottom: 30px; /* 모바일에서 여백 줄이기 */
-            }
-
-            .image-container img {
-                border-radius: 8px; /* 모서리 둥글게 */
-            }
-        }
-    </style>
+    <link rel="stylesheet" href="./assets/css/style.css">
 </head>
-<body>
 
-    <div class="container">
-        <div class="image-container">
-            <a href="video1.html">
-                <img src="images/image1.jpg" alt="Unreal Image 1">
-            </a>
-        </div>
+<body class="dark-mode">
+    <div class="layout">
 
-        <div class="image-container">
-            <a href="video2.html">
-                <img src="images/image2.jpg" alt="Unreal Image 2">
-            </a>
-        </div>
+        <div id="header"></div>
+        <div id="sidebar"></div>
+        <div id="menu"></div>
 
+        <main class="content">
+
+            <br>
+            <br>
+            
+            <div class="video-thumbnail">
+                <a href="video1.html" class="project-link" style="text-decoration: none;">
+                    <img src="images/image1.jpg" alt="UnReal 1">
+                    <div class="main-title">Everyone’s Aliens to Someone, 2024</div>
+                </a>
+            </div>
+
+            <div class="video-thumbnail">
+                <a href="video2.html" class="project-link" style="text-decoration: none;">
+                    <img src="images/image2.jpg" alt="UnReal 2">
+                    <div class="main-title">DDW Duo 24, 2024</div>
+                </a>
+            </div>
+
+        </main>
     </div>
 
+    <!-- 스크립트 -->
+    <script src="./assets/js/common.js"></script>
 </body>
+
 </html>
