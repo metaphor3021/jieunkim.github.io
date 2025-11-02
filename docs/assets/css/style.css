@@ -71,17 +71,24 @@ body.dark-mode {
 .dark-mode .header-logo,
 .dark-mode .header-logo a,
 .dark-mode .sidebar,
-.dark-mode .sidebar a,
-.dark-mode .sidebar a[disabled],
 .dark-mode .main-title,
 .dark-mode .menu,
-.dark-mode .menu a,
-.dark-mode .menu a[disabled],
 .dark-mode .menu-close {
     color: white;
     background-color: #1a1a1a;
 }
 
+.dark-mode .sidebar a,
+.dark-mode .sidebar a[disabled],
+.dark-mode .menu a,
+.dark-mode .menu a[disabled] {
+    color: rgb(150, 150, 150);
+}
+
+.dark-mode .sidebar a.active,
+.dark-mode .menu a.active {
+    color: white
+}
 
 /* =========================
    3. 메인 타이틀
@@ -201,11 +208,6 @@ body.dark-mode {
     font-weight: 300;
 }
 
-.menu a:hover {
-    text-decoration: underline;
-}
-
-
 /* 사이드바 (데스크탑) */
 .sidebar {
     position: fixed;
@@ -220,14 +222,14 @@ body.dark-mode {
 .sidebar a {
     padding: 6px 16px;
     text-decoration: none;
-    color: black;
+    color: rgb(150, 150, 150);
     display: block;
-    font-weight: 200;
+    font-weight: 300;
 }
 
 .sidebar a[disabled] {
     pointer-events: none;
-    color: black;
+    color: rgb(170, 170, 170);
 }
 
 .sidebar .real,
@@ -245,6 +247,7 @@ body.dark-mode {
     right: 16px;
     font-size: 24px;
     z-index: 1100;
+    cursor: pointer;
 }
 
 .menu-close {
@@ -292,10 +295,6 @@ body.dark-mode {
     box-shadow: -2px 0 5px rgba(0, 0, 0, 0.1);
 }
 
-.menu.active {
-    right: 0;
-}
-
 .menu a {
     text-decoration: none;
     color: black;
@@ -304,7 +303,7 @@ body.dark-mode {
 
 .menu a[disabled] {
     pointer-events: none;
-    color: black;
+    color: rgb(150, 150, 150);
 }
 
 .menu .real,
@@ -330,6 +329,11 @@ a {
 
 a:hover {
     text-decoration: underline;
+}
+
+a.active {
+    color: black;
+    font-weight: 600;
 }
 
 .video-thumbnail {
@@ -442,6 +446,7 @@ a:hover {
         text-align: left;
         display: flex;
         flex-direction: column;
+        
         font-size: 16px;
         font-weight: 100;
         box-shadow: -2px 0 5px rgba(0, 0, 0, 0.1);
@@ -454,8 +459,18 @@ a:hover {
     .menu a {
         padding: 6px 16px;
         text-decoration: none;
+        color: rgb(150, 150, 150);
         display: block;
         font-weight: 200;
+    }
+
+    .menu a.active {
+        color: black;
+        font-weight: 600;
+    }
+    
+    a:hover {
+        text-decoration: underline;
     }
 
     .menu .real,

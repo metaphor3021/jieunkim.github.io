@@ -1,9 +1,14 @@
 document.addEventListener('DOMContentLoaded', () => {
     includeHTML('#header', '../components/header.html');
-    includeHTML('#sidebar', '../components/sidebar.html');
+    includeHTML('#sidebar', '../components/sidebar.html')
+        .then(() => {
+            setActiveLink('.sidebar a[href]');
+        })
+        .catch(err => console.error('사이드바 include 실패:', err));
     includeHTML('#menu', '../components/menu.html') // 실제 메뉴 HTML 경로
         .then(() => {
             initMobileMenu(); // 삽입 완료 후 이벤트 연결
+            setActiveLink('.menu a[href]');
         })
         .catch(err => console.error('메뉴 include 실패:', err));
 });
@@ -49,4 +54,18 @@ function initMobileMenu() {
     menuButton.addEventListener('click', openMenu);
     menuClose.addEventListener('click', closeMenu);
     menuOverlay.addEventListener('click', closeMenu);
+}
+
+function setActiveLink(selector) {
+    const currentPage = window.location.pathname.split('/').pop(); // 현재 파일명
+    const links = document.querySelectorAll(selector);
+
+    links.forEach(link => {
+        const hrefPage = link.getAttribute('href')?.split('/').pop();
+        if (hrefPage === currentPage) {
+            link.classList.add('active');
+        } else {
+            link.classList.remove('active');
+        }
+    });
 }
