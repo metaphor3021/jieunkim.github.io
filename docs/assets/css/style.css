@@ -222,9 +222,17 @@ body.dark-mode {
 .sidebar a {
     padding: 6px 16px;
     text-decoration: none;
-    color: rgb(150, 150, 150);
+    color: rgba(0,0,0,0.70);  /* 너무 흐리지 않게 */
     display: block;
-    font-weight: 300;
+    font-weight: 300;        /* 굵기 통일 */
+    font-size: 15px;          /* 16보다 살짝 세련됨 (원하면 16 유지해도 됨) */
+}
+
+.sidebar a.active {
+    color: rgba(0,0,0,1);
+    font-weight: 300;  /* 굵기 유지 (위계 깨짐 방지) */
+    text-decoration: underline;
+    text-underline-offset: 4px;
 }
 
 .sidebar a[disabled] {
@@ -393,7 +401,7 @@ a.active {
 }
 
 /* =========================
-   6. 반응형
+   6. 반응형. 모바일 
    ========================= */
 @media (max-width: 768px) {
     .sidebar {
@@ -459,16 +467,17 @@ a.active {
     .menu a {
         padding: 6px 16px;
         text-decoration: none;
-        color: rgb(150, 150, 150);
+        color: rgba(0,0,0,0.70);
         display: block;
         font-weight: 200;
     }
 
-    .menu a.active {
-        color: black;
-        font-weight: 600;
-    }
-    
+  .menu a.active {
+    color: black;
+    font-weight: 300;
+    text-decoration: underline;
+    text-underline-offset: 4px;
+   }
     a:hover {
         text-decoration: underline;
     }
