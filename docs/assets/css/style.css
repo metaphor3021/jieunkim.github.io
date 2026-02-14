@@ -529,3 +529,111 @@ a.active {
 .semi-bold {
     font-weight: 400;
 }
+
+/* =========================
+   8. Desktop Landing Layout
+   ========================= */
+
+@media (min-width: 769px) {
+  /* 데스크탑: 사이드바 숨김 */
+  .sidebar { display: none !important; }
+
+  /* 데스크탑: header는 메뉴 역할만 */
+  .header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 64px;
+    padding: 12px 28px;
+    width: 100%;
+    background: white;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center; /* 메뉴를 가운데로 */
+    box-sizing: border-box;
+  }
+
+  .top-nav {
+    width: 100%;
+    max-width: 1100px;
+    display: flex;
+    justify-content: space-between; /* 왼쪽/오른쪽으로 퍼지는 스타일 */
+    align-items: center;
+  }
+
+  .top-nav a {
+    font-size: 12px;
+    font-weight: 400;
+    letter-spacing: 0.8px;
+    text-transform: uppercase;
+    color: rgba(0,0,0,0.55);
+    text-decoration: none;
+  }
+
+  .top-nav a.active {
+    color: rgba(0,0,0,1);
+  }
+
+  /* 데스크탑: 햄버거 숨김 */
+  .menu-button { display: none; }
+
+  /* content 시작 위치를 헤더 아래로 */
+  .content {
+    margin-top: 64px !important;
+    margin-left: 0 !important;
+    padding: 0 !important;
+  }
+
+  /* landing 전체 */
+  .landing {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 40px 28px 10px;
+    display: grid;
+    grid-template-columns: 1fr 1.4fr; /* 왼쪽 JI EUN / 오른쪽 이미지 */
+    gap: 40px;
+    align-items: center;
+    min-height: calc(100vh - 64px);
+    box-sizing: border-box;
+  }
+
+  .landing-wordmark {
+    font-size: 64px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-align: center;
+  }
+
+  .landing-figure {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .material-row {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    font-size: 10px;
+    letter-spacing: 0.5px;
+    color: rgba(0,0,0,0.55);
+    margin-bottom: 8px;
+  }
+
+  .landing-figure img {
+    width: 100%;
+    max-width: 520px; /* 오른쪽 이미지 크기 조절 */
+    height: auto;
+    display: block;
+  }
+
+  .landing-caption {
+    margin-top: 10px;
+    font-size: 12px;
+    letter-spacing: 0.4px;
+    color: rgba(0,0,0,0.75);
+    text-align: center;
+  }
+}
+
