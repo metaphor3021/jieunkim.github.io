@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => {
   includeHTML('#header', '../components/header.html')
     .then(() => {
-      setActiveLink('.top-nav a[href]');
+      setActiveLink('.header-nav a[href]');
     });
 
   includeHTML('#sidebar', '../components/sidebar.html')
