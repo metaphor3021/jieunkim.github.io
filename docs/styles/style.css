@@ -554,16 +554,11 @@ a:hover {
         top: 0;
         left: 0;
         width: 100%;
-        height: -webkit-fill-available;
-        height: 100dvh;
+        height: 100vh;
         background: white;
         display: flex;
         flex-direction: column;
         padding-left: 20px;
-        padding-left: max(20px, env(safe-area-inset-left));
-        padding-right: max(20px, env(safe-area-inset-right));
-        padding-bottom: env(safe-area-inset-bottom);
-        z-index: 9999;
 
         opacity: 0;
         visibility: hidden;

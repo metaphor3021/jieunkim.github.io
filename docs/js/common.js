@@ -1,13 +1,20 @@
 function initPageFade() {
     const layout = document.querySelector('.layout');
+    if (!layout) return;
+    
+    // 기존 클래스 제거 후 재설정
+    layout.classList.remove('fade-in');
+    
+    // 강제 리플로우 (reflow) 트리거
+    layout.offsetHeight;
     
     // 페이지 페이드 인 효과 - 초기에는 fade-in 클래스로 투명하게 시작
     layout.classList.add('fade-in');
     
-    // 약간의 지연 후 fade-in 클래스 제거하여 페이드 인
+    // 지연 후 fade-in 클래스 제거하여 페이드 인
     setTimeout(() => {
         layout.classList.remove('fade-in');
-    }, 50);
+    }, 100);
 }
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -40,10 +47,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
 // 뒤로가기/앞으로가기 시에도 페이드 인 효과 적용
 window.addEventListener('pageshow', (event) => {
-    // bfcache에서 로드된 경우에만 페이드 인 재적용
-    if (event.persisted) {
-        initPageFade();
-    }
+    // 뒤로가기/앞으로가기 시 페이드 인 재실행
+    initPageFade();
+});
+
+// 추가 보장: load 이벤트에서도 페이드 인 실행
+window.addEventListener('load', () => {
+    initPageFade();
 });
 
 function openNewTab(event, url) {
@@ -83,6 +93,9 @@ function initMobileMenu() {
 
     toggleBtn.addEventListener('click', () => {
         const isActive = menu.classList.toggle('active');
+
+        // 스크롤 잠금
+        document.body.style.overflow = isActive ? "hidden" : "";
 
         toggleBtn.textContent = isActive ? "✕" : "☰";
     });
