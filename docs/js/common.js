@@ -1,60 +1,106 @@
-function initPageFade() {
-    const layout = document.querySelector('.layout');
-    if (!layout) return;
-    
-    // 기존 클래스 제거 후 재설정
-    layout.classList.remove('fade-in');
-    
-    // 강제 리플로우 (reflow) 트리거
-    layout.offsetHeight;
-    
-    // 페이지 페이드 인 효과 - 초기에는 fade-in 클래스로 투명하게 시작
-    layout.classList.add('fade-in');
-    
-    // 지연 후 fade-in 클래스 제거하여 페이드 인
-    setTimeout(() => {
-        layout.classList.remove('fade-in');
-    }, 100);
-}
-
 document.addEventListener('DOMContentLoaded', () => {
-    initPageFade();
-    
+
+initScrollFade();
+
     includeHTML('#header', '/views/components/header.html')
         .then(() => {
             setActiveLink('.header-nav a[href]');
-            setupPageTransition();
+            initHeaderAutoHide();
         })
         .catch(err => console.error('헤더 include 실패:', err));
+
     includeHTML('#menu', '/views/components/menu.html')
         .then(() => {
-            initMobileMenu(); // 삽입 완료 후 이벤트 연결
+            initMobileMenu();
             setActiveLink('.menu a[href]');
-            setupPageTransition();
         })
         .catch(err => console.error('메뉴 include 실패:', err));
+
     
+
     // 우클릭 비활성화
     document.addEventListener('contextmenu', (e) => {
         e.preventDefault();
     });
-    
+
     // 드래그 비활성화
     document.addEventListener('dragstart', (e) => {
         e.preventDefault();
     });
+
 });
 
-// 뒤로가기/앞으로가기 시에도 페이드 인 효과 적용
-window.addEventListener('pageshow', (event) => {
-    // 뒤로가기/앞으로가기 시 페이드 인 재실행
-    initPageFade();
-});
 
-// 추가 보장: load 이벤트에서도 페이드 인 실행
-window.addEventListener('load', () => {
-    initPageFade();
-});
+function initPageTransition() {
+
+    const layout = document.querySelector('.layout');
+    if (!layout) return;
+
+    /* -------------------
+       초기 상태 숨김
+    ------------------- */
+
+    layout.classList.add("fade-in");
+
+
+
+    /* -------------------
+       링크 클릭 전환
+    ------------------- */
+
+    document.addEventListener("click", (e) => {
+
+        const link = e.target.closest("a");
+        if (!link) return;
+
+        const href = link.getAttribute("href");
+
+        if (!href) return;
+        if (href.startsWith("#")) return;
+        if (href.startsWith("http")) return;
+        if (href.startsWith("mailto")) return;
+        if (href.startsWith("tel")) return;
+        if (link.target === "_blank") return;
+
+        e.preventDefault();
+
+
+        /* 메뉴 닫기 */
+
+        const menu = document.querySelector('.menu-overlay');
+
+        if (menu && menu.classList.contains('active')) {
+            menu.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+
+
+        /* 페이드 아웃 */
+
+        layout.classList.add("fade-out");
+
+        setTimeout(() => {
+            window.location.href = href;
+        }, 500);
+
+    });
+
+
+    /* -------------------
+       뒤로가기 캐시 해결
+    ------------------- */
+
+    window.addEventListener("pageshow", (event) => {
+
+        if (event.persisted) {
+            layout.classList.remove("fade-out");
+            layout.classList.remove("fade-in");
+        }
+
+    });
+
+}
+
 
 function openNewTab(event, url) {
     window.open(url, '_blank'); // 새 탭에서 열기
@@ -119,36 +165,47 @@ function setActiveLink(selector) {
     });
 }
 
-function setupPageTransition() {
-    const internalLinks = document.querySelectorAll('a[href^="/"], a[href*=".html"]');
-    
-    internalLinks.forEach(link => {
-        // 새 탭 열기 링크는 제외
-        if (link.onclick && link.onclick.toString().includes('openNewTab')) {
-            return;
-        }
-        
-        link.addEventListener('click', (e) => {
-            const href = link.getAttribute('href');
-            
-            // 현재 페이지와의 이동이 아닐 때만 처리
-            if (href && !href.includes('#')) {
-                e.preventDefault();
-                
-                // 메뉴가 열려있으면 닫기
-                const menu = document.querySelector('.menu-overlay');
-                if (menu && menu.classList.contains('active')) {
-                    menu.classList.remove('active');
-                    document.body.style.overflow = 'auto';
-                }
-                
-                // 페이드 아웃 후 페이지 이동
-                document.querySelector('.layout').classList.add('fade-out');
-                setTimeout(() => {
-                    window.location.href = href;
-                }, 500);
+function initScrollFade() {
+
+    const elements = document.querySelectorAll(".scroll-fade");
+
+    const observer = new IntersectionObserver((entries) => {
+
+        entries.forEach(entry => {
+
+            if (entry.isIntersecting) {
+
+                entry.target.classList.add("visible");
+                observer.unobserve(entry.target);
+
             }
+
         });
+
+    }, {
+        threshold: 0.15
     });
+
+    elements.forEach(el => observer.observe(el));
 }
 
+function initHeaderAutoHide() {
+    const header = document.querySelector(".header");
+    if (!header) return;
+
+    let lastScroll = window.pageYOffset;
+
+    window.addEventListener("scroll", () => {
+
+        const currentScroll = window.pageYOffset;
+
+        if (currentScroll > lastScroll && currentScroll > 80) {
+            header.classList.add("hide");
+        } else {
+            header.classList.remove("hide");
+        }
+
+        lastScroll = currentScroll;
+
+    });
+}
