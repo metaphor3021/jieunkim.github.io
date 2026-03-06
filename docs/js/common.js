@@ -1,11 +1,17 @@
-document.addEventListener('DOMContentLoaded', () => {
+function initPageFade() {
+    const layout = document.querySelector('.layout');
+    
     // 페이지 페이드 인 효과 - 초기에는 fade-in 클래스로 투명하게 시작
-    document.querySelector('.layout').classList.add('fade-in');
+    layout.classList.add('fade-in');
     
     // 약간의 지연 후 fade-in 클래스 제거하여 페이드 인
     setTimeout(() => {
-        document.querySelector('.layout').classList.remove('fade-in');
+        layout.classList.remove('fade-in');
     }, 50);
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+    initPageFade();
     
     includeHTML('#header', '/views/components/header.html')
         .then(() => {
@@ -30,6 +36,14 @@ document.addEventListener('DOMContentLoaded', () => {
     document.addEventListener('dragstart', (e) => {
         e.preventDefault();
     });
+});
+
+// 뒤로가기/앞으로가기 시에도 페이드 인 효과 적용
+window.addEventListener('pageshow', (event) => {
+    // bfcache에서 로드된 경우에만 페이드 인 재적용
+    if (event.persisted) {
+        initPageFade();
+    }
 });
 
 function openNewTab(event, url) {
@@ -61,8 +75,7 @@ function initMobileMenu() {
 
     function setMenuPosition() {
         const headerHeight = header.offsetHeight;
-        menu.style.top = headerHeight + "px";
-        menu.style.height = `calc(100vh - ${headerHeight}px)`;
+        menu.style.paddingTop = headerHeight + 20 + "px"; // 헤더 높이 + 여백
     }
 
     window.addEventListener("load", setMenuPosition);
