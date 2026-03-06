@@ -58,13 +58,6 @@ function initPageFadeOutOnly() {
 
         e.preventDefault();
 
-        // 메뉴 열려있으면 닫기
-        // const menu = document.querySelector('.menu-overlay');
-        // if (menu && menu.classList.contains('active')) {
-        //     menu.classList.remove('active');
-        //     document.body.style.overflow = '';
-        // }
-
         // 페이드 아웃
         layout.classList.add("fade-out");
 

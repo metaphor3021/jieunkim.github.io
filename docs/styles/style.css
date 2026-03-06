@@ -477,11 +477,13 @@ a:hover {
 .about {
     padding: 240px 20px;
     max-width: 460px;
-
-    font-weight: 400;
-    font-size: 14px;
     
     text-align: left;
+}
+
+.about-text {
+    font-size: 14px;
+    font-weight: 400;
     line-height: 35px;
 }
 
@@ -707,10 +709,7 @@ a:hover {
         padding: 224px 40px;
     }
 
-    .about-text {
-        font-size: 14px;
-        line-height: 35px;
-    }
+    
 
     .cv {
     padding: 64px 20px;
