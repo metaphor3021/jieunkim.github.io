@@ -70,10 +70,6 @@ html {
     pointer-events: none;
 }
 
-.layout.fade-in {
-    opacity: 0;
-}
-
 .layout.loaded {
     opacity: 1;
 }
@@ -708,8 +704,11 @@ a:hover {
     }
 
     .about {
-        font-size: 14px;
         padding: 224px 40px;
+    }
+
+    .about-text {
+        font-size: 14px;
         line-height: 35px;
     }
 

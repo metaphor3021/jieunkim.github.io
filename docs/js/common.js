@@ -1,22 +1,20 @@
 document.addEventListener('DOMContentLoaded', () => {
 
-initScrollFade();
+    initPageFadeOutOnly();
+    initScrollFade();
 
     includeHTML('#header', '/views/components/header.html')
         .then(() => {
             setActiveLink('.header-nav a[href]');
             initHeaderAutoHide();
+            includeHTML('#menu', '/views/components/menu.html')
+                .then(() => {
+                    initMobileMenu();
+                    setActiveLink('.menu a[href]');
+                })
+                .catch(err => console.error('메뉴 include 실패:', err));
         })
         .catch(err => console.error('헤더 include 실패:', err));
-
-    includeHTML('#menu', '/views/components/menu.html')
-        .then(() => {
-            initMobileMenu();
-            setActiveLink('.menu a[href]');
-        })
-        .catch(err => console.error('메뉴 include 실패:', err));
-
-    
 
     // 우클릭 비활성화
     document.addEventListener('contextmenu', (e) => {
@@ -31,23 +29,12 @@ initScrollFade();
 });
 
 
-function initPageTransition() {
+function initPageFadeOutOnly() {
 
     const layout = document.querySelector('.layout');
     if (!layout) return;
 
-    /* -------------------
-       초기 상태 숨김
-    ------------------- */
-
-    layout.classList.add("fade-in");
-
-
-
-    /* -------------------
-       링크 클릭 전환
-    ------------------- */
-
+    // 링크 클릭 감지
     document.addEventListener("click", (e) => {
 
         const link = e.target.closest("a");
@@ -55,6 +42,7 @@ function initPageTransition() {
 
         const href = link.getAttribute("href");
 
+        // 예외 처리
         if (!href) return;
         if (href.startsWith("#")) return;
         if (href.startsWith("http")) return;
@@ -64,41 +52,21 @@ function initPageTransition() {
 
         e.preventDefault();
 
+        // 메뉴 열려있으면 닫기
+        // const menu = document.querySelector('.menu-overlay');
+        // if (menu && menu.classList.contains('active')) {
+        //     menu.classList.remove('active');
+        //     document.body.style.overflow = '';
+        // }
 
-        /* 메뉴 닫기 */
-
-        const menu = document.querySelector('.menu-overlay');
-
-        if (menu && menu.classList.contains('active')) {
-            menu.classList.remove('active');
-            document.body.style.overflow = '';
-        }
-
-
-        /* 페이드 아웃 */
-
+        // 페이드 아웃
         layout.classList.add("fade-out");
 
+        // 페이지 이동
         setTimeout(() => {
             window.location.href = href;
-        }, 500);
-
+        }, 450); // CSS transition duration과 동일하게 설정
     });
-
-
-    /* -------------------
-       뒤로가기 캐시 해결
-    ------------------- */
-
-    window.addEventListener("pageshow", (event) => {
-
-        if (event.persisted) {
-            layout.classList.remove("fade-out");
-            layout.classList.remove("fade-in");
-        }
-
-    });
-
 }
 
 
@@ -172,21 +140,53 @@ function initScrollFade() {
     const observer = new IntersectionObserver((entries) => {
 
         entries.forEach(entry => {
-
             if (entry.isIntersecting) {
-
                 entry.target.classList.add("visible");
                 observer.unobserve(entry.target);
-
             }
-
         });
 
     }, {
         threshold: 0.15
     });
 
-    elements.forEach(el => observer.observe(el));
+    elements.forEach(el => {
+
+        const imgs = el.querySelectorAll("img");
+
+        if (imgs.length === 0) {
+            // 이미지가 없으면 바로 observer 등록
+            observer.observe(el);
+        } else {
+            // 이미지가 있으면 로딩 후 observer 등록
+            let loadedCount = 0;
+
+            imgs.forEach(img => {
+                if (img.complete) {
+                    loadedCount++;
+                } else {
+                    img.addEventListener("load", () => {
+                        loadedCount++;
+                        if (loadedCount === imgs.length) {
+                            observer.observe(el);
+                        }
+                    });
+                    img.addEventListener("error", () => {
+                        loadedCount++;
+                        if (loadedCount === imgs.length) {
+                            observer.observe(el);
+                        }
+                    });
+                }
+            });
+
+            // 모든 이미지가 이미 로딩 완료된 경우
+            if (loadedCount === imgs.length) {
+                observer.observe(el);
+            }
+        }
+
+    });
 }
 
 function initHeaderAutoHide() {
