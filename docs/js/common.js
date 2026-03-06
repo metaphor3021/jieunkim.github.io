@@ -1,16 +1,35 @@
 document.addEventListener('DOMContentLoaded', () => {
-    includeHTML('#header', '/views/components/header.html');
-    includeHTML('#sidebar', '/views/components/sidebar.html')
+    // 페이지 페이드 인 효과 - 초기에는 fade-in 클래스로 투명하게 시작
+    document.querySelector('.layout').classList.add('fade-in');
+    
+    // 약간의 지연 후 fade-in 클래스 제거하여 페이드 인
+    setTimeout(() => {
+        document.querySelector('.layout').classList.remove('fade-in');
+    }, 50);
+    
+    includeHTML('#header', '/views/components/header.html')
         .then(() => {
-            setActiveLink('.sidebar a[href]');
+            setActiveLink('.header-nav a[href]');
+            setupPageTransition();
         })
-        .catch(err => console.error('사이드바 include 실패:', err));
+        .catch(err => console.error('헤더 include 실패:', err));
     includeHTML('#menu', '/views/components/menu.html')
         .then(() => {
             initMobileMenu(); // 삽입 완료 후 이벤트 연결
             setActiveLink('.menu a[href]');
+            setupPageTransition();
         })
         .catch(err => console.error('메뉴 include 실패:', err));
+    
+    // 우클릭 비활성화
+    document.addEventListener('contextmenu', (e) => {
+        e.preventDefault();
+    });
+    
+    // 드래그 비활성화
+    document.addEventListener('dragstart', (e) => {
+        e.preventDefault();
+    });
 });
 
 function openNewTab(event, url) {
@@ -62,11 +81,48 @@ function setActiveLink(selector) {
 
     links.forEach(link => {
         const hrefPage = link.getAttribute('href')?.split('/').pop();
-        if (hrefPage === currentPage) {
+        let isActive = hrefPage === currentPage;
+        if (currentPage.startsWith('project') && hrefPage === 'works.html') {
+            isActive = true;
+        }
+        if (isActive) {
             link.classList.add('active');
         } else {
             link.classList.remove('active');
         }
+    });
+}
+
+function setupPageTransition() {
+    const internalLinks = document.querySelectorAll('a[href^="/"], a[href*=".html"]');
+    
+    internalLinks.forEach(link => {
+        // 새 탭 열기 링크는 제외
+        if (link.onclick && link.onclick.toString().includes('openNewTab')) {
+            return;
+        }
+        
+        link.addEventListener('click', (e) => {
+            const href = link.getAttribute('href');
+            
+            // 현재 페이지와의 이동이 아닐 때만 처리
+            if (href && !href.includes('#')) {
+                e.preventDefault();
+                
+                // 메뉴가 열려있으면 닫기
+                const menu = document.querySelector('.menu-overlay');
+                if (menu && menu.classList.contains('active')) {
+                    menu.classList.remove('active');
+                    document.body.style.overflow = 'auto';
+                }
+                
+                // 페이드 아웃 후 페이지 이동
+                document.querySelector('.layout').classList.add('fade-out');
+                setTimeout(() => {
+                    window.location.href = href;
+                }, 500);
+            }
+        });
     });
 }
 

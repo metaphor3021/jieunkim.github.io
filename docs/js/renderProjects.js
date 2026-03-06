@@ -6,23 +6,33 @@ document.addEventListener('DOMContentLoaded', () => {
         const html = `
         <div class="main-container">
             <a href="/views/projects/${work.link}" class="main-link" style="text-decoration: none;">
-                <img src="/assets/images/${work.thumbnail}" alt="${work.title}">
+                <img src="/assets/images/${work.mainThumbnail}" alt="${work.title}">
                 <div class="main-descript">${work.title}, ${work.material}, ${work.year}</div>
             </a>
         </div>
         `;
         wrapper.innerHTML += html;
     });
+    
+    // "View all works" 링크를 최 하단에 추가
+    const viewAllLink = `
+        <div class="main-container">
+            <a href="/views/works.html" class="main-link">
+                <div class="main-descript">View all works →</div>
+            </a>
+        </div>
+    `;
+    wrapper.innerHTML += viewAllLink;
 });
 
 
 document.addEventListener('DOMContentLoaded', () => {
     const wrapper = document.getElementById('works-wrapper');
     const filteredWorks = works.filter(work => work.show);
-    filteredWorks.sort((a, b) => b.id - a.id);
+    filteredWorks.sort((a, b) => a.id - b.id);
     filteredWorks.forEach(work => {
         const html = `
-        <div class="work-container">
+        <div class="work-container" style="--aspect-ratio: ${work.aspectRatio};">
             <a href="/views/projects/${work.link}" style="text-decoration: none;">
                 <img src="/assets/images/${work.thumbnail}" alt="${work.title}">
                 <div class="project-title">${work.title}</div>
