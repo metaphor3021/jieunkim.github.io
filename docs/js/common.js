@@ -28,6 +28,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
 });
 
+window.addEventListener("pageshow", function(event) {
+    if (event.persisted) {
+        document.querySelector('.layout').classList.remove("fade-out");
+    }
+});
+
 
 function initPageFadeOutOnly() {
 
