@@ -16,9 +16,7 @@ document.addEventListener('DOMContentLoaded', () => {
             
             <div class="thumbnail">
                 <img src="/assets/images/${work.mainThumbnail}" alt="${work.title}">
-                <div class="overlay">${work.title}
-                    <br>
-                    <br>
+                <div class="overlay">${work.title}<br>
                     <a href="/views/works/${work.link}">
                     ➜ VIEW WORK
                     </a>
