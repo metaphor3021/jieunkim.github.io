@@ -2,6 +2,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const wrapper = document.getElementById('main-wrapper');
     const filteredWorks = works.filter(work => work.showOnMain);
     filteredWorks.sort((a, b) => a.orderOnMain - b.orderOnMain);
+    
 
     // build slider structure
     wrapper.innerHTML = '';
@@ -18,7 +19,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 <div class="overlay">${work.title}
                     <br>
                     <br>
-                    <a href="/views/works/${work.link}" style="font-size:14px; font-weight:500;">
+                    <a href="/views/works/${work.link}">
                     ➜ VIEW WORK
                     </a>
                 </div>
@@ -28,6 +29,7 @@ document.addEventListener('DOMContentLoaded', () => {
         `;
         slider.appendChild(slide);
     });
+    
 
     wrapper.appendChild(slider);
 

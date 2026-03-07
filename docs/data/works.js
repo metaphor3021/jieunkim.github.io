@@ -18,7 +18,7 @@ const works =[
         id: 2,
         show: true,
         title: "INK-DYED PAPER TABLE",
-        material: "Newspaper dyed with ink, finished with oil & varnish",
+        material: "ink-dyed newspaper, oil, varnish",
         year: "2025",
         link: "inkDyedPaperTable.html",
 
@@ -33,7 +33,7 @@ const works =[
         id: 3,
         show: true,
         title: "SABANGTAKJA IN PAPER",
-        material: "Egg carton, natural glue, linen, Korean lacquer",
+        material: "egg carton, natural glue, linen, Korean lacquer",
         year: "2025",
         link: "sabangTakja.html",
 
@@ -48,7 +48,7 @@ const works =[
         id: 4,
         show: true,
         title: "Merged Grain",
-        material: "Egg carton, newspaper dyed with ink, acrylic, light bulb",
+        material: "egg carton, ink-dyed newspaper, acrylic, light",
         year: "2025",
         link: "mergedGrain.html",
 
@@ -63,7 +63,7 @@ const works =[
         id: 5,
         show: true,
         title: "HELD SHAPE",
-        material: "Egg carton, eggshell, natural glue, outer base finished with Korean lacquer",
+        material: "egg carton, eggshell, natural glue, Korean lacquer",
         year: "2025",
         link: "heldShape.html",
 
@@ -79,7 +79,7 @@ const works =[
         id: 6,
         show: true,
         title: "AFTER CLAY",
-        material: "Materials of Project 15",
+        material: "newspaper, hanji, bio-based composite",
         year: "2026",
         link: "afterClay.html",
 
@@ -94,7 +94,7 @@ const works =[
         id: 7,
         show: true,
         title: "TREASURE SERIES",
-        material: "egg carton, natural glue",
+        material: "egg carton, newspaper, natural glue, Korean lacquer",
         year: "2024",
         link: "treasureSeries.html",
 

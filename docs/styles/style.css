@@ -238,7 +238,7 @@ body.dark-mode {
 
 .image-container {
     max-width: 1280px;
-    margin: 0 auto 30px;
+    margin: 0 auto 60px;
 }
 
 .image-container img {
@@ -272,6 +272,11 @@ body.dark-mode {
     padding-bottom: 6px;
     text-align: left;
     text-transform: uppercase;
+}
+
+.project-title .small-text {
+    font-size: 12px;
+    font-weight: 500;
 }
 
 .project-details {
@@ -394,7 +399,7 @@ body.home .layout {
     /* background: rgba(0, 0, 0, 0.5); */
     color: #000;
     padding: 10px;
-    font-size: 16px;
+    font-size: 20px;
     font-weight: 300;
     text-align: left;
     box-sizing: border-box;
