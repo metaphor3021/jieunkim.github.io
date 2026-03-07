@@ -115,13 +115,15 @@ function initMobileMenu() {
 }
 
 function setActiveLink(selector) {
-    const currentPage = window.location.pathname.split('/').pop(); // 현재 파일명
+    const path = window.location.pathname;
+    const currentPage = path.split('/').pop(); // 현재 파일명
     const links = document.querySelectorAll(selector);
 
     links.forEach(link => {
         const hrefPage = link.getAttribute('href')?.split('/').pop();
         let isActive = hrefPage === currentPage;
-        if (currentPage.startsWith('project') && hrefPage === 'works.html') {
+
+        if (path.includes('/works/') && hrefPage === 'works.html') {
             isActive = true;
         }
         if (isActive) {

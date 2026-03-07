@@ -271,6 +271,7 @@ body.dark-mode {
     font-weight: 500;
     padding-bottom: 6px;
     text-align: left;
+    text-transform: uppercase;
 }
 
 .project-details {
@@ -324,14 +325,22 @@ body.dark-mode {
 /* wrapper holds slider, fills viewport height minus fixed header */
 #main-wrapper {
     width: 100%;
-    height: calc(100vh - 60px); /* header is 60px tall */
+    height: 100vh;
     overflow: hidden;
     position: relative;
 }
 
 /* make sure the content margin doesn't introduce scroll on the home slider */
 body.home .content {
-    margin: 60px 0 0; /* remove bottom margin */
+    margin: 0 0 0;
+}
+
+body.home .header {
+    background: transparent;
+}
+
+body.home .layout {
+    max-width: 100%;
 }
 
 /* =========================
@@ -385,9 +394,23 @@ body.home .content {
     /* background: rgba(0, 0, 0, 0.5); */
     color: #000;
     padding: 10px;
-    font-size: 14px;
+    font-size: 16px;
+    font-weight: 300;
     text-align: left;
     box-sizing: border-box;
+    z-index: 10;
+}
+
+.project-slide .overlay a {
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: .1rem;
+    transition: color 0.4s ease;
+}
+
+.project-slide .overlay a:hover {
+    color: #999999;
+    text-decoration: none;
 }
 
 /* progress/navigation bars */
@@ -396,14 +419,15 @@ body.home .content {
     bottom: 20px;
     right: 20px;
     display: flex;
-    gap: 6px;
+    gap: 10px;
     z-index: 2;
+    cursor: pointer;
 }
 
 .progress-bar {
-    width: 40px;
-    height: 4px;
-    background: rgba(255, 255, 255, 0.3);
+    width: 80px;
+    height: 2px;
+    background: rgba(49, 40, 40, 0.3);
     overflow: hidden;
 }
 
@@ -463,6 +487,33 @@ body.home .content {
 .project-slider::-webkit-scrollbar {
     display: none; /* Chrome, Safari, Opera*/
 }
+
+.slide-nav-layer{
+    position:absolute;
+    inset:0;
+    display:flex;
+    padding-bottom: 120px;
+    z-index:5;
+    pointer-events:none; /* 중요 */
+}
+
+.slide-prev,
+.slide-next{
+    flex:1;
+    pointer-events:auto; /* 여기만 클릭 가능 */
+}
+
+.slide-prev{
+    cursor:url("/assets/cursor/cursor-prev.svg") 16 16, w-resize;
+}
+
+.slide-next{
+    cursor:url("/assets/cursor/cursor-next.svg") 16 16, e-resize;
+}
+
+
+
+
 
 .main-container img {
     width: 100%;
@@ -759,7 +810,7 @@ a:hover {
     }
 
     .header-inner {
-        height: 64px;
+        height: 44px;
     }
 
     .header-logo a {
@@ -771,10 +822,8 @@ a:hover {
     }
 
     .content {
-        margin-top: 0px;
+        margin-top: 44px;
         display: block;
-        margin-left: 0;
-        padding: 64px 20px;
     }
 
     .text-container {
@@ -807,6 +856,8 @@ a:hover {
         opacity: 0;
         visibility: hidden;
         transition: 0.5s ease-in-out;
+
+        z-index: 100;
     }
 
     .menu-overlay.active {
@@ -848,7 +899,7 @@ a:hover {
         display:contents;
         position: fixed;
         right: 12px;
-        z-index: 10000;
+        z-index: 1000;
 
         font-size: 24px;
         background: none;
@@ -887,7 +938,7 @@ a:hover {
     /* 모바일에서는 works를 1열로 유지 */
     #works-wrapper {
         display: block;
-        margin: 0 0;
+        margin: 0 20;
     }
 
     .work-container {

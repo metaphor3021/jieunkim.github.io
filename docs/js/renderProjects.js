@@ -12,27 +12,40 @@ document.addEventListener('DOMContentLoaded', () => {
         const slide = document.createElement('div');
         slide.className = 'project-slide';
         slide.innerHTML = `
-            <a href="/views/projects/${work.link}" class="slide-link" style="text-decoration:none; display:block; width:100%; height:100%;">
-                <div class="thumbnail">
-                    <img src="/assets/images/${work.mainThumbnail}" alt="${work.title}">
-                    <div class="overlay">${work.title}, ${work.material}, ${work.year}</div>
+            
+            <div class="thumbnail">
+                <img src="/assets/images/${work.mainThumbnail}" alt="${work.title}">
+                <div class="overlay">${work.title}
+                    <br>
+                    <br>
+                    <a href="/views/works/${work.link}" style="font-size:14px; font-weight:500;">
+                    ➜ VIEW WORK
+                    </a>
                 </div>
-            </a>
+                
+            </div>
+            
         `;
         slider.appendChild(slide);
     });
 
-    // // view all slide
-    // const viewSlide = document.createElement('div');
-    // viewSlide.className = 'project-slide';
-    // viewSlide.innerHTML = `
-    //     <a href="/views/works.html" class="slide-link" style="text-decoration:none; display:flex; justify-content:center; align-items:center; width:100%; height:100%;">
-    //         <div class="overlay" style="background:transparent;color:#fff;">View all works →</div>
-    //     </a>
-    // `;
-    // slider.appendChild(viewSlide);
-
     wrapper.appendChild(slider);
+
+    // 네비게이션 레이어
+    const navLayer = document.createElement('div');
+    navLayer.className = 'slide-nav-layer';
+
+    navLayer.innerHTML = `
+        <div class="slide-prev"></div>
+        <div class="slide-next"></div>
+    `;
+
+    wrapper.appendChild(navLayer);
+
+    // click events
+    navLayer.querySelector('.slide-prev').addEventListener('click', goToPrev);
+    navLayer.querySelector('.slide-next').addEventListener('click', goToNext);
+
 
     // progress navigation
     const progressNav = document.createElement('div');
@@ -42,11 +55,19 @@ document.addEventListener('DOMContentLoaded', () => {
     for (let i = 0; i < slideCount; i++) {
         const bar = document.createElement('div');
         bar.className = 'progress-bar';
+
         const fill = document.createElement('div');
         fill.className = 'progress-fill';
+
         bar.appendChild(fill);
         progressNav.appendChild(bar);
         fills.push(fill);
+
+        // click navigation
+        bar.addEventListener('click', () => {
+            currentIndex = i;
+            startTimer();
+        });
     }
     wrapper.appendChild(progressNav);
 
@@ -58,12 +79,20 @@ document.addEventListener('DOMContentLoaded', () => {
         Array.from(slider.children).forEach((s, idx) => {
             s.classList.toggle('active', idx === currentIndex);
         });
-        fills.forEach(f => (f.style.width = '0'));
-        // trigger fill on current bar
-        setTimeout(() => {
-            fills[currentIndex].style.transition = `width ${intervalDelay}ms linear`;
-            fills[currentIndex].style.width = '100%';
-        }, 50);
+
+        // progress reset instantly
+        fills.forEach(f => {
+            f.style.transition = 'none';
+            f.style.width = '0';
+        });
+
+        // force reflow so browser applies reset immediately
+        void wrapper.offsetWidth;
+
+        // start current progress animation
+        const currentFill = fills[currentIndex];
+        currentFill.style.transition = `width ${intervalDelay}ms linear`;
+        currentFill.style.width = '100%';
     }
 
     const intervalDelay = 5000;
@@ -110,7 +139,7 @@ document.addEventListener('DOMContentLoaded', () => {
     filteredWorks.forEach(work => {
         const html = `
         <div class="work-container scroll-fade" style="--aspect-ratio: ${work.aspectRatio};">
-            <a href="/views/projects/${work.link}" style="text-decoration: none;">
+            <a href="/views/works/${work.link}" style="text-decoration: none;">
                 <div class="thumbnail">
                     <img src="/assets/images/${work.thumbnail}" alt="${work.title}">
                 </div>
@@ -124,3 +153,16 @@ document.addEventListener('DOMContentLoaded', () => {
 
     initScrollFade();
 })
+
+
+
+
+    // // view all slide
+    // const viewSlide = document.createElement('div');
+    // viewSlide.className = 'project-slide';
+    // viewSlide.innerHTML = `
+    //     <a href="/views/works.html" class="slide-link" style="text-decoration:none; display:flex; justify-content:center; align-items:center; width:100%; height:100%;">
+    //         <div class="overlay" style="background:transparent;color:#fff;">View all works →</div>
+    //     </a>
+    // `;
+    // slider.appendChild(viewSlide);
