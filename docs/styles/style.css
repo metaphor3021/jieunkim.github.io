@@ -142,7 +142,7 @@ body.dark-mode {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    height: 180px;
+    height: 60px;
     padding: 8px 20px;
     box-sizing: border-box;
 }
@@ -152,7 +152,7 @@ body.dark-mode {
 }
 
 .header-logo a {
-    font-size: 36px;
+    font-size: 24px;
     font-weight: 400;
     letter-spacing: 0.2em;
 
@@ -213,7 +213,7 @@ body.dark-mode {
 
 /* 본문 */
 .content {
-    margin: 180px 0 80px;
+    margin: 60px 0 80px;
     width: 100%;
 
     display: flex;
