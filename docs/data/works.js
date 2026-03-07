@@ -3,7 +3,7 @@ const works =[
         id: 1,
         show: true,
         title: "PAPER LAMP III",
-        material: "metal wire, newspaper, Ottchil(Korean lacquer)",
+        material: "metal wire, newspaper, Korean lacquer",
         year: "2024",
         link: "project8.html",
 
@@ -17,7 +17,7 @@ const works =[
     {
         id: 2,
         show: true,
-        title: "먹을 품은 종이 탁상 / INK-DYED PAPER TABLE",
+        title: "INK-DYED PAPER TABLE",
         material: "Newspaper dyed with ink, finished with oil & varnish",
         year: "2025",
         link: "project12.html",
@@ -33,7 +33,7 @@ const works =[
         id: 3,
         show: true,
         title: "SABANGTAKJA IN PAPER",
-        material: "Egg carton, natural glue, linen, ottchil(Korean lacquer)",
+        material: "Egg carton, natural glue, linen, Korean lacquer",
         year: "2025",
         link: "project11.html",
 
@@ -63,7 +63,7 @@ const works =[
         id: 5,
         show: true,
         title: "HELD SHAPE",
-        material: "Egg carton, eggshell, natural glue, outer base finished with Ottchil (Korean lacquer)",
+        material: "Egg carton, eggshell, natural glue, outer base finished with Korean lacquer",
         year: "2025",
         link: "project13.html",
 
@@ -110,7 +110,7 @@ const works =[
         id: 8,
         show: true,
         title: "NATURE TO NATURE",
-        material: "egg carton, ottchil(Korean lacquer)",
+        material: "egg carton, Korean lacquer",
         year: "2024",
         link: "project5.html",
 
