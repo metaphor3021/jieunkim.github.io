@@ -1,18 +1,18 @@
 const works =[
     {
-        id: 1,
-        show: true,
-        title: "PAPER LAMP III",
-        material: "metal wire, newspaper, Korean lacquer",
+        id: 1,  // Work 페이지에서 보이는 순서 (낮을수록 먼저 보임)
+        show: true, // Work 페이지에서 보이는 여부
+        title: "PAPER LAMP III", // 작품 제목
+        material: "metal wire, newspaper, Korean lacquer", // 작품 재료
         year: "2024",
-        link: "project8.html",
+        link: "project8.html", // 작품 상세 페이지 링크
 
-        thumbnail: "project8_2.jpg",
-        aspectRatio: "1/1",
+        thumbnail: "project8_2.jpg", // Work 페이지에서 보이는 썸네일 이미지 파일명
+        aspectRatio: "1/1", // Work 썸네일 이미지의 가로세로 비율 (예: 1/1, 3/4, 16/9 등)
 
-        showOnMain: true,
-        orderOnMain: 1,
-        mainThumbnail: "project8_2.jpg",
+        showOnMain: true, // 메인 페이지에서 보이는 여부
+        orderOnMain: 1, // 메인 페이지에서 보이는 순서 (낮을수록 먼저 보임)
+        mainThumbnail: "project8_2.jpg", // 메인 페이지 썸네일 이미지 파일명
     },
     {
         id: 2,

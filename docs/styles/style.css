@@ -649,7 +649,7 @@ a:hover {
         display: flex;
         flex-direction: column;
         padding-left: 20px;
-        padding-top: 84px;
+        padding-top: 124px;
         gap: 36px;
         flex: 1;
         justify-content: flex-start;
@@ -657,7 +657,7 @@ a:hover {
 
     .menu a {
         color: #999999;
-        font-size: 22px;
+        font-size: 16px;
         font-weight: 400;
         text-decoration: none;
         text-align: left;
