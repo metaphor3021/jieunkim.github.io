@@ -5,14 +5,14 @@ const works =[
         title: "PAPER LAMP III", // 작품 제목
         material: "metal wire, newspaper, Korean lacquer", // 작품 재료
         year: "2024",
-        link: "project8.html", // 작품 상세 페이지 링크
+        link: "paperLamp3.html", // 작품 상세 페이지 링크
 
-        thumbnail: "project8_2.jpg", // Work 페이지에서 보이는 썸네일 이미지 파일명
+        thumbnail: "paperLamp3_main.jpg", // Work 페이지에서 보이는 썸네일 이미지 파일명
         aspectRatio: "1/1", // Work 썸네일 이미지의 가로세로 비율 (예: 1/1, 3/4, 16/9 등)
 
         showOnMain: true, // 메인 페이지에서 보이는 여부
         orderOnMain: 1, // 메인 페이지에서 보이는 순서 (낮을수록 먼저 보임)
-        mainThumbnail: "project8_2.jpg", // 메인 페이지 썸네일 이미지 파일명
+        mainThumbnail: "paperLamp3_main.jpg", // 메인 페이지 썸네일 이미지 파일명
     },
     {
         id: 2,
@@ -20,14 +20,14 @@ const works =[
         title: "INK-DYED PAPER TABLE",
         material: "Newspaper dyed with ink, finished with oil & varnish",
         year: "2025",
-        link: "project12.html",
+        link: "inkDyedPaperTable.html",
 
-        thumbnail: "project12.jpg",
+        thumbnail: "inkDyedPaperTable_thumb.jpg",
         aspectRatio: "3/4",
 
         showOnMain: true,
         orderOnMain: 3,
-        mainThumbnail: "project12_11.jpg",
+        mainThumbnail: "inkDyedPaperTable_main.jpg",
     },
     {
         id: 3,
@@ -35,9 +35,9 @@ const works =[
         title: "SABANGTAKJA IN PAPER",
         material: "Egg carton, natural glue, linen, Korean lacquer",
         year: "2025",
-        link: "project11.html",
+        link: "sabangTakja.html",
 
-        thumbnail: "project11_444.jpg",
+        thumbnail: "sabangTakja_thumb.jpg",
         aspectRatio: "3/4",
 
         showOnMain: false,
@@ -50,9 +50,9 @@ const works =[
         title: "Merged Grain",
         material: "Egg carton, newspaper dyed with ink, acrylic, light bulb",
         year: "2025",
-        link: "project14.html",
+        link: "mergedGrain.html",
 
-        thumbnail: "project14.jpg",
+        thumbnail: "mergedGrain_thumb.jpg",
         aspectRatio: "3/4",
 
         showOnMain: false,
@@ -65,9 +65,9 @@ const works =[
         title: "HELD SHAPE",
         material: "Egg carton, eggshell, natural glue, outer base finished with Korean lacquer",
         year: "2025",
-        link: "project13.html",
+        link: "heldShape.html",
 
-        thumbnail: "project13_14.jpg",
+        thumbnail: "heldShape_thumb.jpg",
         aspectRatio: "3/4",
 
         orderOnMain: 0,
@@ -78,17 +78,17 @@ const works =[
     {
         id: 6,
         show: true,
-        title: "Project 15",
+        title: "AFTER CLAY",
         material: "Materials of Project 15",
         year: "2026",
-        link: "project15.html",
+        link: "afterClay.html",
 
-        thumbnail: "project15.jpg",
+        thumbnail: "afterClay_thumb.jpg",
         aspectRatio: "3/4",
 
         showOnMain: true,
         orderOnMain: 2,
-        mainThumbnail: "project15.jpg",
+        mainThumbnail: "afterClay_main.jpg",
     },
     {
         id: 7,
@@ -96,9 +96,9 @@ const works =[
         title: "TREASURE SERIES",
         material: "egg carton, natural glue",
         year: "2024",
-        link: "project9.html",
+        link: "treasureSeries.html",
 
-        thumbnail: "project9.jpg",
+        thumbnail: "treasureSeries_thumb.jpg",
         aspectRatio: "3/4",
 
         showOnMain: false,
@@ -112,9 +112,9 @@ const works =[
         title: "NATURE TO NATURE",
         material: "egg carton, Korean lacquer",
         year: "2024",
-        link: "project5.html",
+        link: "natureToNature.html",
 
-        thumbnail: "project5_5.jpg",
+        thumbnail: "natureToNature_thumb.jpg",
         aspectRatio: "1/1",
 
         showOnMain: false,
