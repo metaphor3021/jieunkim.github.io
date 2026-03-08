@@ -7,7 +7,7 @@ const works =[
         year: "2024",
         link: "paperLamp3.html", // 작품 상세 페이지 링크
 
-        thumbnail: "paperLamp3_main.jpg", // Work 페이지에서 보이는 썸네일 이미지 파일명
+        thumbnail: "paperLamp3_thumb.jpg", // Work 페이지에서 보이는 썸네일 이미지 파일명
         aspectRatio: "1/1", // Work 썸네일 이미지의 가로세로 비율 (예: 1/1, 3/4, 16/9 등)
 
         showOnMain: true, // 메인 페이지에서 보이는 여부
