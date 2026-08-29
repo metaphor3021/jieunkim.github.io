@@ -500,9 +500,15 @@ body.home .layout {
     position:absolute;
     inset:0;
     display:flex;
-    padding-bottom: 120px;
+    padding-bottom:120px;
     z-index:5;
-    pointer-events:none; /* 중요 */
+    pointer-events:none;
+}
+
+.slide-prev,
+.slide-next{
+    flex:1;
+    pointer-events:auto;
 }
 
 .slide-prev{
