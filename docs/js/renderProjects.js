@@ -16,11 +16,11 @@ document.addEventListener('DOMContentLoaded', () => {
             
             <div class="thumbnail">
                 <img src="/assets/images/${work.mainThumbnail}" alt="${work.title}">
-                <div class="overlay">${work.title}<br>
-                    <a href="/views/works/${work.link}">
-                    ➜ VIEW WORK
-                    </a>
-                </div>
+<div class="overlay">
+    <a href="/views/works/${work.link}" class="home-project-link">
+        ${work.title}
+    </a>
+</div>
                 
             </div>
             
