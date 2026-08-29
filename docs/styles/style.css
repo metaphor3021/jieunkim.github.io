@@ -506,12 +506,13 @@ body.home .layout {
 }
 
 .slide-prev{
-    cursor:url("/assets/cursor/cursor-prev.png") 16 16, pointer;
+    cursor:url("/assets/cursor/cursor-prev.svg") 16 16, w-resize;
 }
 
 .slide-next{
-    cursor:url("/assets/cursor/cursor-next.png") 16 16, pointer;
+    cursor:url("/assets/cursor/cursor-next.svg") 16 16, e-resize;
 }
+
 
 
 
