@@ -505,12 +505,12 @@ body.home .layout {
     pointer-events:none; /* 중요 */
 }
 
-.slide-prev {
-  cursor: w-resize;
+.slide-prev{
+    cursor:url("/assets/cursor/cursor-prev.svg") 16 16, w-resize;
 }
 
-.slide-next {
-  cursor: e-resize;
+.slide-next{
+    cursor:url("/assets/cursor/cursor-next.svg") 16 16, e-resize;
 }
 
 
