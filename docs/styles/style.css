@@ -506,19 +506,32 @@ body.home .layout {
 }
 
 .slide-prev,
-.slide-next{
-    flex:1;
-    pointer-events:auto; /* 여기만 클릭 가능 */
+.slide-next {
+    flex: 1;
+    pointer-events: auto;
+    cursor: pointer;
 }
 
-.slide-prev{
-    cursor:url("/assets/cursor/cursor-prev.svg") 16 16, w-resize;
+.slide-prev::after,
+.slide-next::after {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 18px;
+    font-weight: 300;
+    color: #000;
+    opacity: 0.7;
 }
 
-.slide-next{
-    cursor:url("/assets/cursor/cursor-next.svg") 16 16, e-resize;
+.slide-prev::after {
+    content: "←";
+    left: 24px;
 }
 
+.slide-next::after {
+    content: "→";
+    right: 24px;
+}
 
 
 
