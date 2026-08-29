@@ -505,34 +505,13 @@ body.home .layout {
     pointer-events:none; /* 중요 */
 }
 
-.slide-prev,
+.slide-prev {
+  cursor: w-resize;
+}
+
 .slide-next {
-    flex: 1;
-    pointer-events: auto;
-    cursor: pointer;
+  cursor: e-resize;
 }
-
-.slide-prev::after,
-.slide-next::after {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    font-size: 18px;
-    font-weight: 300;
-    color: #000;
-    opacity: 0.7;
-}
-
-.slide-prev::after {
-    content: "←";
-    left: 24px;
-}
-
-.slide-next::after {
-    content: "→";
-    right: 24px;
-}
-
 
 
 
