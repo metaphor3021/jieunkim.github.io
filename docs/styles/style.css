@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600;700&display=swap');
 /* =========================
    1. Spoqa Han Sans Neo 폰트 설정
    ========================= */
@@ -47,7 +48,7 @@
    2. 기본 전역 스타일
    ========================= */
 * {
-    font-family: 'Spoqa Han Sans Neo', sans-serif;
+    font-family: 'Instrument Sans', sans-serif;
     font-weight: 300;
     /* 기본 두께 (얇지 않게) */
     user-select: none;
