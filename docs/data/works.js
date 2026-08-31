@@ -8,7 +8,7 @@ const works =[
         link: "manualLiving.html",
 
         thumbnail: "manualLiving_thumb.jpg",
-        aspectRatio: "16/9",
+        aspectRatio: "3/4",
 
         showOnMain: true,
         orderOnMain: 1,
