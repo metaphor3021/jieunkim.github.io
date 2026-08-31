@@ -1,48 +1,48 @@
 const works =[
     {
-        {
-    id: -2,
-    show: true,
-    title: "MANUAL LIVING",
-    material: "paper, potassium silicate, concrete",
-    year: "2026",
-    link: "manualLiving.html",
+        id: -2,
+        show: true,
+        title: "MANUAL LIVING",
+        material: "paper, potassium silicate, concrete",
+        year: "2026",
+        link: "manualLiving.html",
 
-    thumbnail: "manualLiving_thumb.jpg",
-    aspectRatio: "16/9",
+        thumbnail: "manualLiving_thumb.jpg",
+        aspectRatio: "16/9",
 
-    showOnMain: true,
-    orderOnMain: 1,
-    mainThumbnail: "manualLiving_main.jpg",
-},
-{
-    id: -1,
-    show: true,
-    title: "VISUAL SILENCE",
-    material: "discarded paper, hanji, natural lacquer, LED",
-    year: "2026",
-    link: "visualSilence.html",
+        showOnMain: true,
+        orderOnMain: 1,
+        mainThumbnail: "manualLiving_main.jpg",
+    },
+    {
+        id: -1,
+        show: true,
+        title: "VISUAL SILENCE",
+        material: "discarded paper, hanji, natural lacquer, LED",
+        year: "2026",
+        link: "visualSilence.html",
 
-    thumbnail: "visualSilence_thumb.jpg",
-    aspectRatio: "3/4",
+        thumbnail: "visualSilence_thumb.jpg",
+        aspectRatio: "3/4",
 
-    showOnMain: true,
-    orderOnMain: 2,
-    mainThumbnail: "visualSilence_main.jpg",
-},
-        id: 1,  // Work 페이지에서 보이는 순서 (낮을수록 먼저 보임)
-        show: true, // Work 페이지에서 보이는 여부
-        title: "PAPER LAMP III", // 작품 제목
-        material: "metal wire, newspaper, Korean lacquer", // 작품 재료
+        showOnMain: true,
+        orderOnMain: 2,
+        mainThumbnail: "visualSilence_main.jpg",
+    },
+    {
+        id: 1,
+        show: true,
+        title: "PAPER LAMP III",
+        material: "metal wire, newspaper, Korean lacquer",
         year: "2024",
-        link: "paperLamp3.html", // 작품 상세 페이지 링크
+        link: "paperLamp3.html",
 
-        thumbnail: "paperLamp3_thumb.jpg", // Work 페이지에서 보이는 썸네일 이미지 파일명
-        aspectRatio: "1/1", // Work 썸네일 이미지의 가로세로 비율 (예: 1/1, 3/4, 16/9 등)
+        thumbnail: "paperLamp3_thumb.jpg",
+        aspectRatio: "1/1",
 
-        showOnMain: false, // 메인 페이지에서 보이는 여부
-        orderOnMain: 1, // 메인 페이지에서 보이는 순서 (낮을수록 먼저 보임)
-        mainThumbnail: "paperLamp3_main.jpg", // 메인 페이지 썸네일 이미지 파일명
+        showOnMain: false,
+        orderOnMain: 1,
+        mainThumbnail: "paperLamp3_main.jpg",
     },
     {
         id: 2,
@@ -72,7 +72,7 @@ const works =[
 
         showOnMain: false,
         orderOnMain: 4,
-        mainThumbnail: "",
+        mainThumbnail: "sabangTakja_thumb.jpg",
     },
     {
         id: 4,
