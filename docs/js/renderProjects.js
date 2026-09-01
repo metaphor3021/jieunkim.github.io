@@ -18,6 +18,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 <img src="/assets/images/${work.mainThumbnail}" alt="${work.title}">
 <div class="overlay">
     <a href="/views/works/${work.link}" class="home-project-link">
+      ${work.textColor ? `style="color: ${work.textColor};"` : ''}>
         ${work.title}
     </a>
 </div>
