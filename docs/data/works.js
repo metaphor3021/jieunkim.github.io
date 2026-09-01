@@ -3,7 +3,7 @@ const works =[
         id: -2,
         show: true,
         title: "MANUAL LIVING",
-        material: "paper, potassium silicate, concrete",
+        material: "newspaper, potassium silicate, reinforced concrete",
         year: "2026",
         link: "manualLiving.html",
 
@@ -18,7 +18,7 @@ const works =[
         id: -1,
         show: true,
         title: "VISUAL SILENCE",
-        material: "discarded paper, hanji, natural lacquer, LED",
+        material: "newspaper, egg carton, hanji, lacquer, LED",
         year: "2026",
         link: "visualSilence.html",
 
@@ -35,7 +35,7 @@ const works =[
         id: 1,
         show: true,
         title: "PAPER LAMP III",
-        material: "metal wire, newspaper, Korean lacquer",
+        material: "metal wire, newspaper, lacquer",
         year: "2024",
         link: "paperLamp3.html",
 
@@ -65,7 +65,7 @@ const works =[
         id: 3,
         show: true,
         title: "SABANGTAKJA IN PAPER",
-        material: "egg carton, natural glue, linen, Korean lacquer",
+        material: "egg carton, natural glue, linen, lacquer",
         year: "2025",
         link: "sabangTakja.html",
 
@@ -80,7 +80,7 @@ const works =[
         id: 4,
         show: true,
         title: "Merged Grain",
-        material: "egg carton, ink-dyed newspaper, acrylic, light",
+        material: "egg carton, ink-dyed newspaper, acrylic, LED",
         year: "2025",
         link: "mergedGrain.html",
 
@@ -95,7 +95,7 @@ const works =[
         id: 5,
         show: true,
         title: "HELD SHAPE",
-        material: "egg carton, eggshell, natural glue, Korean lacquer",
+        material: "egg carton, eggshell, natural glue, lacquer",
         year: "2025",
         link: "heldShape.html",
 
