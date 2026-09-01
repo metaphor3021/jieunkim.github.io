@@ -17,8 +17,9 @@ document.addEventListener('DOMContentLoaded', () => {
             <div class="thumbnail">
                 <img src="/assets/images/${work.mainThumbnail}" alt="${work.title}">
 <div class="overlay">
-    <a href="/views/works/${work.link}" class="home-project-link">
-      ${work.textColor ? `style="color: ${work.textColor};"` : ''}>
+    <a href="/views/works/${work.link}"
+        class="home-project-link${work.textColor ? ' custom-text-color' : ''}"
+       ${work.textColor ? `style="--text-color: ${work.textColor}; --hover-color: ${work.hoverTextColor || work.textColor};"` : ''}>
         ${work.title}
     </a>
 </div>
