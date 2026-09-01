@@ -998,3 +998,10 @@ a:hover {
 .home-project-link[style*="--project-text-color"]:hover {
     color: var(--project-hover-color);
 }
+.project-slide .overlay a.custom-text-color {
+    color: var(--text-color);
+}
+
+.project-slide .overlay a.custom-text-color:hover {
+    color: var(--hover-color);
+}
