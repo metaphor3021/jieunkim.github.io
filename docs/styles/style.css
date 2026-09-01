@@ -991,3 +991,10 @@ a:hover {
         display: none;
     }
 }
+.home-project-link[style*="--project-text-color"] {
+    color: var(--project-text-color);
+}
+
+.home-project-link[style*="--project-text-color"]:hover {
+    color: var(--project-hover-color);
+}
