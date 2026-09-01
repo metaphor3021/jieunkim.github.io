@@ -1005,3 +1005,23 @@ a:hover {
 .project-slide .overlay a.custom-text-color:hover {
     color: var(--hover-color);
 }
+/* Project Notes toggle */
+.project-notes summary {
+    cursor: pointer;
+    list-style: none;
+}
+
+/* Chrome / Safari 기본 화살표 제거 */
+.project-notes summary::-webkit-details-marker {
+    display: none;
+}
+
+/* 닫혀 있을 때 */
+.project-notes summary::after {
+    content: " +";
+}
+
+/* 열려 있을 때 */
+.project-notes[open] summary::after {
+    content: " -";
+}
