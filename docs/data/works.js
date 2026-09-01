@@ -28,7 +28,8 @@ const works =[
         showOnMain: true,
         orderOnMain: 2,
         mainThumbnail: "visualSilence_main.jpg",
-        textColor: "#c7c7c7",
+        textColor: "#b8b8b8",
+        hoverTextColor: "#d0d0d0",
     },
     {
         id: 1,
