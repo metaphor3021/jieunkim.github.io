@@ -15,7 +15,11 @@ document.addEventListener('DOMContentLoaded', () => {
         slide.innerHTML = `
             
             <div class="thumbnail">
-                <img src="/assets/images/${work.mainThumbnail}" alt="${work.title}">
+                <img
+        src="/assets/images/${work.mainThumbnail}"
+        alt="${work.title}"
+        ${work.mobilePosition ? `style="--mobile-position: ${work.mobilePosition};"` : ''}
+    >
 <div class="overlay">
     <a href="/views/works/${work.link}"
         class="home-project-link${work.textColor ? ' custom-text-color' : ''}"
