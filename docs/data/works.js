@@ -13,6 +13,7 @@ const works =[
         showOnMain: true,
         orderOnMain: 1,
         mainThumbnail: "manualLiving_main.jpg",
+        mobileMainThumbnail: "manualLiving_mobile.jpg",
     },
     {
         id: -1,
@@ -28,6 +29,7 @@ const works =[
         showOnMain: true,
         orderOnMain: 2,
         mainThumbnail: "visualSilence_main.jpg",
+        mobileMainThumbnail: "visualSilence_mobile.jpg",
         
         textColor: "#b8b8b8",
         hoverTextColor: "#d0d0d0",
@@ -122,6 +124,7 @@ const works =[
         showOnMain: true,
         orderOnMain: 3,
         mainThumbnail: "afterClay_main.jpg",
+        mobileMainThumbnail: "afterClay_mobile.jpg",
     },
     {
         id: 7,
