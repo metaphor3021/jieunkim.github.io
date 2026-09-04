@@ -13,6 +13,7 @@ const works =[
         showOnMain: true,
         orderOnMain: 1,
         mainThumbnail: "manualLiving_main.jpg",
+        mobilePosition: "58% center",
     },
     {
         id: -1,
@@ -28,6 +29,8 @@ const works =[
         showOnMain: true,
         orderOnMain: 2,
         mainThumbnail: "visualSilence_main.jpg",
+        mobilePosition: "42% center",
+        
         textColor: "#b8b8b8",
         hoverTextColor: "#d0d0d0",
     },
@@ -121,6 +124,7 @@ const works =[
         showOnMain: true,
         orderOnMain: 3,
         mainThumbnail: "afterClay_main.jpg",
+        mobilePosition: "50% center",
     },
     {
         id: 7,
