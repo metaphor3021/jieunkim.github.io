@@ -14,9 +14,19 @@ document.addEventListener('DOMContentLoaded', () => {
         slide.className = 'project-slide';
         slide.innerHTML = `
             
-            <div class="thumbnail">
-               <img src="/assets/images/${work.mainThumbnail}" alt="${work.title}">
-<div class="overlay">
+<div class="thumbnail">
+    <picture>
+        <source
+            media="(max-width: 768px)"
+            srcset="/assets/images/${work.mobileMainThumbnail || work.mainThumbnail}"
+        >
+        <img
+            src="/assets/images/${work.mainThumbnail}"
+            alt="${work.title}"
+        >
+    </picture>
+
+    <div class="overlay">
     <a href="/views/works/${work.link}"
         class="home-project-link${work.textColor ? ' custom-text-color' : ''}"
        ${work.textColor ? `style="--text-color: ${work.textColor}; --hover-color: ${work.hoverTextColor || work.textColor};"` : ''}>
