@@ -991,6 +991,11 @@ a:hover {
         display: none;
     }
 }
+/* 메인 슬라이드 모바일 이미지 위치 조정 */
+@media (max-width: 768px) {
+    .project-slide .thumbnail img {
+        object-position: var(--mobile-position, center center);
+}  
 .home-project-link[style*="--project-text-color"] {
     color: var(--project-text-color);
 }
