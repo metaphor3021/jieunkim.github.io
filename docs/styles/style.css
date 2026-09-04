@@ -1030,3 +1030,9 @@ a:hover {
 .project-notes[open] summary::after {
     content: " -";
 }
+   @media (max-width: 768px) {
+    .project-slide .thumbnail img {
+        object-fit: contain;
+        object-position: center center;
+    }
+}
