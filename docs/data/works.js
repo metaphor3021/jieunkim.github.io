@@ -33,6 +33,7 @@ const works =[
         
         textColor: "#b8b8b8",
         hoverTextColor: "#d0d0d0",
+        darkHomeUI: true,
     },
     {
         id: 1,
