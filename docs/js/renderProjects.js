@@ -15,6 +15,11 @@ document.addEventListener('DOMContentLoaded', () => {
         slide.innerHTML = `
             
 <div class="thumbnail">
+ <a
+        href="/views/works/${work.link}"
+        class="slide-image-link"
+        aria-label="View ${work.title}"
+    >
     <picture>
         <source
             media="(max-width: 768px)"
@@ -25,6 +30,7 @@ document.addEventListener('DOMContentLoaded', () => {
             alt="${work.title}"
         >
     </picture>
+    </a>
 
     <div class="overlay">
     <a href="/views/works/${work.link}"
