@@ -1054,10 +1054,14 @@ body.home.home-dark-ui .menu-toggle {
    Mobile homepage
    ========================= */
 
-@media (max-width: 768px) {
+@media (max-width: 769px) {
     .slide-prev,
     .slide-next {
         display: none;
+    }
+       .slide-image-link picture img {
+        object-fit: contain;
+        object-position: center center;
     }
 }
 
