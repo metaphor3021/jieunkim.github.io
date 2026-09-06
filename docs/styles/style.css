@@ -996,45 +996,11 @@ a:hover {
         display: none;
     }
 }
-/* 메인 슬라이드 모바일 이미지 위치 조정 */
-@media (max-width: 768px) {
-    .project-slide .thumbnail img {
-        object-position: var(--mobile-position, center center);
-}  
+/* =========================
+   Homepage project UI
+   ========================= */
 
-.project-slide .overlay a.custom-text-color {
-    color: var(--text-color);
-}
-
-.project-slide .overlay a.custom-text-color:hover {
-    color: var(--hover-color);
-}
-/* Project Notes toggle */
-.project-notes summary {
-    cursor: pointer;
-    list-style: none;
-}
-
-/* Chrome / Safari 기본 화살표 제거 */
-.project-notes summary::-webkit-details-marker {
-    display: none;
-}
-
-/* 닫혀 있을 때 */
-.project-notes summary::after {
-    content: " +";
-}
-
-/* 열려 있을 때 */
-.project-notes[open] summary::after {
-    content: " -";
-}
-   @media (max-width: 768px) {
-    .project-slide .thumbnail img {
-        object-fit: contain;
-        object-position: center center;
-    }
-}
+/* 프로젝트별 제목 색상 - 데스크탑 + 모바일 공통 */
 .project-slide .overlay a.custom-text-color {
     color: var(--text-color) !important;
 }
@@ -1042,13 +1008,27 @@ a:hover {
 .project-slide .overlay a.custom-text-color:hover {
     color: var(--hover-color) !important;
 }
-   body.home.home-dark-ui .header-logo a {
+
+/* 어두운 메인 이미지일 때 로고 색상 */
+body.home.home-dark-ui .header-logo a {
     color: #b8b8b8 !important;
 }
 
+/* 로고 hover underline도 같은 색 */
+body.home.home-dark-ui .header-logo a::after {
+    background: #b8b8b8;
+}
+
+/* 모바일 햄버거도 같은 색 */
 body.home.home-dark-ui .menu-toggle {
     color: #b8b8b8 !important;
 }
+
+
+/* =========================
+   Homepage image link
+   ========================= */
+
 .slide-image-link {
     display: block;
     width: 100%;
@@ -1068,9 +1048,37 @@ body.home.home-dark-ui .menu-toggle {
     object-fit: cover;
     display: block;
 }
-   @media (max-width: 768px) {
+
+
+/* =========================
+   Mobile homepage
+   ========================= */
+
+@media (max-width: 768px) {
     .slide-prev,
     .slide-next {
         display: none;
     }
+}
+
+
+/* =========================
+   Project Notes toggle
+   ========================= */
+
+.project-notes summary {
+    cursor: pointer;
+    list-style: none;
+}
+
+.project-notes summary::-webkit-details-marker {
+    display: none;
+}
+
+.project-notes summary::after {
+    content: " +";
+}
+
+.project-notes[open] summary::after {
+    content: " -";
 }
