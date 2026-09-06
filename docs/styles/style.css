@@ -1037,3 +1037,10 @@ a:hover {
 .project-slide .overlay a.custom-text-color:hover {
     color: var(--hover-color) !important;
 }
+   body.home.home-dark-ui .header-logo a {
+    color: #b8b8b8 !important;
+}
+
+body.home.home-dark-ui .menu-toggle {
+    color: #b8b8b8 !important;
+}
