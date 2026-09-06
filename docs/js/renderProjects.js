@@ -91,7 +91,9 @@ document.addEventListener('DOMContentLoaded', () => {
         Array.from(slider.children).forEach((s, idx) => {
             s.classList.toggle('active', idx === currentIndex);
         });
-
+    const currentWork = filteredWorks[currentIndex];
+    document.body.classList.toggle('home-dark-ui', currentWork.darkHomeUI === true);
+    
         // progress reset instantly
         fills.forEach(f => {
             f.style.transition = 'none';
