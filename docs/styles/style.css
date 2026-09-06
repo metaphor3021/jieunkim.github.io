@@ -996,13 +996,7 @@ a:hover {
     .project-slide .thumbnail img {
         object-position: var(--mobile-position, center center);
 }  
-.home-project-link[style*="--project-text-color"] {
-    color: var(--project-text-color);
-}
 
-.home-project-link[style*="--project-text-color"]:hover {
-    color: var(--project-hover-color);
-}
 .project-slide .overlay a.custom-text-color {
     color: var(--text-color);
 }
@@ -1035,4 +1029,11 @@ a:hover {
         object-fit: contain;
         object-position: center center;
     }
+}
+.project-slide .overlay a.custom-text-color {
+    color: var(--text-color) !important;
+}
+
+.project-slide .overlay a.custom-text-color:hover {
+    color: var(--hover-color) !important;
 }
